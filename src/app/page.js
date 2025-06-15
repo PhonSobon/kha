@@ -1,20 +1,19 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import KHANavbar from "../components/KHANavbar";
-import KHAFooter from "../components/KHAFooter";
+import CardHomepage from "../components/Home/CardHomepage";
 
 const featureImages = [
   "/images/3.jpg",
   "/images/3.jpg",
   "/images/3.jpg",
   "/images/3.jpg",
-  // Add more if needed
 ];
 
 const content = {
   EN: {
-    welcome: "WELCOME TO SERVICEBOX",
-    desc: "At SERVICEBOX, we provide a seamless platform for businesses to purchase the products they need to thrive. Whether you're looking for essential tools, equipment, or specialized solutions for your company, we are here to make the process easy and efficient.",
+    welcome: "WELCOME TO KHMER HEIRS ASSOCIATION",
+    desc: "The Khmer Heirs Association is a non-governmental organization that is independent, sovereign, apolitical, non-partisan, and not for private profit. It is represented by a single president who is committed to upholding and implementing the statutes and regulations of the association.",
     getStarted: "Get Started",
     features: [
       {
@@ -32,8 +31,8 @@ const content = {
     ],
   },
   KH: {
-    welcome: "សូមស្វាគមន៍មកកាន់ SERVICEBOX",
-    desc: "នៅ SERVICEBOX យើងផ្តល់ជាវេទិកាដែលងាយស្រួលសម្រាប់អាជីវកម្មក្នុងការទិញផលិតផលដែលពួកគេត្រូវការ។ មិនថាអ្នកកំពុងស្វែងរកឧបករណ៍សំខាន់ៗ ឧបករណ៍ ឬដំណោះស្រាយឯកទេសសម្រាប់ក្រុមហ៊ុនរបស់អ្នកទេ យើងនៅទីនេះដើម្បីធ្វើឲ្យដំណើរការងាយស្រួលនិងមានប្រសិទ្ធភាព។",
+    welcome: "សូមស្វាគមន៍មកកាន់ សមាគមទាយាទខ្មែរ",
+    desc: "សមាគមទាយាទខ្មែរ  ជាអង្គការមិនមែនរដ្ឋាភិបាល ឯករាជ្យភាព អធិបតេយ្យភាព មិនធ្វើនយោបាយមិនបម្រើគណបក្សនយោបាយ និងមិនរកកម្រៃជាឯកជន ។ ទាយាទខ្មែរ តំណាងដោយ ប្រធានមួយរូប ប្តេជ្ញាគោរព និងអនុវត្តតាមលក្ខន្តិកៈ និងបទបញ្ញាត្តិនានា របស់សមាគម ។",
     getStarted: "ចាប់ផ្តើម",
     features: [
       {
@@ -50,6 +49,49 @@ const content = {
       },
     ],
   },
+};
+
+const cards = {
+  EN: [
+    {
+      imageSrc: "/images/3.jpg",
+      title: "ASEAN-Australia-New Zealand Free Trade...",
+      description:
+        "On April 29, 2024, Oknha Pech Bolen, President of the Young Entrepreneurs Association of Cambodia, joined as a panelist at the ASEAN-Australia-New...",
+    },
+    {
+      imageSrc: "/images/3.jpg",
+      title: "AANZFTA Business Roundtable 2025 –...",
+      description:
+        "Join industry leaders and business experts at the AANZFTA Business Roundtable 2025, where we’ll tackle key trade barriers, share insights and...",
+    },
+    {
+      imageSrc: "/images/3.jpg",
+      title: "Memorandum of Understanding Signed with...",
+      description:
+        "On March 26, 2025, Oknha Pech Bolen, President of the Young Entrepreneurs Association of Cambodia (YEAC), signed a Memorandum of...",
+    },
+  ],
+  KH: [
+    {
+      imageSrc: "/images/3.jpg",
+      title: "កិច្ចពិភាក្សាពាណិជ្ជកម្មអាស៊ាន-អូស្ត្រាលី-នូវែលសេឡង់...",
+      description:
+        "នៅថ្ងៃទី ២៩ ខែមេសា ឆ្នាំ២០២៤ លោកអ៊ុកណា ប៉ិច បូឡែន ប្រធានសមាគមអ្នកស្រីវ័យក្មេងកម្ពុជា បានចូលរួមជាអ្នកពិភាក្សាក្នុងកិច្ចពិភាក្សាពាណិជ្ជកម្មអាស៊ាន-អូស្ត្រាលី-នូវែលសេឡង់...",
+    },
+    {
+      imageSrc: "/images/3.jpg",
+      title: "ក្រុមប្រឹក្សាអាជីវកម្ម AANZFTA ឆ្នាំ២០២៥...",
+      description:
+        "ចូលរួមជាមួយអ្នកដឹកនាំឧស្សាហកម្ម និងអ្នកជំនាញអាជីវកម្មនៅក្នុងក្រុមប្រឹក្សាអាជីវកម្ម AANZFTA ឆ្នាំ២០២៥ ដែលយើងនឹងដោះសោគន្លងពាណិជ្ជកម្មសំខាន់ៗ ចែករំលែកចំណេះដឹង និង...",
+    },
+    {
+      imageSrc: "/images/3.jpg",
+      title: "ចុះហត្ថលេខាលើអនុស្សរណៈយោបល់ជាមួយ...",
+      description:
+        "នៅថ្ងៃទី ២៦ ខែមីនា ឆ្នាំ២០២៥ លោកអ៊ុកណា ប៉ិច បូឡែន ប្រធានសមាគមអ្នកស្រីវ័យក្មេងកម្ពុជា (YEAC) បានចុះហត្ថលេខាលើអនុស្សរណៈយោបល់ជាមួយ...",
+    },
+  ],
 };
 
 export default function Home() {
@@ -73,7 +115,7 @@ export default function Home() {
 
   return (
     <div>
-      <KHANavbar lang={lang} setLang={setLang} />
+      {/* <KHANavbar lang={lang} setLang={setLang} /> */}
       <div className="pt-16">
         <div className="relative w-full h-[520px] md:h-[600px] overflow-hidden">
           <img
@@ -95,16 +137,20 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* Welcome Section */}
+      '{/* Welcome Section */}
       <div className={lang === "KH" ? "font-kantumruy text-content" : ""}>
         {/* Welcome Section */}
-        <div className="max-w-6xl mx-auto py-16 px-4 flex flex-col md:flex-row items-center text-center gap-8">
-          <div className="flex-1">
-            <h2 className="text-2xl font-bold mb-4">{content[lang].welcome}</h2>
-            <p className="mb-4 text-gray-700">{content[lang].desc}</p>
-            <button className="bg-orange-500 text-white px-5 py-2 rounded font-semibold hover:bg-orange-600 transition">
-              {content[lang].getStarted}
-            </button>
+        <div className="w-full bg-gray-100">
+          <div className="max-w-6xl mx-auto py-16 px-4 flex flex-col md:flex-row items-center text-center gap-8">
+            <div className="flex-1">
+              <h2 className="text-2xl font-bold mb-4">
+                {content[lang].welcome}
+              </h2>
+              <p className="mb-4 text-gray-700">{content[lang].desc}</p>
+              <button className="bg-orange-500 text-white px-5 py-2 rounded font-semibold hover:bg-orange-600 transition">
+                {content[lang].getStarted}
+              </button>
+            </div>
           </div>
         </div>
 
@@ -139,22 +185,24 @@ export default function Home() {
             </div>
           </div>
           {/* Feature 3 */}
-          <div className="flex flex-col md:flex-row items-center gap-6">
-            <img
-              src={featureImages[2]}
-              alt={content[lang].features[2].title}
-              className="w-48 h-48 object-contain"
+        </div>
+      </div>
+      {/* Cards Section */}
+      <div className="max-w-6xl mx-auto py-8 px-4">
+        <h2 className="text-2xl font-bold mb-6 text-center">
+          {lang === "EN" ? "Latest News" : "ព័ត៌មានថ្មីៗ"}
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {cards[lang].map((card, idx) => (
+            <CardHomepage
+              key={idx}
+              imageSrc={card.imageSrc}
+              title={card.title}
+              description={card.description}
             />
-            <div>
-              <h3 className="text-xl font-bold mb-2">
-                {content[lang].features[2].title}
-              </h3>
-              <p className="text-gray-700">{content[lang].features[2].desc}</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
- 
   );
 }

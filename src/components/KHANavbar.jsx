@@ -1,4 +1,4 @@
-import React from "react";
+import React, { unstable_Activity } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -9,14 +9,16 @@ import {
 
 const navText = {
   EN: {
-    home: "Khmer Heirs Association",
-    feature: "Feature",
+    home: "KHMER HEIRS ASSOCIATION",
+    event: "Events",
     about: "About Us",
+    leader: "KHA Leader",
     contact: "Contact Us",
   },
   KH: {
     home: "សមាគមទាយាទខ្មែរ",
-    feature: "លក្ខណៈពិសេស",
+    event: "ព្រឹត្តិការណ៍",
+    leader: "ថ្នាក់ដឹកនាំសមាគម",
     about: "អំពីពួកយើង",
     contact: "ទំនាក់ទំនង",
   },
@@ -44,7 +46,7 @@ export default function KHANavbar({ lang, setLang }) {
           aria-label="Home"
         >
         <KHALogo />
-        <p className="font-bold text-white tracking-wide font-siemreap">
+        <p className="font-bold text-white tracking-wide font-siemreap ">
           {navText[lang].home}
         </p>
         </Link>
@@ -62,19 +64,19 @@ export default function KHANavbar({ lang, setLang }) {
         <NavbarItem>
           <Link
             color="foreground"
-            href="#"
+            href="/event"
             className="text-white "
           >
-            {navText[lang].feature}
+            {navText[lang].event}
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link
             color="foreground"
-            href="#"
+            href="/leader"
             className="text-white "
           >
-            {navText[lang].feature}
+            {navText[lang].leader}
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -90,7 +92,7 @@ export default function KHANavbar({ lang, setLang }) {
         <NavbarItem>
           <Link
             color="foreground"
-            href="#"
+            href="/contact"
             className="text-white "
           >
             {navText[lang].contact}

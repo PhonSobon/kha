@@ -12,7 +12,7 @@ export function Providers({children}: { children: React.ReactNode }) {
     <HeroUIProvider>
       <KHANavbar lang={lang} setLang={setLang} />
       {children}
-      <KHAFooter />
+      <KHAFooter lang={lang} setLang={setLang} />
     </HeroUIProvider>
   )
 }
