@@ -25,7 +25,7 @@ const navText = {
 export const KHALogo = () => {
   return (
     <div className="flex items-center">
-      <img src="/images/logo.png" alt="KHA Logo" className="w-10 h-10 mr-2" />
+      <img src="/images/Logo/logo.jpg" alt="KHA Logo" className="w-10 h-10 mr-2 rounded-3xl" />
     </div>
   );
 };
@@ -43,6 +43,15 @@ export default function KHANavbar({ lang, setLang }) {
         <NavbarItem>
           <Link
             color="foreground"
+            href="/about"
+            className="text-white hover:underline"
+          >
+            {navText[lang].about}
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link
+            color="foreground"
             href="#"
             className="text-white hover:underline"
           >
@@ -55,9 +64,19 @@ export default function KHANavbar({ lang, setLang }) {
             href="#"
             className="text-white hover:underline"
           >
-            {navText[lang].about}
+            {navText[lang].feature}
           </Link>
         </NavbarItem>
+        <NavbarItem>
+          <Link
+            color="foreground"
+            href="#"
+            className="text-white hover:underline"
+          >
+            {navText[lang].feature}
+          </Link>
+        </NavbarItem>
+        
         <NavbarItem>
           <Link
             color="foreground"

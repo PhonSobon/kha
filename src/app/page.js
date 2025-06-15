@@ -5,7 +5,8 @@ import KHANavbar from "../components/KHANavbar";
 const featureImages = [
   "/images/3.jpg",
   "/images/3.jpg",
-  "/images/2.jpg",
+  "/images/3.jpg",
+  "/images/3.jpg",
   // Add more if needed
 ];
 
@@ -53,10 +54,8 @@ const content = {
 export default function Home() {
   const [lang, setLang] = useState("EN");
   const heroImages = [
-     "/images/Hero/7.jpg",
     "/images/Hero/1.jpg",
     "/images/Hero/2.jpg",
-    "/images/Hero/3.jpg",
     "/images/Hero/4.jpg",
     "/images/Hero/5.jpg",
     "/images/Hero/6.png",
@@ -113,7 +112,7 @@ export default function Home() {
         </div>
         <div className="flex-1 flex justify-center">
           <img
-            src="/welcome-illustration.svg"
+            src={featureImages[0]}
             alt="Welcome"
             className="w-full h-72 object-contain"
           />
