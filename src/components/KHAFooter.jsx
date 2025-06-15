@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function KKAFooter() {
+export default function KKAFooter({ lang, setLang }) {
   return (
     <footer className="bg-[#1a237e] text-white py-8">
   <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">

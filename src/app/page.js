@@ -74,7 +74,6 @@ export default function Home() {
   return (
     <div>
       <KHANavbar lang={lang} setLang={setLang} />
-      {/* Hero Section with Auto Carousel */}
       <div className="pt-16">
         <div className="relative w-full h-[520px] md:h-[600px] overflow-hidden">
           <img
@@ -82,12 +81,6 @@ export default function Home() {
             alt="Service"
             className="w-full h-full object-cover transition-all duration-700"
           />
-          {/* <div className="absolute inset-0 bg-opacity-40 flex items-center justify-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white">
-              
-            </h1>
-          </div> */}
-          {/* Indicators */}
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
             {heroImages.map((_, idx) => (
               <button
@@ -105,20 +98,13 @@ export default function Home() {
       {/* Welcome Section */}
       <div className={lang === "KH" ? "font-kantumruy text-content" : ""}>
         {/* Welcome Section */}
-        <div className="max-w-6xl mx-auto py-16 px-4 flex flex-col md:flex-row items-center gap-8">
+        <div className="max-w-6xl mx-auto py-16 px-4 flex flex-col md:flex-row items-center text-center gap-8">
           <div className="flex-1">
             <h2 className="text-2xl font-bold mb-4">{content[lang].welcome}</h2>
             <p className="mb-4 text-gray-700">{content[lang].desc}</p>
             <button className="bg-orange-500 text-white px-5 py-2 rounded font-semibold hover:bg-orange-600 transition">
               {content[lang].getStarted}
             </button>
-          </div>
-          <div className="flex-1 flex justify-center">
-            <img
-              src={featureImages[0]}
-              alt="Welcome"
-              className="w-full h-72 object-contain"
-            />
           </div>
         </div>
 
@@ -168,7 +154,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-         <KHAFooter />
     </div>
  
   );
