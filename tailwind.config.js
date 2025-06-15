@@ -9,11 +9,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        battambang: ['"Battambang"', "sans-serif"],
         kantumruy: ['"Kantumruy Pro"', "sans-serif"],
-        khmer: ['"Khmer"', "sans-serif"],
-        noto: ['"Noto Sans Khmer"', "sans-serif"],
-        siemreap: ['"Siemreap"', "sans-serif"],
+      },
+      fontSize: {
+        navbar: "18 px",
+        content: "13 px",
       },
     },
   },

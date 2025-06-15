@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import KHANavbar from "../components/KHANavbar";
+import KHAFooter from "../components/KHAFooter";
 
 const featureImages = [
   "/images/3.jpg",
@@ -102,67 +103,73 @@ export default function Home() {
         </div>
       </div>
       {/* Welcome Section */}
-      <div className="max-w-6xl mx-auto py-16 px-4 flex flex-col md:flex-row items-center gap-8">
-        <div className="flex-1">
-          <h2 className="text-2xl font-bold mb-4">{content[lang].welcome}</h2>
-          <p className="mb-4 text-gray-700">{content[lang].desc}</p>
-          <button className="bg-orange-500 text-white px-5 py-2 rounded font-semibold hover:bg-orange-600 transition">
-            {content[lang].getStarted}
-          </button>
+      <div className={lang === "KH" ? "font-kantumruy text-content" : ""}>
+        {/* Welcome Section */}
+        <div className="max-w-6xl mx-auto py-16 px-4 flex flex-col md:flex-row items-center gap-8">
+          <div className="flex-1">
+            <h2 className="text-2xl font-bold mb-4">{content[lang].welcome}</h2>
+            <p className="mb-4 text-gray-700">{content[lang].desc}</p>
+            <button className="bg-orange-500 text-white px-5 py-2 rounded font-semibold hover:bg-orange-600 transition">
+              {content[lang].getStarted}
+            </button>
+          </div>
+          <div className="flex-1 flex justify-center">
+            <img
+              src={featureImages[0]}
+              alt="Welcome"
+              className="w-full h-72 object-contain"
+            />
+          </div>
         </div>
-        <div className="flex-1 flex justify-center">
-          <img
-            src={featureImages[0]}
-            alt="Welcome"
-            className="w-full h-72 object-contain"
-          />
-        </div>
-      </div>
 
-      <div className="max-w-6xl mx-auto py-8 px-4 flex flex-col gap-16">
-        {/* Feature 1: Image left, Text right */}
-        <div className="flex flex-col md:flex-row items-center gap-6">
-          <img
-            src={featureImages[0]}
-            alt={content[lang].features[0].title}
-            className="w-full h-52 object-contain font-siemreap"
-          />
-          <div>
-            <h3 className="text-xl font-bold mb-2">
-              {content[lang].features[0].title}
-            </h3>
-            <p className="text-gray-700">{content[lang].features[0].desc}</p>
+        {/* Features Section */}
+        <div className="max-w-6xl mx-auto py-8 px-4 flex flex-col gap-16">
+          {/* Feature 1 */}
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <img
+              src={featureImages[0]}
+              alt={content[lang].features[0].title}
+              className="w-full h-52 object-contain"
+            />
+            <div>
+              <h3 className="text-xl font-bold mb-2">
+                {content[lang].features[0].title}
+              </h3>
+              <p className="text-gray-700">{content[lang].features[0].desc}</p>
+            </div>
           </div>
-        </div>
-        {/* Feature 2: Text left, Image right */}
-        <div className="flex flex-col md:flex-row-reverse items-center gap-6">
-          <img
-            src={featureImages[1]}
-            alt={content[lang].features[1].title}
-            className="w-48 h-48 object-contain font-siemreap"
-          />
-          <div>
-            <h3 className="text-xl font-bold mb-2">
-              {content[lang].features[1].title}
-            </h3>
-            <p className="text-gray-700">{content[lang].features[1].desc}</p>
+          {/* Feature 2 */}
+          <div className="flex flex-col md:flex-row-reverse items-center gap-6">
+            <img
+              src={featureImages[1]}
+              alt={content[lang].features[1].title}
+              className="w-48 h-48 object-contain"
+            />
+            <div>
+              <h3 className="text-xl font-bold mb-2">
+                {content[lang].features[1].title}
+              </h3>
+              <p className="text-gray-700">{content[lang].features[1].desc}</p>
+            </div>
           </div>
-        </div>
-        {/* Feature 3: Image left, Text right */}
-        <div className="flex flex-col md:flex-row items-center gap-6">
-          <img
-            src={featureImages[2]}
-            alt={content[lang].features[2].title}
-            className="w-48 h-48 object-contain font-siemreap"
-          />
-          <div>
-            <h3 className="text-xl font-bold mb-2">
-              {content[lang].features[2].title}
-            </h3>
-            <p className="text-gray-700">{content[lang].features[2].desc}</p>
+          {/* Feature 3 */}
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <img
+              src={featureImages[2]}
+              alt={content[lang].features[2].title}
+              className="w-48 h-48 object-contain"
+            />
+            <div>
+              <h3 className="text-xl font-bold mb-2">
+                {content[lang].features[2].title}
+              </h3>
+              <p className="text-gray-700">{content[lang].features[2].desc}</p>
+            </div>
           </div>
         </div>
       </div>
+         <KHAFooter />
     </div>
+ 
   );
 }
