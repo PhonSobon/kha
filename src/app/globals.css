@@ -28,3 +28,7 @@ body {
 .navbar {
   font-size: 19px !important;
 }
+.content {
+  font-size: 19px !important;
+  color : #171717
+}

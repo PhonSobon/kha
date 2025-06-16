@@ -79,15 +79,6 @@ export default function KHANavbar({ lang, setLang }) {
             {navText[lang].leader}
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link
-            color="foreground"
-            href="#"
-            className="text-white "
-          >
-            {navText[lang].feature}
-          </Link>
-        </NavbarItem>
 
         <NavbarItem>
           <Link

@@ -115,7 +115,7 @@ export default function Home() {
 
   return (
     <div>
-      {/* <KHANavbar lang={lang} setLang={setLang} /> */}
+      <KHANavbar lang={lang} setLang={setLang} />
       <div className="pt-16">
         <div className="relative w-full h-[520px] md:h-[600px] overflow-hidden">
           <img
@@ -138,61 +138,56 @@ export default function Home() {
         </div>
       </div>
       '{/* Welcome Section */}
-      <div className={lang === "KH" ? "font-kantumruy text-content" : ""}>
+      <div
+        className={
+          lang === "KH" ? "font-kantumruy text-content " : "w-full bg-gray-100"
+        }
+      >
         {/* Welcome Section */}
-        <div className="w-full bg-gray-100">
-          <div className="max-w-6xl mx-auto py-16 px-4 flex flex-col md:flex-row items-center text-center gap-8">
+        <div className="w-full">
+          <div className="max-w-3xl mx-auto py-20​​ pb-20 pt-20 px-4 flex flex-col md:flex-row items-center text-center gap-8 ">
             <div className="flex-1">
-              <h2 className="text-2xl font-bold mb-4">
+              <h2 className="text-3xl font-bold mb-4">
                 {content[lang].welcome}
               </h2>
-              <p className="mb-4 text-gray-700">{content[lang].desc}</p>
-              <button className="bg-orange-500 text-white px-5 py-2 rounded font-semibold hover:bg-orange-600 transition">
-                {content[lang].getStarted}
-              </button>
+              <div className="flex justify-center">
+                <hr className="border-t-8 border-gray-300 mb-9 mt-0 w-auto mx-auto" />
+              </div>{" "}
+              <p className="mb-4 text-gray-700 content">{content[lang].desc}</p>
             </div>
           </div>
         </div>
 
-        {/* Features Section */}
-        <div className="max-w-6xl mx-auto py-8 px-4 flex flex-col gap-16">
-          {/* Feature 1 */}
-          <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="max-w-7xl mx-auto py-8 flex flex-col gap-16">
+          <div className="flex flex-col md:flex-row items-center gap-20 py-4">
             <img
               src={featureImages[0]}
               alt={content[lang].features[0].title}
-              className="w-full h-52 object-contain"
+              className="w-full h-96 rounded-lg shadow-md"
             />
-            <div>
-              <h3 className="text-xl font-bold mb-2">
-                {content[lang].features[0].title}
-              </h3>
-              <p className="text-gray-700">{content[lang].features[0].desc}</p>
-            </div>
+
+            <p className="text-gray-700 text-justify leading-relaxed indent-4 content">
+              {content[lang].features[0].desc}
+            </p>
           </div>
-          {/* Feature 2 */}
-          <div className="flex flex-col md:flex-row-reverse items-center gap-6">
+          <div className="flex flex-col md:flex-row-reverse items-center gap-20 py-20​​ pb-20 pt-20">
             <img
               src={featureImages[1]}
               alt={content[lang].features[1].title}
-              className="w-48 h-48 object-contain"
+              className="w-full h-96 rounded-lg shadow-md"
             />
-            <div>
-              <h3 className="text-xl font-bold mb-2">
-                {content[lang].features[1].title}
-              </h3>
-              <p className="text-gray-700">{content[lang].features[1].desc}</p>
-            </div>
+
+            <p className="text-gray-700 text-justify leading-relaxed indent-4 content">
+              {content[lang].features[1].desc}
+            </p>
           </div>
-          {/* Feature 3 */}
         </div>
       </div>
-      {/* Cards Section */}
-      <div className="max-w-6xl mx-auto py-8 px-4">
+      <div className="max-w-7xl mx-auto py-20​​ pb-20 pt-20 px-4">
         <h2 className="text-2xl font-bold mb-6 text-center">
           {lang === "EN" ? "Latest News" : "ព័ត៌មានថ្មីៗ"}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {cards[lang].map((card, idx) => (
             <CardHomepage
               key={idx}
