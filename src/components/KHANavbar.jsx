@@ -5,6 +5,7 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
+  Image,
 } from "@heroui/react";
 
 const navText = {
@@ -27,10 +28,14 @@ const navText = {
 export const KHALogo = () => {
   return (
     <div className="flex items-center">
-      <img
+      <Image
         src="/images/Logo/logo.jpg"
         alt="KHA Logo"
         className="w-10 h-10 mr-2 rounded-3xl"
+        width={40}
+        height={40}
+        
+        style={{ objectFit: "cover" }} // Ensures the image covers the area without distortion
       />
     </div>
   );
@@ -45,8 +50,8 @@ export default function KHANavbar({ lang, setLang }) {
           className="flex items-center text-white "
           aria-label="Home"
         >
-        <KHALogo />
-        <p className="font-bold text-white tracking-wide font-siemreap ">
+        <KHALogo className= "px-5"/>
+        <p className="font-bold text-white tracking-wide font-siemreap gap-2">
           {navText[lang].home}
         </p>
         </Link>
@@ -107,7 +112,10 @@ export default function KHANavbar({ lang, setLang }) {
               onClick={() => setLang("EN")}
               aria-label="Switch to English"
             >
-              <img
+              <Image
+                
+                width={0}
+                height={0}
                 src="/images/UK.png"
                 alt="English"
                 className="w-6 h-6 object-cover"
@@ -123,7 +131,10 @@ export default function KHANavbar({ lang, setLang }) {
               onClick={() => setLang("KH")}
               aria-label="Switch to Khmer"
             >
-              <img
+              <Image
+                
+                width={0}
+                height={0}
                 src="/images/cambodia.png"
                 alt="Khmer"
                 className="w-6 h-6 object-cover"

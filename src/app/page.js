@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import KHANavbar from "../components/KHANavbar";
 import CardHomepage from "../components/Home/CardHomepage";
 
@@ -118,8 +119,11 @@ export default function Home() {
       <KHANavbar lang={lang} setLang={setLang} />
       <div className="pt-16">
         <div className="relative w-full h-[520px] md:h-[600px] overflow-hidden">
-          <img
+          <Image
+            
+            width={100} height={100}
             src={heroImages[current]}
+            unoptimized
             alt="Service"
             className="w-full h-full object-cover transition-all duration-700"
           />
@@ -160,7 +164,9 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto py-8 flex flex-col gap-16">
           <div className="flex flex-col md:flex-row items-center gap-20 py-4">
-            <img
+            <Image
+              unoptimized
+              width={100} height={100}
               src={featureImages[0]}
               alt={content[lang].features[0].title}
               className="w-full h-96 rounded-lg shadow-md"
@@ -171,7 +177,9 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col md:flex-row-reverse items-center gap-20 py-20​​ pb-20 pt-20">
-            <img
+            <Image
+              unoptimized
+              width={100} height={100}
               src={featureImages[1]}
               alt={content[lang].features[1].title}
               className="w-full h-96 rounded-lg shadow-md"
