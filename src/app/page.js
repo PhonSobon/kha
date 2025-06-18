@@ -99,7 +99,6 @@ export default function Home() {
     "/images/Hero/2.jpg",
     "/images/Hero/4.jpg",
     "/images/Hero/5.jpg",
-    "/images/Hero/6.png",
   ];
   const [current, setCurrent] = useState(0);
 

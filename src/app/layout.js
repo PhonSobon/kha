@@ -28,7 +28,7 @@ export const metadata = {
     siteName: "KHMER HEIRS ASSOCIATION",
     images: [
       {
-        url: "/images/metadata/metadata.png", // Path to your image (should be absolute or start with /)
+        url: "/images/metadata/metadata.png",
         width: 1200,
         height: 630,
         alt: "my image alt text",
