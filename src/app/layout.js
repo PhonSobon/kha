@@ -19,30 +19,36 @@ const kantumruyPro = Kantumruy_Pro({
 });
 
 export const metadata = {
-  title: "Khmer Heirs Association",
-  description: "The Khmer Heirs Association is a non-governmental organization that is independent, sovereign, apolitical, non-partisan, and not for private profit.",
-  openGraph: {
-    title: "Khmer Heirs Association",
-    description: "The Khmer Heirs Association is a non-governmental organization that is independent, sovereign, apolitical, non-partisan, and not for private profit.",
-    url: "https://kha-com.vercel.app/",
-    siteName: "Khmer Heirs Association",
-    images: [
-      {
-        url: "https://kha-com.vercel.app/og-image.jpg", // Make sure this image exists in your public folder
-        width: 1200,
-        height: 630,
-        alt: "Khmer Heirs Association",
-      },
-    ],
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Khmer Heirs Association",
-    description: "The Khmer Heirs Association is a non-governmental organization that is independent, sovereign, apolitical, non-partisan, and not for private profit.",
-    images: ["https://kha-com.vercel.app/og-image.jpg"],
-  },
-};
+    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL),
+    manifest: process.env.NEXT_PUBLIC_APP_URL+"/icons/manifest.json",
+    title: {
+        template: '%s - KHMER HEIRS ASSOCIATION'
+    },
+    openGraph:{
+        title: 'Home - KHMER HEIRS ASSOCIATION',
+        description: 'Collect better data and make better decisions.',
+        url: '/',
+        siteName: 'KHMER HEIRS ASSOCIATION',
+        images: [
+            {
+                url: "/og-image.jpg",
+                width: 800,
+                height: 600,
+            },
+        ]
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: {
+            template: '%s - KHMER HEIRS ASSOCIATION'
+        },
+        description: 'Collect better data and make better decisions.',
+        creator: 'KHMER HEIRS ASSOCIATION ',
+        images: [
+            "/og-image.jpg"
+        ],
+    }
+}
 
 export default function RootLayout({ children }) {
   return (
