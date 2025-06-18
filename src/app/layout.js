@@ -20,7 +20,7 @@ const kantumruyPro = Kantumruy_Pro({
 
 export const metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL),
-    manifest: process.env.NEXT_PUBLIC_APP_URL+"/icons/manifest.json",
+    manifest: process.env.NEXT_PUBLIC_APP_URL+"/images/Logo/logo.jpg",
     title: {
         template: '%s - KHMER HEIRS ASSOCIATION'
     },
