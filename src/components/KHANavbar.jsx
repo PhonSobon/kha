@@ -43,15 +43,15 @@ export const KHALogo = () => {
 
 export default function KHANavbar({ lang, setLang }) {
   return (
-    <Navbar className="bg-[#28308f] text-white fixed top-0 left-0 w-full h-16 z-50 px-10 py-2 flex justify-between items-center navbar">
+    <Navbar className="bg-[#28308f] font-bold text-white fixed top-0 left-0 w-full h-16 z-50 px-10 py-2 flex justify-between items-center navbar">
       <NavbarBrand>
         <Link
           href="/"
           className="flex items-center text-white "
           aria-label="Home"
         >
-        <KHALogo className= "px-5"/>
-        <p className="font-bold text-white tracking-wide font-siemreap gap-2">
+        <KHALogo className= "px-5 py-6"/>
+        <p className="px-5  text-white tracking-wide font-siemreap gap-6">
           {navText[lang].home}
         </p>
         </Link>

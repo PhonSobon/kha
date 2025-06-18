@@ -14,19 +14,18 @@ const featureImages = [
 const content = {
   EN: {
     welcome: "WELCOME TO KHMER HEIRS ASSOCIATION",
-    desc: "The Khmer Heirs Association is a non-governmental organization that is independent, sovereign, apolitical, non-partisan, and not for private profit. It is represented by a single president who is committed to upholding and implementing the statutes and regulations of the association.",
-    getStarted: "Get Started",
+    desc: "The Khmer Heirs Association is a non governmental organization that is independent, sovereign, apolitical, non partisan, and not for private profit. It is represented by a single president who is committed to upholding and implementing the statutes and regulations of the association.",
     features: [
       {
-        title: "High-Quality",
-        desc: "The Khmer Heirs Association is a non-governmental organization that is independent, sovereign, apolitical, non-partisan, and not for private profit. It is represented by a single president who is committed to upholding and implementing the statutes and regulations of the association.",
+    
+        desc: "The Khmer Heirs Association is a non governmental organization that is independent, sovereign, apolitical, non-partisan, and not for private profit. It is represented by a single president who is committed to upholding and implementing the statutes and regulations of the association.",
       },
       {
-        title: "User-Friendly",
+    
         desc: "SERVICEBOX is designed for a seamless experience, allowing you to quickly browse, compare, and purchase the tech products or website services that meet your needs.",
       },
       {
-        title: "Specialized in Technology",
+        
         desc: "SERVICEBOX offers a wide range of cutting-edge technology products and professional website services to help your business stay ahead in a digital world.",
       },
     ],
@@ -34,18 +33,16 @@ const content = {
   KH: {
     welcome: "សូមស្វាគមន៍មកកាន់ សមាគមទាយាទខ្មែរ",
     desc: "សមាគមទាយាទខ្មែរ  ជាអង្គការមិនមែនរដ្ឋាភិបាល ឯករាជ្យភាព អធិបតេយ្យភាព មិនធ្វើនយោបាយមិនបម្រើគណបក្សនយោបាយ និងមិនរកកម្រៃជាឯកជន ។ ទាយាទខ្មែរ តំណាងដោយ ប្រធានមួយរូប ប្តេជ្ញាគោរព និងអនុវត្តតាមលក្ខន្តិកៈ និងបទបញ្ញាត្តិនានា របស់សមាគម ។",
-    getStarted: "ចាប់ផ្តើម",
     features: [
       {
-        title: "គុណភាពខ្ពស់",
         desc: "សមាគមទាយាទខ្មែរ  ជាអង្គការមិនមែនរដ្ឋាភិបាល ឯករាជ្យភាព អធិបតេយ្យភាព មិនធ្វើនយោបាយមិនបម្រើគណបក្សនយោបាយ និងមិនរកកម្រៃជាឯកជន ។ ទាយាទខ្មែរ តំណាងដោយ ប្រធានមួយរូប ប្តេជ្ញាគោរព និងអនុវត្តតាមលក្ខន្តិកៈ និងបទបញ្ញាត្តិនានា របស់សមាគម ។",
       },
       {
-        title: "ងាយស្រួលប្រើ",
+      
         desc: "SERVICEBOX ត្រូវបានរចនាឡើងសម្រាប់បទពិសោធន៍ងាយស្រួល អនុញ្ញាតឱ្យអ្នករកមើល ប្រៀបធៀប និងទិញផលិតផលបច្ចេកវិទ្យា ឬសេវាកម្មគេហទំព័រដែលសមស្របនឹងតម្រូវការរបស់អ្នក។",
       },
       {
-        title: "ឯកទេសក្នុងបច្ចេកវិទ្យា",
+      
         desc: "SERVICEBOX ផ្តល់ជូននូវផលិតផលបច្ចេកវិទ្យាចុងក្រោយនិងសេវាកម្មគេហទំព័រដែលមានវិជ្ជាជីវៈ ដើម្បីជួយអាជីវកម្មរបស់អ្នកឲ្យនាំមុខគេក្នុងសម័យឌីជីថល។",
       },
     ],
@@ -62,9 +59,9 @@ const cards = {
     },
     {
       imageSrc: "/images/3.jpg",
-      title: "AANZFTA Business Roundtable 2025 –...",
+      title: "AANZFTA Business Roundtable 2025 ",
       description:
-        "Join industry leaders and business experts at the AANZFTA Business Roundtable 2025, where we’ll tackle key trade barriers, share insights and...",
+        "Join industry leaders and business experts at the AANZFTA Business Roundtable 2025, where  tackle key trade barriers, share insights and...",
     },
     {
       imageSrc: "/images/3.jpg",
@@ -141,7 +138,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      '{/* Welcome Section */}
+      {/* Welcome Section */}
       <div
         className={
           lang === "KH" ? "font-kantumruy text-content " : "w-full bg-gray-100"
@@ -149,10 +146,11 @@ export default function Home() {
       >
         {/* Welcome Section */}
         <div className="w-full">
-          <div className="max-w-3xl mx-auto py-20​​ pb-20 pt-20 px-4 flex flex-col md:flex-row items-center text-center gap-8 ">
+          <div className="max-w-3xl mx-auto py-20 pb-20 pt-20 px-4 flex flex-col md:flex-row items-center text-center gap-8 ">
             <div className="flex-1">
               <h2 className="text-3xl font-bold mb-4">
                 {content[lang].welcome}
+                
               </h2>
               <div className="flex justify-center">
                 <hr className="border-t-8 border-gray-300 mb-9 mt-0 w-auto mx-auto" />
