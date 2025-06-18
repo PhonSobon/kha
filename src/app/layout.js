@@ -19,36 +19,38 @@ const kantumruyPro = Kantumruy_Pro({
 });
 
 export const metadata = {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL),
-    manifest: process.env.NEXT_PUBLIC_APP_URL+"/images/Logo/logo.jpg",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL || "https://kha-com.vercel.app"
+  ),
+  manifest:
+    (process.env.NEXT_PUBLIC_APP_URL || "https://kha-com.vercel.app") +
+    "/images/Logo/logo.jpg",
+  title: {
+    template: "%s - KHMER HEIRS ASSOCIATION",
+  },
+  openGraph: {
+    title: "Home - KHMER HEIRS ASSOCIATION",
+    description: "Collect better data and make better decisions.",
+    url: "/",
+    siteName: "KHMER HEIRS ASSOCIATION",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 800,
+        height: 600,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
     title: {
-        template: '%s - KHMER HEIRS ASSOCIATION'
+      template: "%s - KHMER HEIRS ASSOCIATION",
     },
-    openGraph:{
-        title: 'Home - KHMER HEIRS ASSOCIATION',
-        description: 'Collect better data and make better decisions.',
-        url: '/',
-        siteName: 'KHMER HEIRS ASSOCIATION',
-        images: [
-            {
-                url: "/og-image.jpg",
-                width: 800,
-                height: 600,
-            },
-        ]
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: {
-            template: '%s - KHMER HEIRS ASSOCIATION'
-        },
-        description: 'Collect better data and make better decisions.',
-        creator: 'KHMER HEIRS ASSOCIATION ',
-        images: [
-            "/og-image.jpg"
-        ],
-    }
-}
+    description: "Collect better data and make better decisions.",
+    creator: "KHMER HEIRS ASSOCIATION",
+    images: ["/og-image.jpg"],
+  },
+};
 
 export default function RootLayout({ children }) {
   return (
