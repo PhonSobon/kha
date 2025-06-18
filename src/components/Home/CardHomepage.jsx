@@ -8,8 +8,8 @@ export default function CardHomepage({ imageSrc, title, description}) {
         src={imageSrc}
         alt={title}
         className="w-full h-56 object-cover"
-        width={400} // set your desired width
-        height={224} // set your desired height (h-56 = 224px)
+        width={400}
+        height={224}
         unoptimized
       />
       <div className="p-4 flex-1 flex flex-col">

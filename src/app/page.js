@@ -138,19 +138,18 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* Welcome Section */}
       <div
         className={
           lang === "KH" ? "font-kantumruy text-content " : "w-full bg-gray-100"
         }
       >
-        {/* Welcome Section */}
+
         <div className="w-full">
           <div className="max-w-3xl mx-auto py-20 pb-20 pt-20 px-4 flex flex-col md:flex-row items-center text-center gap-8 ">
             <div className="flex-1">
               <h2 className="text-3xl font-bold mb-4">
                 {content[lang].welcome}
-                
+
               </h2>
               <div className="flex justify-center">
                 <hr className="border-t-8 border-gray-300 mb-9 mt-0 w-auto mx-auto" />
@@ -166,7 +165,7 @@ export default function Home() {
               unoptimized
               width={100} height={100}
               src={featureImages[0]}
-              alt={content[lang].features[0].title}
+              alt="Feature Image 1"
               className="w-full h-96 rounded-lg shadow-md"
             />
 
@@ -179,7 +178,8 @@ export default function Home() {
               unoptimized
               width={100} height={100}
               src={featureImages[1]}
-              alt={content[lang].features[1].title}
+              // alt={content[lang].features[1].title}
+              alt="Feature Image"
               className="w-full h-96 rounded-lg shadow-md"
             />
 
