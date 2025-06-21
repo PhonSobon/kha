@@ -5,7 +5,7 @@ import KHANavbar from "../components/KHANavbar";
 import CardHomepage from "../components/Home/CardHomepage";
 import ScholarshipKHA from "../components/Home/ScholarshipKHA";
 
-const featureImages = ["/images/Hero/1.jpg", "/images/Hero/2.jpg"];
+const featureImages = ["/images/Hero/1.jpg", "/images/content/6.jpg"];
 
 const content = {
   EN: {
@@ -172,7 +172,7 @@ export default function Home() {
               height={100}
               src={featureImages[1]}
               alt="Feature Image"
-              className="w-1/2 h-80 rounded-lg shadow-md"
+              className="w-full h-80 rounded-lg shadow-md"
             />
 
             <p className="text-gray-700 text-justify leading-relaxed indent-4 content">
