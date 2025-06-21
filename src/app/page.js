@@ -3,8 +3,9 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import KHANavbar from "../components/KHANavbar";
 import CardHomepage from "../components/Home/CardHomepage";
+import ScholarshipKHA from "../components/Home/ScholarshipKHA";
 
-const featureImages = ["/images/3.jpg", "/images/Hero/5.jpg"];
+const featureImages = ["/images/Hero/1.jpg", "/images/Hero/2.jpg"];
 
 const content = {
   EN: {
@@ -88,9 +89,11 @@ export default function Home() {
   const [lang, setLang] = useState("EN");
   const heroImages = [
     "/images/Hero/1.jpg",
+    "/images/khaold/2022-kha.jpg",
     "/images/Hero/2.jpg",
     "/images/Hero/4.jpg",
-    "/images/Hero/5.jpg",
+    "/images/content/2.jpg",
+    "/images/khaold/2019.jpg",
   ];
   const [current, setCurrent] = useState(0);
 
@@ -155,7 +158,7 @@ export default function Home() {
               height={100}
               src={featureImages[0]}
               alt="Feature Image 1"
-              className="w-3/4 h-96 rounded-lg shadow-md"
+              className="w-1/2 h-80 rounded-lg shadow-md"
             />
 
             <p className="text-gray-700 text-justify leading-relaxed indent-4 content">
@@ -177,6 +180,9 @@ export default function Home() {
             </p>
           </div>
         </div>
+      </div>
+      <div className="bg-gray-100 ">
+        <ScholarshipKHA  lang={lang} setLang={setLang}/>
       </div>
       <div className="max-w-7xl mx-auto py-20​​ pb-20 pt-20 px-4">
         <h2 className="text-2xl font-bold mb-6 text-center">

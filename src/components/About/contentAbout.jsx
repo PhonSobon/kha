@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { useLanguage } from "../../components/LanguageProvider"; 
 
-const featureImages = ["/images/3.jpg", "/images/Hero/5.jpg"];
+const featureImages = ["/images/3.jpg", "/images/content/4.jpg"];
 const content = {
   EN: {
     features: [
