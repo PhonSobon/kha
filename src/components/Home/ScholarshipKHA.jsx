@@ -67,10 +67,10 @@ export default function ScholarshipKHA({ lang = "EN" }) {
               }`}
             >
               <div className="flex-1 flex flex-col justify-center px-8 py-4 w-full">
-                <div className="text-white text-2xl  font-semibold mb-2">
+                <div className="text-white text-xl  font-semibold mb-2">
                   {lang === "KH" ? member.nameKH : member.name}
                 </div>
-                <div className="text-cyan-400 text-2xl  font-extrabold mb-1">
+                <div className="text-cyan-400 text-xl  font-extrabold mb-1">
                   {lang === "KH" ? member.universityKH : member.university}
                 </div>
                 <div className="text-white text-xl  font-extrabold mb-1">
