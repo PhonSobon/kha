@@ -26,7 +26,7 @@ export const metadata = {
     title: "KHMER HEIRS ASSOCIATION",
     description:
       "The Khmer Heirs Association is a non-governmental organization that is independent, sovereign, apolitical, non-partisan, and not for private profit.",
-    url: "https://kha-com.vercel.app/",
+    url: "https://kha-com.vercel.app",
     siteName: "KHMER HEIRS ASSOCIATION",
     images: [
       {
