@@ -4,45 +4,37 @@ import Image from "next/image";
 import KHANavbar from "../components/KHANavbar";
 import CardHomepage from "../components/Home/CardHomepage";
 
-const featureImages = [
-  "/images/3.jpg",
-  "/images/3.jpg",
-  "/images/3.jpg",
-  "/images/3.jpg",
-];
+const featureImages = ["/images/3.jpg", "/images/Hero/5.jpg"];
 
 const content = {
   EN: {
     welcome: "WELCOME TO KHMER HEIRS ASSOCIATION",
-    desc: "The Khmer Heirs Association is a non governmental organization that is independent, sovereign, apolitical, non partisan, and not for private profit. It is represented by a single president who is committed to upholding and implementing the statutes and regulations of the association.",
+
+    desc: "A group of Khmer intellectual students have come together to establish an association based in the Kingdom of Cambodia, called the Khmer Heirs Association.The Khmer Heirs Association is abbreviated as “KHA” in English and “សទខ” in Khmer.",
     features: [
       {
-    
-        desc: "The Khmer Heirs Association is a non governmental organization that is independent, sovereign, apolitical, non-partisan, and not for private profit. It is represented by a single president who is committed to upholding and implementing the statutes and regulations of the association.",
+        desc: "The Khmer Heirs Association is a non-governmental organization that is independent, sovereign, apolitical, non-partisan, and not for private profit.",
       },
       {
-    
-        desc: "SERVICEBOX is designed for a seamless experience, allowing you to quickly browse, compare, and purchase the tech products or website services that meet your needs.",
+        desc: "Khmer Heirs work to build a bright, honorable, and prosperous future for the Cambodian people. Democracy and respect for human rights are the strong foundations of the leadership and development of the Khmer Heirs Association.",
       },
       {
-        
         desc: "SERVICEBOX offers a wide range of cutting-edge technology products and professional website services to help your business stay ahead in a digital world.",
       },
     ],
   },
   KH: {
     welcome: "សូមស្វាគមន៍មកកាន់ សមាគមទាយាទខ្មែរ",
-    desc: "សមាគមទាយាទខ្មែរ  ជាអង្គការមិនមែនរដ្ឋាភិបាល ឯករាជ្យភាព អធិបតេយ្យភាព មិនធ្វើនយោបាយមិនបម្រើគណបក្សនយោបាយ និងមិនរកកម្រៃជាឯកជន ។ ទាយាទខ្មែរ តំណាងដោយ ប្រធានមួយរូប ប្តេជ្ញាគោរព និងអនុវត្តតាមលក្ខន្តិកៈ និងបទបញ្ញាត្តិនានា របស់សមាគម ។",
+    desc: "និស្សិត បញ្ញវន្តខ្មែរ បានរួមគ្នាបង្កើតសមាគមមួយ តាំងនៅក្នុងទឹកដី នៃព្រះរាជាណាចក្រកម្ពុជា ដែលមានឈ្មោះថា “សមាគមទាយាទខ្មែរ” ។ សមាគមទាយាទខ្មែរ សរសេរជាអក្សកាត់ថា “សទខ” និងជាភាសាអង់គ្លេសថា “Khmer Heirs Association (KHA)",
     features: [
       {
-        desc: "សមាគមទាយាទខ្មែរ  ជាអង្គការមិនមែនរដ្ឋាភិបាល ឯករាជ្យភាព អធិបតេយ្យភាព មិនធ្វើនយោបាយមិនបម្រើគណបក្សនយោបាយ និងមិនរកកម្រៃជាឯកជន ។ ទាយាទខ្មែរ តំណាងដោយ ប្រធានមួយរូប ប្តេជ្ញាគោរព និងអនុវត្តតាមលក្ខន្តិកៈ និងបទបញ្ញាត្តិនានា របស់សមាគម ។",
+    desc: "សមាគមទាយាទខ្មែរ ជាអង្គការមិនមែនរដ្ឋាភិបាល ឯករាជ្យភាព អធិបតេយ្យភាព មិនធ្វើនយោបាយ មិនបម្រើគណបក្សនយោបាយ និងមិនរកកម្រៃជាឯកជន។",
+
       },
       {
-      
-        desc: "SERVICEBOX ត្រូវបានរចនាឡើងសម្រាប់បទពិសោធន៍ងាយស្រួល អនុញ្ញាតឱ្យអ្នករកមើល ប្រៀបធៀប និងទិញផលិតផលបច្ចេកវិទ្យា ឬសេវាកម្មគេហទំព័រដែលសមស្របនឹងតម្រូវការរបស់អ្នក។",
+        desc: "ទាយាទខ្មែរ ធ្វើអ្វីៗដើម្បីកសាងវាសនាឧត្តុង្គឧត្តម ថ្កុំថ្កើង និងភាពសំបូររុងរឿងសម្រាប់កូនខ្មែរ។ លទ្ធិប្រជាធិបតេយ្យ និងការគោរពសិទ្ធិមនុស្ស គឺជាមូលដ្ឋានគ្រឹះ ដ៏រឹងមាំក្នងការដឹកនាំ និងអភិវឌ្ឍសមាគទាយាទខ្មែរ ។",
       },
       {
-      
         desc: "SERVICEBOX ផ្តល់ជូននូវផលិតផលបច្ចេកវិទ្យាចុងក្រោយនិងសេវាកម្មគេហទំព័រដែលមានវិជ្ជាជីវៈ ដើម្បីជួយអាជីវកម្មរបស់អ្នកឲ្យនាំមុខគេក្នុងសម័យឌីជីថល។",
       },
     ],
@@ -115,8 +107,8 @@ export default function Home() {
       <div className="pt-16">
         <div className="relative w-full h-[520px] md:h-[600px] overflow-hidden">
           <Image
-            
-            width={100} height={100}
+            width={100}
+            height={100}
             src={heroImages[current]}
             unoptimized
             alt="Service"
@@ -141,13 +133,11 @@ export default function Home() {
           lang === "KH" ? "font-kantumruy text-content " : "w-full bg-gray-100"
         }
       >
-
         <div className="w-full">
           <div className="max-w-3xl mx-auto py-20 pb-20 pt-20 px-4 flex flex-col md:flex-row items-center text-center gap-8 ">
             <div className="flex-1">
               <h2 className="text-3xl font-bold mb-4">
                 {content[lang].welcome}
-
               </h2>
               <div className="flex justify-center">
                 <hr className="border-t-8 border-gray-300 mb-9 mt-0 w-auto mx-auto" />
@@ -161,10 +151,11 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center gap-20 py-4">
             <Image
               unoptimized
-              width={100} height={100}
+              width={100}
+              height={100}
               src={featureImages[0]}
               alt="Feature Image 1"
-              className="w-full h-96 rounded-lg shadow-md"
+              className="w-3/4 h-96 rounded-lg shadow-md"
             />
 
             <p className="text-gray-700 text-justify leading-relaxed indent-4 content">
@@ -174,11 +165,11 @@ export default function Home() {
           <div className="flex flex-col md:flex-row-reverse items-center gap-20 py-20​​ pb-20 pt-20">
             <Image
               unoptimized
-              width={100} height={100}
+              width={100}
+              height={100}
               src={featureImages[1]}
-              // alt={content[lang].features[1].title}
               alt="Feature Image"
-              className="w-full h-96 rounded-lg shadow-md"
+              className="w-1/2 h-80 rounded-lg shadow-md"
             />
 
             <p className="text-gray-700 text-justify leading-relaxed indent-4 content">

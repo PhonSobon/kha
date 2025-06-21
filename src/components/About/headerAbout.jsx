@@ -5,11 +5,9 @@ import { useLanguage } from '../LanguageProvider'
 const content = {
   EN: {
     title: "Khmer Heirs Association",
-    desc: "The Khmer Heirs Association is a non-governmental organization that is independent, sovereign, apolitical, non-partisan, and not for private profit.",
   },
   KH: {
     title: "សមាគមទាយាទខ្មែរ",
-    desc: "សមាគមទាយាទខ្មែរ ជាអង្គការមិនមែនរដ្ឋាភិបាល ឯករាជ្យភាព អធិបតេយ្យភាព មិនធ្វើនយោបាយ មិនបម្រើគណបក្សនយោបាយ និងមិនរកកម្រៃជាឯកជន។",
   },
 };
 
@@ -30,9 +28,6 @@ export default function HeaderAbout() {
         <h1 className="text-white text-3xl md:text-5xl font-bold drop-shadow-lg">
           {content[lang].title}
         </h1>
-        <p className="text-white text-lg font-bold md:text-xl mt-4 drop-shadow-lg max-w-3xl">
-          {content[lang].desc}
-        </p>
       </div>
     </div>
   )
