@@ -30,7 +30,7 @@ export const metadata = {
     siteName: "KHMER HEIRS ASSOCIATION",
     images: [
       {
-        url: "https://kha-com.vercel.app/og-image.jpg", // Absolute URL required!
+        url: "https://kha-com.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "KHMER HEIRS ASSOCIATION",
@@ -53,7 +53,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${kantumruyPro.variable} antialiased font-kantumruy`}
       >
-        <Providers>{children}</Providers>
+        <Providers>
+          
+          {children}
+          </Providers>
       </body>
     </html>
   );

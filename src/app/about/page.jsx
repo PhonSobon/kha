@@ -1,10 +1,16 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
+import HeaderAbout from "../../components/About/headerAbout";
+import { useLanguage } from "../../components/LanguageProvider";
+import KHANavbar from "../../components/KHANavbar";
 
-export default function page() {
+export default function Page() {
+  const { lang, setLang } = useLanguage();
+
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      Page
+    <div>
+       <KHANavbar lang={lang} setLang={setLang} />
+      <HeaderAbout lang={lang}  setLang={setLang}/>
     </div>
-  )
+  );
 }

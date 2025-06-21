@@ -102,7 +102,6 @@ export default function Home() {
   ];
   const [current, setCurrent] = useState(0);
 
-  // Auto-slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev === heroImages.length - 1 ? 0 : prev + 1));
