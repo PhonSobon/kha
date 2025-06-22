@@ -25,7 +25,7 @@ const members = [
     image: "/images/member/pha1.jpg",
   },
   {
-    name: "moeun visal",
+    name: "Moeun visal",
     nameKH: "មឿន វិសាល",
     university: "Đoàn Trường Hữu Nghị 80 ",
     universityKH: "Đoàn Trường Hữu Nghị 80 ",
@@ -45,6 +45,17 @@ const members = [
     major: "Bachelor of Japanese Language",
     majorKH: "បរិញ្ញាបត្រភាសាជប៉ុន",
     image: "/images/member/chak.jpg",
+  },
+  {
+    name: "Chhorn Rachhat",
+    nameKH: "ឈាន់ រ៉ាឆាត",
+    university: "ECAM LaSalle",
+    universityKH: "ECAM LaSalle",
+    country: "France",
+    countryKH: "ប្រទេសបារាំង",
+    major: "Bachelor of suply chain ",
+    majorKH: "បរិញ្ញាបត្រវិស្វកម្មឧស្សាហកម្ម",
+    image: "/images/member/chhart.jpg",
   },
   
 ];

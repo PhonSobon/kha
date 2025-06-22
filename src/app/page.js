@@ -43,48 +43,6 @@ const content = {
   },
 };
 
-const cards = {
-  EN: [
-    {
-      imageSrc: "/images/3.jpg",
-      title: "ASEAN-Australia-New Zealand Free Trade...",
-      description:
-        "On April 29, 2024, Oknha Pech Bolen, President of the Young Entrepreneurs Association of Cambodia, joined as a panelist at the ASEAN-Australia-New...",
-    },
-    {
-      imageSrc: "/images/3.jpg",
-      title: "AANZFTA Business Roundtable 2025 ",
-      description:
-        "Join industry leaders and business experts at the AANZFTA Business Roundtable 2025, where  tackle key trade barriers, share insights and...",
-    },
-    {
-      imageSrc: "/images/3.jpg",
-      title: "Memorandum of Understanding Signed with...",
-      description:
-        "On March 26, 2025, Oknha Pech Bolen, President of the Young Entrepreneurs Association of Cambodia (YEAC), signed a Memorandum of...",
-    },
-  ],
-  KH: [
-    {
-      imageSrc: "/images/3.jpg",
-      title: "កិច្ចពិភាក្សាពាណិជ្ជកម្មអាស៊ាន-អូស្ត្រាលី-នូវែលសេឡង់...",
-      description:
-        "នៅថ្ងៃទី ២៩ ខែមេសា ឆ្នាំ២០២៤ លោកអ៊ុកណា ប៉ិច បូឡែន ប្រធានសមាគមអ្នកស្រីវ័យក្មេងកម្ពុជា បានចូលរួមជាអ្នកពិភាក្សាក្នុងកិច្ចពិភាក្សាពាណិជ្ជកម្មអាស៊ាន-អូស្ត្រាលី-នូវែលសេឡង់...",
-    },
-    {
-      imageSrc: "/images/3.jpg",
-      title: "ក្រុមប្រឹក្សាអាជីវកម្ម AANZFTA ឆ្នាំ២០២៥...",
-      description:
-        "ចូលរួមជាមួយអ្នកដឹកនាំឧស្សាហកម្ម និងអ្នកជំនាញអាជីវកម្មនៅក្នុងក្រុមប្រឹក្សាអាជីវកម្ម AANZFTA ឆ្នាំ២០២៥ ដែលយើងនឹងដោះសោគន្លងពាណិជ្ជកម្មសំខាន់ៗ ចែករំលែកចំណេះដឹង និង...",
-    },
-    {
-      imageSrc: "/images/3.jpg",
-      title: "ចុះហត្ថលេខាលើអនុស្សរណៈយោបល់ជាមួយ...",
-      description:
-        "នៅថ្ងៃទី ២៦ ខែមីនា ឆ្នាំ២០២៥ លោកអ៊ុកណា ប៉ិច បូឡែន ប្រធានសមាគមអ្នកស្រីវ័យក្មេងកម្ពុជា (YEAC) បានចុះហត្ថលេខាលើអនុស្សរណៈយោបល់ជាមួយ...",
-    },
-  ],
-};
 
 export default function Home() {
   const [lang, setLang] = useState("EN");
@@ -185,21 +143,9 @@ export default function Home() {
       <div className="bg-gray-100 ">
         <ScholarshipKHA  lang={lang} setLang={setLang}/>
       </div>
-      {/* <div className="max-w-7xl mx-auto py-20​​ pb-20 pt-20 px-4">
-        <h2 className="text-2xl font-bold mb-6 text-center">
-          {lang === "EN" ? "Latest News" : "ព័ត៌មានថ្មីៗ"}
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-          {cards[lang].map((card, idx) => (
-            <CardHomepage
-              key={idx}
-              imageSrc={card.imageSrc}
-              title={card.title}
-              description={card.description}
-            />
-          ))}
-        </div>
-      </div> */}
+      <div className="bg-gray-100 pt-10 pb-10">
+        <CardHomepage lang={lang} setLang={setLang} />
+      </div>
       <KHAFooter lang={lang} setLang={setLang} />
     </div>
   );
