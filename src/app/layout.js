@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Kantumruy_Pro } from "next/font/google";
 import "./globals.css";
 import { Providers } from "../components/providers";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +27,7 @@ export const metadata = {
     title: "KHMER HEIRS ASSOCIATION",
     description:
       "The Khmer Heirs Association is a non-governmental organization that is independent, sovereign, apolitical, non-partisan, and not for private profit.",
-    url: "https://kha-com.vercel.app",
+    url: "https://kha-com.vercel.app/",
     siteName: "KHMER HEIRS ASSOCIATION",
     images: [
       {
@@ -50,13 +51,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html>
+      <Head>
+        <link rel="icon" href="/logo.png" type="image/png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${kantumruyPro.variable} antialiased font-kantumruy`}
       >
-        <Providers>
-          
-          {children}
-          </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
