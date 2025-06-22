@@ -4,6 +4,7 @@ import HeaderAbout from "../../components/About/headerAbout";
 import KHANavbar from "../../components/KHANavbar";
 import ContentAbout from "../../components/About/contentAbout";
 import { useLanguage } from "../../components/LanguageProvider"; 
+import KHAFooter from "../../components/KHAFooter";
 
 export default function Page() {
   const { lang, setLang } = useLanguage();
@@ -22,6 +23,8 @@ export default function Page() {
         </div>
       </div>
       <ContentAbout lang={lang} setLang={setLang} />
+            <KHAFooter lang={lang} setLang={setLang} />
+      
     </div>
   );
 }

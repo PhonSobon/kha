@@ -4,6 +4,7 @@ import HeaderLeader from '../../components/Leader/HeaderLeader'
 import { useLanguage } from '../../components/LanguageProvider'
 import KHANavbar from '../../components/KHANavbar';
 import LeaderKha from '../../components/Leader/LeaderKha';
+import KHAFooter from '../../components/KHAFooter';
 
 export default function page() {
 const { lang, setLang } = useLanguage();
@@ -12,6 +13,8 @@ const { lang, setLang } = useLanguage();
       <KHANavbar lang={lang} setLang={setLang}/>
         {/* <HeaderLeader lang={lang} setLang={setLang}/> */}
         <LeaderKha lang={lang} setLang={setLang}/>
+            <KHAFooter lang={lang} setLang={setLang} />
+      
         </div>
   )
 }

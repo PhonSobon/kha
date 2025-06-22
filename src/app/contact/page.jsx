@@ -1,9 +1,13 @@
+"use client";
 import React from 'react'
 import FromContact from '../../components/contact/FromContact'
 import HeaderContact from '../../components/contact/HeaderContact'
 import CardContact from '../../components/contact/CardContact'
+import KHAFooter from '../../components/KHAFooter'
+import { useLanguage } from '../../components/LanguageProvider'
 
 export default function page() {
+  const { lang, setLang } = useLanguage()
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       <HeaderContact />
@@ -33,6 +37,8 @@ export default function page() {
         </div>
       </div>
       </div>
+            <KHAFooter lang={lang} setLang={setLang} />
+      
     </div>
   )
 }

@@ -11,14 +11,14 @@ import {
 const navText = {
   EN: {
     home: "KHMER HEIRS ASSOCIATION",
-    event: "Events",
+    // event: "Events",
     about: "About Us",
     leader: "KHA Leader",
     contact: "Contact Us",
   },
   KH: {
     home: "សមាគមទាយាទខ្មែរ",
-    event: "ព្រឹត្តិការណ៍",
+    // event: "ព្រឹត្តិការណ៍",
     leader: "ថ្នាក់ដឹកនាំសមាគម",
     about: "អំពីពួកយើង",
     contact: "ទំនាក់ទំនង",
@@ -75,7 +75,7 @@ export default function KHANavbar({ lang, setLang }) {
             {navText[lang].leader}
           </Link>
         </NavbarItem>
-        <NavbarItem>
+        {/* <NavbarItem>
           <Link
             color="foreground"
             href="/event"
@@ -83,7 +83,7 @@ export default function KHANavbar({ lang, setLang }) {
           >
             {navText[lang].event}
           </Link>
-        </NavbarItem>
+        </NavbarItem> */}
         
         <NavbarItem>
           <Link

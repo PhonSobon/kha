@@ -4,6 +4,7 @@ import Image from "next/image";
 import KHANavbar from "../components/KHANavbar";
 import CardHomepage from "../components/Home/CardHomepage";
 import ScholarshipKHA from "../components/Home/ScholarshipKHA";
+import KHAFooter from "../components/KHAFooter";
 
 const featureImages = ["/images/Hero/1.jpg", "/images/content/6.jpg"];
 
@@ -184,7 +185,7 @@ export default function Home() {
       <div className="bg-gray-100 ">
         <ScholarshipKHA  lang={lang} setLang={setLang}/>
       </div>
-      <div className="max-w-7xl mx-auto py-20​​ pb-20 pt-20 px-4">
+      {/* <div className="max-w-7xl mx-auto py-20​​ pb-20 pt-20 px-4">
         <h2 className="text-2xl font-bold mb-6 text-center">
           {lang === "EN" ? "Latest News" : "ព័ត៌មានថ្មីៗ"}
         </h2>
@@ -198,7 +199,8 @@ export default function Home() {
             />
           ))}
         </div>
-      </div>
+      </div> */}
+      <KHAFooter lang={lang} setLang={setLang} />
     </div>
   );
 }
