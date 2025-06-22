@@ -24,7 +24,7 @@ const memberContent = [
     nameKh: "ទូច ពេជ្រ",
     position: "ICT Teacher",
     positionKh: "គ្រូបង្រៀន ICT",
-    imageSrc: "/images/cards/pich.jpg",
+    imageSrc: "/images/cards/pich1.jpg",
   },  
   {
     name: "Cheng Sovannarith",
