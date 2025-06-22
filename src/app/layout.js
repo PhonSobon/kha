@@ -20,13 +20,25 @@ const kantumruyPro = Kantumruy_Pro({
 });
 
 export const metadata = {
-  title: "KHMER HEIRS ASSOCIATION",
+  title: "KHMER HEIRS ASSOCIATION | KHA",
   description:
-    "The Khmer Heirs Association is a non-governmental organization that is independent, sovereign, apolitical, non-partisan, and not for private profit.",
+    "Khmer Heirs Association (KHA) is a non-governmental organization in Cambodia. KHA is independent, sovereign, apolitical, non-partisan, and not for private profit.",
+  keywords: [
+    "Khmer Heirs Association",
+    "KHA",
+    "Cambodia NGO",
+    "Khmer NGO",
+    "Khmer Heirs",
+    "សមាគមទាយាទខ្មែរ",
+    "Cambodia",
+    "Non-governmental organization",
+    "Education",
+    "Human Rights"
+  ],
   openGraph: {
-    title: "KHMER HEIRS ASSOCIATION",
+    title: "KHMER HEIRS ASSOCIATION | KHA",
     description:
-      "The Khmer Heirs Association is a non-governmental organization that is independent, sovereign, apolitical, non-partisan, and not for private profit.",
+      "Khmer Heirs Association (KHA) is a non-governmental organization in Cambodia. KHA is independent, sovereign, apolitical, non-partisan, and not for private profit.",
     url: "https://kha-com.vercel.app/",
     siteName: "KHMER HEIRS ASSOCIATION",
     images: [
@@ -41,9 +53,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "KHMER HEIRS ASSOCIATION",
+    title: "KHMER HEIRS ASSOCIATION | KHA",
     description:
-      "The Khmer Heirs Association is a non-governmental organization that is independent, sovereign, apolitical, non-partisan, and not for private profit.",
+      "Khmer Heirs Association (KHA) is a non-governmental organization in Cambodia. KHA is independent, sovereign, apolitical, non-partisan, and not for private profit.",
     images: ["https://kha-com.vercel.app/og-image.jpg"],
   },
 };
@@ -54,6 +66,24 @@ export default function RootLayout({ children }) {
       <Head>
         <link rel="icon" href="/logo.png" type="image/png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* SEO: Organization Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Khmer Heirs Association",
+              "alternateName": "KHA",
+              "url": "https://kha-com.vercel.app/",
+              "email": "kha.info01@gmail.com",
+              "sameAs": [
+                "https://web.facebook.com/KhmerHeirsAssociation",
+                "https://t.me/yourtelegramusername"
+              ]
+            }),
+          }}
+        />
       </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${kantumruyPro.variable} antialiased font-kantumruy`}
