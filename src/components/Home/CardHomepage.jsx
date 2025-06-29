@@ -15,8 +15,8 @@ const memberContent = [
   {
     name: "Ra Sarin",
     nameKh: "រ៉ា សារិន",
-    position: "Physics Teacher",
-    positionKh: "គ្រូបង្រៀនរូបវិទ្យា",
+    position: "Researcher Physics",
+    positionKh: "អ្នកស្រាវជ្រាវរូបវិទ្យា",
     imageSrc: "/images/cards/sarin.jpg",
   },
   {

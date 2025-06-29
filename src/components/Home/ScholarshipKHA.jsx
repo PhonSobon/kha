@@ -57,7 +57,6 @@ const members = [
     majorKH: "បរិញ្ញាបត្រវិស្វកម្មឧស្សាហកម្ម",
     image: "/images/member/chhart.jpg",
   },
-  
 ];
 
 export default function ScholarshipKHA({ lang = "EN" }) {

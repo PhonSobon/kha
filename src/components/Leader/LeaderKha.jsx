@@ -7,7 +7,7 @@ const Dictor = {
   name: "Mr. Prak Thearith",
   nameKH: "លោក ប្រាក់ ធារិទ្ធ",
   image: "/images/member/director.jpg",
-  desc: "The Khmer Heirs Association is led by Mr. Prak Thearith with the following Deputy Director​ Mr.Lart Souy and members.",
+  desc: "The Khmer Heirs Association is President by Mr. Prak Thearith with the following Vice President Mr.Lart Souy and members.",
   descKH:
     "សមាគមទាយាទខ្មែរដឹកនាំដោយលោក ប្រាក់ ធារិទ្ធ ជាប្រធាន និងអមដោយ លោក ឡាត សូយ ជាអនុប្រធាននិងសមាជិកផ្សេងទៀត។",
   title: "President of Khmer Heirs Association",
