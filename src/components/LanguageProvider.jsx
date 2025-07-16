@@ -1,7 +1,4 @@
-'use client';
-import i18n from './i18n'; 
-import React, { createContext, useContext, useState, useEffect } from 'react';
-
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const LanguageContext = createContext();
 
@@ -9,19 +6,21 @@ export function LanguageProvider({ children }) {
   const [lang, setLang] = useState(null);
 
   useEffect(() => {
-    const savedLang = localStorage.getItem('lang') || 'en';
-    i18n.changeLanguage(savedLang);
+    // read saved language from localStorage on client only
+    const savedLang = localStorage.getItem("lang") || "EN";
     setLang(savedLang);
   }, []);
 
   useEffect(() => {
     if (lang) {
-      i18n.changeLanguage(lang);
-      localStorage.setItem('lang', lang);
+      localStorage.setItem("lang", lang);
     }
   }, [lang]);
 
-  if (!lang) return null;
+  if (!lang) {
+    // render nothing or a loader until language is known
+    return null;
+  }
 
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>
