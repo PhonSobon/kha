@@ -1,20 +1,12 @@
-// app/providers.tsx
-"use client" 
-import {HeroUIProvider} from '@heroui/react'
-import React, { useState, useEffect } from "react";
-import KHANavbar from './KHANavbar'
-import KHAFooter from './KHAFooter'
-import {LanguageProvider}  from './LanguageProvider';
+"use client";
+import { HeroUIProvider } from "@heroui/react";
+import React from "react";
+import { LanguageProvider } from "./LanguageProvider";
 
-export function Providers({children}: { children: React.ReactNode }) {
-  const [lang, setLang] = useState("EN");
-  
+export function Providers({ children }) {
   return (
     <HeroUIProvider>
-      <LanguageProvider>
-        <KHANavbar lang={lang} setLang={setLang} />
-        {children}
-      </LanguageProvider>
+      <LanguageProvider>{children}</LanguageProvider>
     </HeroUIProvider>
-  )
+  );
 }

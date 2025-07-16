@@ -3,64 +3,56 @@ import React from "react";
 import Image from "next/image";
 import { useLanguage } from "../../components/LanguageProvider";
 
-const Dictor = {
+const director = {
   name: "Mr. Prak Thearith",
   nameKH: "លោក ប្រាក់ ធារិទ្ធ",
   image: "/images/member/director.jpg",
-  desc: "The Khmer Heirs Association is President by Mr. Prak Thearith with the following Vice President Mr.Lart Souy and members.",
+  descEN:
+    "The Khmer Heirs Association is led by Mr. Prak Thearith as President, along with Mr. Lart Souy as Vice President and other members.",
   descKH:
     "សមាគមទាយាទខ្មែរដឹកនាំដោយលោក ប្រាក់ ធារិទ្ធ ជាប្រធាន និងអមដោយ លោក ឡាត សូយ ជាអនុប្រធាននិងសមាជិកផ្សេងទៀត។",
-  title: "President of Khmer Heirs Association",
+  titleEN: "President of Khmer Heirs Association",
   titleKH: "ប្រធានសមាគមទាយាទខ្មែរ",
 };
 
-const Deputy = {
+const deputy = {
   name: "Mr. Lart Souy",
   nameKH: "លោក ឡាត សូយ",
   image: "/images/member/deputy.jpg",
-  title: "Vice President of Khmer Heirs Association",
+  titleEN: "Vice President of Khmer Heirs Association",
   titleKH: "អនុប្រធានសមាគមទាយាទខ្មែរ",
 };
 
+function LeaderCard({ person, lang }) {
+  return (
+    <div className="flex flex-col items-center pt-8 pb-8">
+      <h2 className="text-3xl font-bold text-orange-600 mb-4">
+        {lang === "EN" ? person.titleEN : person.titleKH}
+      </h2>
+      <Image
+        src={person.image}
+        alt={person.name}
+        width={320}
+        height={320}
+        className="w-80 h-80 rounded-full object-cover border-4 border-white shadow-lg mb-4"
+      />
+      <div className="bg-blue-200 px-6 py-2 rounded shadow text-lg font-semibold text-gray-800">
+        {lang === "EN" ? person.name : person.nameKH}
+      </div>
+    </div>
+  );
+}
+
 export default function LeaderKha() {
   const { lang } = useLanguage();
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white pb-12 pt-10">
       <p className="text-lg text-gray-700 mb-8 text-center max-w-2xl mx-auto">
-        {lang === "EN" ? Dictor.desc : Dictor.descKH}
+        {lang === "EN" ? director.descEN : director.descKH}
       </p>
-      {/* Director */}
-      <div className="flex flex-col items-center pt-8 pb-8">
-        <h2 className="text-3xl font-bold text-orange-600 mb-4">
-          {lang === "EN" ? Dictor.title : Dictor.titleKH}
-        </h2>
-        <Image
-          src={Dictor.image}
-          alt={Dictor.name}
-          width={320}
-          height={320}
-          className="w-80 h-80 rounded-full object-cover border-4 border-white shadow-lg mb-4"
-        />
-        <div className="bg-blue-200 px-6 py-2 rounded shadow text-lg font-semibold text-gray-800">
-          {lang === "EN" ? Dictor.name : Dictor.nameKH}
-        </div>
-      </div>
-      {/* Deputy Director */}
-      <div className="flex flex-col items-center pt-4 pb-8">
-        <h2 className="text-3xl font-bold text-orange-600 mb-4">
-          {lang === "EN" ? Deputy.title : Deputy.titleKH}
-        </h2>
-        <Image
-          src={Deputy.image}
-          alt={Deputy.name}
-          width={320}
-          height={320}
-          className="w-80 h-80 rounded-full object-cover border-4 border-white shadow-lg mb-4"
-        />
-        <div className="bg-blue-200 px-6 py-2 rounded shadow text-lg font-semibold text-gray-800">
-          {lang === "EN" ? Deputy.name : Deputy.nameKH}
-        </div>
-      </div>
+      <LeaderCard person={director} lang={lang} />
+      <LeaderCard person={deputy} lang={lang} />
     </div>
   );
 }

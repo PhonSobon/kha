@@ -5,11 +5,14 @@ import HeaderContact from '../../components/contact/HeaderContact'
 import CardContact from '../../components/contact/CardContact'
 import KHAFooter from '../../components/KHAFooter'
 import { useLanguage } from '../../components/LanguageProvider'
+import KHANavbar from '../../components/KHANavbar';
+
 
 export default function page() {
   const { lang, setLang } = useLanguage()
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
+      <KHANavbar />
       <HeaderContact />
       <div className="flex flex-col items-center justify-center pt-8 pb-8">
       <CardContact />

@@ -5,13 +5,13 @@ import KHANavbar from "../components/KHANavbar";
 import CardHomepage from "../components/Home/CardHomepage";
 import ScholarshipKHA from "../components/Home/ScholarshipKHA";
 import KHAFooter from "../components/KHAFooter";
+import { useLanguage } from "../components/LanguageProvider"; // make sure the path is correct
 
 const featureImages = ["/images/Hero/1.jpg", "/images/content/6.jpg"];
 
 const content = {
   EN: {
     welcome: "WELCOME TO KHMER HEIRS ASSOCIATION",
-
     desc: "A group of Khmer intellectual students have come together to establish an association based in the Kingdom of Cambodia, called the Khmer Heirs Association.The Khmer Heirs Association is abbreviated as “KHA” in English and “សទខ” in Khmer.",
     features: [
       {
@@ -43,7 +43,7 @@ const content = {
 };
 
 export default function Home() {
-  const [lang, setLang] = useState("EN");
+  const { lang } = useLanguage();
   const heroImages = [
     "/images/Hero/1.jpg",
     "/images/khaold/2022-kha.jpg",
@@ -63,7 +63,7 @@ export default function Home() {
 
   return (
     <div>
-      <KHANavbar lang={lang} setLang={setLang} />
+      <KHANavbar />
       <div className="pt-16">
         <div className="relative w-full h-[520px] md:h-[600px] overflow-hidden">
           <Image
@@ -94,14 +94,14 @@ export default function Home() {
         }
       >
         <div className="w-full">
-          <div className="max-w-3xl mx-auto py-20 pb-20 pt-20 px-4 flex flex-col md:flex-row items-center text-center gap-8 ">
+          <div className="max-w-3xl mx-auto py-20 px-4 flex flex-col md:flex-row items-center text-center gap-8 ">
             <div className="flex-1">
               <h2 className="text-3xl font-bold mb-4">
                 {content[lang].welcome}
               </h2>
               <div className="flex justify-center">
                 <hr className="border-t-8 border-gray-300 mb-9 mt-0 w-auto mx-auto" />
-              </div>{" "}
+              </div>
               <p className="mb-4 text-gray-700 content">{content[lang].desc}</p>
             </div>
           </div>
@@ -117,12 +117,11 @@ export default function Home() {
               alt="Feature Image 1"
               className="w-1/2 h-80 rounded-lg shadow-md"
             />
-
             <p className="text-gray-700 text-justify leading-relaxed indent-4 content">
               {content[lang].features[0].desc}
             </p>
           </div>
-          <div className="flex flex-col md:flex-row-reverse items-center gap-20 py-20​​ pb-20 pt-20">
+          <div className="flex flex-col md:flex-row-reverse items-center gap-20 py-20 pb-20 pt-20">
             <Image
               unoptimized
               width={100}
@@ -131,20 +130,19 @@ export default function Home() {
               alt="Feature Image"
               className="w-full h-80 rounded-lg shadow-md"
             />
-
             <p className="text-gray-700 text-justify leading-relaxed indent-4 content">
               {content[lang].features[1].desc}
             </p>
           </div>
         </div>
       </div>
-      <div className="bg-gray-100 ">
-        <ScholarshipKHA lang={lang} setLang={setLang} />
+      <div className="bg-gray-100">
+        <ScholarshipKHA />
       </div>
       <div className="bg-gray-100 pt-10 pb-10">
-        <CardHomepage lang={lang} setLang={setLang} />
+        <CardHomepage />
       </div>
-      <KHAFooter lang={lang} setLang={setLang} />
+      <KHAFooter />
     </div>
   );
 }
