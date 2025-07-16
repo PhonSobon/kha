@@ -1,0 +1,83 @@
+{
+  "home": "KHMER HEIRS ASSOCIATION",
+  "about": "About Us",
+  "leader": "KHA Leader",
+  "contact": "Contact Us",
+  "desc": "A group of Khmer intellectual students have come together...",
+  "name": "Khmer Heirs Association",
+  "address": "No. 82ឈ, Dirt Road, Group 2, Borey 100 Khnang Village, Teuk Thla Commune, Russey Keo District, Phnom Penh",
+  "addressLabel": "Address",
+  "links": "Links",
+  "welcome": "WELCOME TO KHMER HEIRS ASSOCIATION",
+  "description": "A group of Khmer intellectual students have come together to establish an association based in the Kingdom of Cambodia, called the Khmer Heirs Association.The Khmer Heirs Association is abbreviated as 'KHA' in English and 'សទខ' in Khmer.",
+  "features": {
+    "feature1": "The Khmer Heirs Association is a non-governmental organization that is independent, sovereign, apolitical, non-partisan, and not for private profit.",
+    "feature2": "Khmer Heirs work to build a bright, honorable, and prosperous future for the Cambodian people. Democracy and respect for human rights are the strong foundations of the leadership and development of the Khmer Heirs Association."
+  },
+  "members": {
+    "title": "Members Are Able to Get Career Opportunities",
+    "you-sovanarith": {
+      "name": "You Sovanarith",
+      "position": "Graphic Designer"
+    },
+    "ra-sarin": {
+      "name": "Ra Sarin",
+      "position": "Researcher (Physics)"
+    },
+    "touch-pich": {
+      "name": "Touch Pich",
+      "position": "ICT Teacher"
+    },
+    "cheng-sovannarith": {
+      "name": "Cheng Sovannarith",
+      "position": "Khmer Teacher"
+    },
+    "khen-chen": {
+      "name": "Khen Chen",
+      "position": "Soldier"
+    },
+    "toeu-ti": {
+      "name": "Toeu Ti",
+      "position": "Physics Teacher"
+    },
+    "noek-peth": {
+      "name": "Noek Peth",
+      "position": "Math Teacher"
+    }
+  },
+  "scholarship": {
+    "title": "Members receive scholarships to study abroad",
+    "members": {
+      "pogn-tum": {
+        "name": "Pogn Tum",
+        "university": "Beijing Institute of Technology",
+        "major": "Bachelor of Civil Engineering",
+        "country": "China"
+      },
+      "thach-sopha": {
+        "name": "Thach Sopha",
+        "university": "Tianjin university",
+        "major": "Bachelor of Civil Engineering",
+        "country": "China"
+      },
+      "moeun-visal": {
+        "name": "Moeun visal",
+        "university": "Đoàn Trường Hữu Nghị 80",
+        "major": "Bachelor of Doctor",
+        "country": "Vietnam"
+      },
+      "kem-chak": {
+        "name": "Kem Chak",
+        "university": "Okayama University",
+        "major": "Bachelor of Japanese Language",
+        "country": "Japan"
+      },
+      "chhorn-rachhat": {
+        "name": "Chhorn Rachhat",
+        "university": "ECAM LaSalle",
+        "major": "Bachelor of supply chain",
+        "country": "France"
+      }
+    }
+  }
+}

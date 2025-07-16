@@ -7,23 +7,9 @@ import {
   NavbarItem,
   Image,
 } from "@heroui/react";
-import { useLanguage } from "./LanguageProvider"; // ✅ import from your context
 import Link from "next/link";
-
-const navText = {
-  EN: {
-    home: "KHMER HEIRS ASSOCIATION",
-    about: "About Us",
-    leader: "KHA Leader",
-    contact: "Contact Us",
-  },
-  KH: {
-    home: "សមាគមទាយាទខ្មែរ",
-    about: "អំពីពួកយើង",
-    leader: "ថ្នាក់ដឹកនាំសមាគម",
-    contact: "ទំនាក់ទំនង",
-  },
-};
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 export const KHALogo = () => (
   <div className="flex items-center">
@@ -39,33 +25,40 @@ export const KHALogo = () => (
 );
 
 export default function KHANavbar() {
-  const { lang, setLang } = useLanguage(); 
+  const { t } = useTranslation(); // translation function
+  const router = useRouter();
+  const { locale, locales, pathname, asPath, query } = router;
+
+  // Language toggle handler
+  const changeLanguage = (lng) => {
+    router.push({ pathname, query }, asPath, { locale: lng });
+  };
 
   return (
     <Navbar className="bg-[#28308f] font-bold text-white fixed top-0 left-0 w-full h-16 z-50 px-10 py-2 flex justify-between items-center navbar">
       <NavbarBrand>
-        <Link href="/" className="flex items-center text-white" aria-label="Home">
-          <KHALogo className="px-5 py-6" />
+        <Link href="/" locale={locale} className="flex items-center text-white" aria-label="Home">
+          <KHALogo />
           <p className="px-5 text-white tracking-wide font-siemreap gap-6">
-            {navText[lang].home}
+            {t("home")}
           </p>
         </Link>
       </NavbarBrand>
 
       <NavbarContent className="flex gap-8" justify="center">
         <NavbarItem>
-          <Link href="/about" className="text-white">
-            {navText[lang].about}
+          <Link href="/about" locale={locale} className="text-white">
+            {t("about")}
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/leader" className="text-white">
-            {navText[lang].leader}
+          <Link href="/leader" locale={locale} className="text-white">
+            {t("leader")}
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/contact" className="text-white">
-            {navText[lang].contact}
+          <Link href="/contact" locale={locale} className="text-white">
+            {t("contact")}
           </Link>
         </NavbarItem>
       </NavbarContent>
@@ -75,20 +68,20 @@ export default function KHANavbar() {
           <div className="relative flex items-center bg-amber-500 rounded-full px-1 py-1 w-20 h-9">
             <div
               className={`absolute top-1 left-1 transition-all duration-300 w-7 h-7 rounded-full bg-white shadow ${
-                lang === "KH" ? "translate-x-9" : "translate-x-0"
+                locale === "kh" ? "translate-x-9" : "translate-x-0"
               }`}
               style={{ zIndex: 1 }}
             />
             <button
               className={`z-10 w-7 h-7 flex items-center justify-center rounded-full transition-colors duration-300 ${
-                lang === "EN" ? "bg-white" : "bg-amber-500"
+                locale === "en" ? "bg-white" : "bg-amber-500"
               }`}
-              onClick={() => setLang("EN")}
+              onClick={() => changeLanguage("en")}
               aria-label="Switch to English"
             >
               <Image
-                width={0}
-                height={0}
+                width={24}
+                height={24}
                 src="/images/UK.png"
                 alt="English"
                 className="w-6 h-6 object-cover"
@@ -97,14 +90,14 @@ export default function KHANavbar() {
             <span className="mx-1" />
             <button
               className={`z-10 w-7 h-7 flex items-center justify-center rounded-full transition-colors duration-300 ${
-                lang === "KH" ? "bg-white" : "bg-amber-500"
+                locale === "kh" ? "bg-white" : "bg-amber-500"
               }`}
-              onClick={() => setLang("KH")}
+              onClick={() => changeLanguage("kh")}
               aria-label="Switch to Khmer"
             >
               <Image
-                width={0}
-                height={0}
+                width={24}
+                height={24}
                 src="/images/cambodia.png"
                 alt="Khmer"
                 className="w-6 h-6 object-cover"
