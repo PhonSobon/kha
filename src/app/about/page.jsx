@@ -7,12 +7,12 @@ import { useLanguage } from "../../components/LanguageProvider";
 import KHAFooter from "../../components/KHAFooter";
 
 export default function Page() {
-  const { lang, setLang } = useLanguage();
+  const { lang } = useLanguage();
 
   return (
     <div className="">
-      <KHANavbar lang={lang} setLang={setLang} />
-      <HeaderAbout lang={lang} setLang={setLang} />
+      <KHANavbar lang={lang} />
+      <HeaderAbout lang={lang} />
       <div>
         <div className="pt-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,8 +22,8 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <ContentAbout lang={lang} setLang={setLang} />
-            <KHAFooter lang={lang} setLang={setLang} />
+      <ContentAbout lang={lang} />
+            <KHAFooter lang={lang} />
       
     </div>
   );

@@ -15,12 +15,14 @@ const navText = {
     home: "KHMER HEIRS ASSOCIATION",
     about: "About Us",
     leader: "KHA Leader",
+    education: "Education",
     contact: "Contact Us",
   },
   KH: {
     home: "សមាគមទាយាទខ្មែរ",
     about: "អំពីពួកយើង",
     leader: "ថ្នាក់ដឹកនាំសមាគម",
+    education : "ការសិក្សា",
     contact: "ទំនាក់ទំនង",
   },
 };
@@ -64,6 +66,11 @@ export default function KHANavbar() {
           </Link>
         </NavbarItem>
         <NavbarItem>
+          <Link href="/education" className="text-white">
+            {navText[lang].education}
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
           <Link href="/contact" className="text-white">
             {navText[lang].contact}
           </Link>
@@ -80,7 +87,7 @@ export default function KHANavbar() {
               style={{ zIndex: 1 }}
             />
             <button
-              className={`z-10 w-7 h-7 flex items-center justify-center rounded-full transition-colors duration-300 ${
+              className={`z-10 w-7 h-7 flex items-center justify-center rounded-full transition-colors duration-300 cursor-pointer ${
                 lang === "EN" ? "bg-white" : "bg-amber-500"
               }`}
               onClick={() => setLang("EN")}
@@ -96,7 +103,7 @@ export default function KHANavbar() {
             </button>
             <span className="mx-1" />
             <button
-              className={`z-10 w-7 h-7 flex items-center justify-center rounded-full transition-colors duration-300 ${
+              className={`z-10 w-7 h-7 flex items-center justify-center rounded-full transition-colors duration-300 cursor-pointer ${
                 lang === "KH" ? "bg-white" : "bg-amber-500"
               }`}
               onClick={() => setLang("KH")}

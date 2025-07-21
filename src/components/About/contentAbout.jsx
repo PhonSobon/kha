@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { useLanguage } from "../../components/LanguageProvider";
-import { title } from "process";
 
 const featureImages = [
   "/images/content/7.jpg",
