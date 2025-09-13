@@ -1,38 +1,53 @@
 "use client";
-import { useState } from "react";
-import { InputForFilter } from "../ui/inputForFilter";
+import { useState, useEffect } from "react";
 import { useLanguage } from "../LanguageProvider";
 
 export default function Filter({ items, onFilter }) {
-  const [searchTerm, setSearchTerm] = useState("");
   const { lang } = useLanguage();
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const content = {
-    EN: {
-      search: "Search by category...",
-    },
-    KH: {
-      search: "ស្វែងរកតាមប្រភេទ...",
-    },
-  };
+  // Extract unique categories once (on mount)
+  const categories = [
+    "All",
+    ...Array.from(
+      new Set(
+        items.map((item) => {
+          const part = item.title.split("|")[1]?.trim() ?? "";
+          return part.split(" ")[0];
+        })
+      )
+    ),
+  ];
 
-  const handleSearch = (event) => {
-    const term = event.target.value;
-    setSearchTerm(term);
-    const filteredItems = items.filter((item) =>
-      item.title.toLowerCase().includes(term.toLowerCase())
-    );
-    onFilter(filteredItems);
+  // Filter items immediately on category change
+  const handleCategoryChange = (e) => {
+    const category = e.target.value;
+    setSelectedCategory(category);
+
+    if (category === "All") {
+      onFilter(items);
+    } else {
+      const filtered = items.filter((item) => {
+        const part = item.title.split("|")[1]?.trim() ?? "";
+        const cat = part.split(" ")[0];
+        return cat === category;
+      });
+      onFilter(filtered);
+    }
   };
 
   return (
-    <>
-      <InputForFilter
-        type="text"
-        placeholder={`${content[lang].search}`}
-        value={searchTerm}
-        onChange={handleSearch}
-      />
-    </>
+    <select
+      value={selectedCategory}
+      onChange={handleCategoryChange}
+      className="border px-3 py-2 rounded-3xl cursor-pointer"
+      aria-label={lang === "KH" ? "ជ្រើសប្រភេទ" : "Select category"}
+    >
+      {categories.map((cat) => (
+        <option key={cat} value={cat}>
+          {cat}
+        </option>
+      ))}
+    </select>
   );
 }

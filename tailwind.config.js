@@ -1,6 +1,6 @@
 const { heroui } = require("@heroui/react");
+const clipPath = require('tailwind-clip-path');
 
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -14,11 +14,11 @@ module.exports = {
         kantumruy: ['"Kantumruy Pro"', "sans-serif"],
       },
       fontSize: {
-        navbar: "18 px",
-        content: "13 px",
+        navbar: "18px",
+        content: "13px",
       },
     },
   },
   darkMode: "class",
-  plugins: [heroui()],
+  plugins: [heroui(), clipPath],
 };

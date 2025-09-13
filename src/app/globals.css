@@ -146,3 +146,10 @@ body {
     -1px  1px 0 #FFF,
      1px  1px 0 #FFF;
 }
+
+.form-blob {
+  clip-path: path(
+    "M60 0C45 0 35 10 20 10C10 10 5 0 0 0V1000H1000V0C995 0 985 10 970 10C955 10 945 0 930 0H60Z"
+  );
+}
+

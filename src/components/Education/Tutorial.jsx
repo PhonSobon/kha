@@ -46,15 +46,6 @@ export default function Tutorial() {
             <CardTutorial key={tutorial.id} tutorial={tutorial} />
           ))}
         </div>
-        <div>
-          <Badge />
-        </div>
-
-        <div className="flex gap-13 flex-wrap mt-5">
-          {filteredTutorials.map((tutorial) => (
-            <CardTutorial key={tutorial.id} tutorial={tutorial} />
-          ))}
-        </div>
       </div>
     </>
   );

@@ -67,16 +67,6 @@ export default function BacII() {
             <BacIICard key={bacii.id} bacii={bacii} />
           ))}
         </div>
-
-        <div>
-          <Badge />
-        </div>
-
-        <div className="flex gap-13 flex-wrap mt-5">
-          {filteredBacII.map((bacii) => (
-            <BacIICard key={bacii.id} bacii={bacii} />
-          ))}
-        </div>
       </div>
     </>
   );
