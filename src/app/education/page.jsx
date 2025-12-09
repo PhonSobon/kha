@@ -4,24 +4,13 @@ import EducationHeader from "@/components/Education/Header";
 import Tutorial from "@/components/Education/Tutorial";
 import KHAFooter from "@/components/KHAFooter";
 import KHANavbar from "@/components/KHANavbar";
-import { useLanguage } from "@/components/LanguageProvider";
+import { useTranslation } from 'react-i18next';
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 export default function page() {
-  const { lang } = useLanguage();
+  const { t, i18n } = useTranslation('common');
   const [activeComponent, setActiveComponent] = useState("tutorial");
-
-  const content = {
-    EN: {
-      tutorials: "Tutorials",
-      LessonsBac: "Lessons Bac II",
-    },
-    KH: {
-      tutorials: "មេរៀនណែនាំ",
-      LessonsBac: "វិញ្ញាសារបាក់ឌុប",
-    },
-  };
 
   return (
     <div className="bg-[#FFE0E0] w-full h-screen">
@@ -38,7 +27,7 @@ export default function page() {
           }`}
           onClick={() => setActiveComponent("tutorial")}
         >
-          <h2 className="cursor-pointer">{content[lang].tutorials}</h2>
+          <h2 className="cursor-pointer">{t('education.tutorials')}</h2>
         </Button>
         <Button
           variant={activeComponent === "bacii" ? "default" : "outline"}
@@ -50,7 +39,7 @@ export default function page() {
           }`}
           onClick={() => setActiveComponent("bacii")}
         >
-          {content[lang].LessonsBac}
+          {t('education.lessonsBac')}
         </Button>
       </div>
       

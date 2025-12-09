@@ -1,19 +1,18 @@
 "use client";
 import React from "react";
 import HeaderLeader from "../../components/Leader/HeaderLeader";
-import { useLanguage } from "../../components/LanguageProvider";
+import { useTranslation } from 'react-i18next';
 import KHANavbar from "../../components/KHANavbar";
 import LeaderKha from "../../components/Leader/LeaderKha";
 import KHAFooter from "../../components/KHAFooter";
 
 export default function Page() {
-  const { lang, setLang } = useLanguage();
+  const { t, i18n } = useTranslation('common');
   return (
     <div className="pt-16">
-      <KHANavbar lang={lang} setLang={setLang} />
-      {/* <HeaderLeader lang={lang} setLang={setLang} /> */}
-      <LeaderKha lang={lang} setLang={setLang} />
-      <KHAFooter lang={lang} setLang={setLang} />
+      <KHANavbar />
+      <LeaderKha />
+      <KHAFooter />
     </div>
   );
 }

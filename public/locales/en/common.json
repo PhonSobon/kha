@@ -1,0 +1,110 @@
+{
+  "navigation": {
+    "home": "KHMER HEIRS ASSOCIATION",
+    "about": "About",
+    "education": "Education",
+    "event": "Event",
+    "leader": "Leader",
+    "contact": "Contact",
+    "login": "Login"
+  },
+  "home": {
+    "welcome": "WELCOME TO KHMER HEIRS ASSOCIATION",
+    "description": "A group of Khmer intellectual students have come together to establish an association based in the Kingdom of Cambodia, called the Khmer Heirs Association.The Khmer Heirs Association is abbreviated as \"KHA\" in English and \"សទខ\" in Khmer.",
+    "features": {
+      "feature1": "The Khmer Heirs Association is a non-governmental organization that is independent, sovereign, apolitical, non-partisan, and not for private profit.",
+      "feature2": "Khmer Heirs work to build a bright, honorable, and prosperous future for the Cambodian people. Democracy and respect for human rights are the strong foundations of the leadership and development of the Khmer Heirs Association.",
+      "feature3": "SERVICEBOX offers a wide range of cutting-edge technology products and professional website services to help your business stay ahead in a digital world."
+    }
+  },
+  "footer": {
+    "name": "KHA Organization",
+    "addressLabel": "Address",
+    "address": "Phnom Penh, Cambodia",
+    "quickLinks": "Quick Links",
+    "followUs": "Follow Us"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "email": "Email",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot Password?",
+    "emailRequired": "Email is required",
+    "passwordRequired": "Password is required",
+    "invalidCredentials": "Invalid email or password",
+    "loginSuccess": "Login successful!",
+    "loginError": "Login failed. Please try again.",
+    "resetPassword": "Reset Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "passwordMismatch": "Passwords do not match",
+    "passwordTooShort": "Password must be at least 6 characters",
+    "emailVerified": "Email Verified",
+    "resendVerification": "Resend Verification",
+    "verificationSent": "Verification email sent!",
+    "resetLinkSent": "Password reset link sent to your email!",
+    "passwordResetSuccess": "Password reset successfully!",
+    "invalidToken": "Invalid or expired token",
+    "backToLogin": "Back to Login",
+    "sendResetLink": "Send Reset Link",
+    "passwordResetSent": "Password reset link sent to your email",
+    "checkYourEmail": "Check your email for verification link",
+    "sendAnotherEmail": "Send Another Email",
+    "forgotPasswordDescription": "Enter your email address and we'll send you a link to reset your password.",
+    "enterEmailPlaceholder": "Enter your email address"
+  },
+  "members": {
+    "title": "Members Are Able to Get Career Opportunities"
+  },
+  "scholarship": {
+    "title": "Members receive scholarships to study abroad"
+  },
+  "education": {
+    "tutorials": "Tutorials",
+    "lessonsBac": "Lessons Bac II",
+    "header": {
+      "title": "KHMER HEIRS ASSOCIATION",
+      "slogan1": "Together We",
+      "slogan2": "Grow",
+      "slogan3": ",Together We",
+      "slogan4": "Learn"
+    }
+  },
+  "about": {
+    "vision": {
+      "title": "Vision",
+      "description": "Our vision is to see every Cambodian become a valuable human resource in a society full of energy and potential. We aim to achieve this by providing opportunities, encouragement, and capacity building to help them grow and reach their full potential."
+    },
+    "mission": {
+      "title": "Mission",
+      "description": "Our mission is to collaborate with the Royal Government to promote development in the areas of education, health, democracy, human rights, gender equality, and vocational training for all Cambodians across the country. The Khmer Heirs Association is committed to creating positive change, focusing on improving human resources through education and training as a top priority."
+    },
+    "goal": {
+      "title": "Goal",
+      "description": "The purpose of the Khmer Heirs Association is to prepare the future destiny of Cambodian children to be bright, noble, and enduringly prosperous."
+    },
+    "strategicGoals": {
+      "title": "Strategic Goals",
+      "description": "To achieve the above purpose, the Khmer Heirs Association has set the following directions:",
+      "items": [
+        "Establish student housing and seek financial support for underprivileged students from rural areas, enabling them to continue their higher education.",
+        "Organize training programs to enhance students' knowledge and skills in various fields.",
+        "Create job opportunities and provide career guidance for students and graduates.",
+        "Promote cultural preservation and national identity among Cambodian youth.",
+        "Foster international cooperation and exchange programs for educational advancement."
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Khmer Heirs Association"
+  },
+  "leader": {
+    "title": "Leader Khmer Heirs Association"
+  },
+  "search": {
+    "placeholder": "Search Your Subject Here"
+  }
+}

@@ -1,12 +1,14 @@
 "use client";
 import { HeroUIProvider } from "@heroui/react";
 import React from "react";
-import { LanguageProvider } from "./LanguageProvider";
+import I18nProvider from "./I18nProvider";
 
 export function Providers({ children }) {
   return (
-    <HeroUIProvider>
-      <LanguageProvider>{children}</LanguageProvider>
-    </HeroUIProvider>
+    <I18nProvider>
+      <HeroUIProvider>
+        {children}
+      </HeroUIProvider>
+    </I18nProvider>
   );
 }

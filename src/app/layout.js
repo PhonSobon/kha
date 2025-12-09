@@ -66,7 +66,6 @@ export default function RootLayout({ children }) {
       <Head>
         <link rel="icon" href="/logo.png" type="image/png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* SEO: Organization Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

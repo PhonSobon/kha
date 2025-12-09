@@ -4,12 +4,12 @@ import FromContact from '../../components/contact/FromContact'
 import HeaderContact from '../../components/contact/HeaderContact'
 import CardContact from '../../components/contact/CardContact'
 import KHAFooter from '../../components/KHAFooter'
-import { useLanguage } from '../../components/LanguageProvider'
+import { useTranslation } from 'react-i18next'
 import KHANavbar from '../../components/KHANavbar';
 
 
 export default function page() {
-  const { lang, setLang } = useLanguage()
+  const { t, i18n } = useTranslation('common')
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       <KHANavbar />
@@ -19,12 +19,10 @@ export default function page() {
       </div>
       <div className="pt-16 pb-16 ">
       <div className="flex-1 w-full max-w-6xl mx-auto flex flex-col md:flex-row shadow-lg rounded-xl overflow-hidden bg-white">
-        {/* Left: Contact Form */}
         <div className="w-full md:w-1/2 flex flex-col justify-center p-8 bg-white">
           <FromContact />
         </div>
 
-        {/* Right: Map */}
         <div className="w-full md:w-1/2">
           <iframe
             title="KHA Location"
@@ -40,7 +38,7 @@ export default function page() {
         </div>
       </div>
       </div>
-            <KHAFooter lang={lang} setLang={setLang} />
+      <KHAFooter />
       
     </div>
   )
