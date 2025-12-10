@@ -1,26 +1,31 @@
 "use client";
 import React, { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const members = [
   {
     id: "director",
-    name: "Moeurn Sovanara",
+    name: "Nhoeurm Veasna",
+    roleKey: "memberPage.members.director.role",
     role: "Director of KHA Housing",
     years: "2025 - 2026",
     year: 2025,
+    introKey: "memberPage.members.director.intro",
     intro:
-      "My name is Moeurn Sovanara. I come from Battambang Province. Currently, I am a 4th-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science.",
+      "My name is Nhoeurm Veasna. I come from Siem Reap Province. Currently, I am a 4th-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science.",
     phone: "097 69 76 912",
     email: "moeurnsovanara181004@gmail.com",
-    image: "/images/member/moeurnsovanara.jpg",
+    image: "/images/member/nhoeurmveasna.jpeg",
     align: "left",
   },
   {
     id: "deputy-director",
     name: "Moeurn Sovanara",
+    roleKey: "memberPage.members.deputyDirector.role",
     role: "Deputy Director of KHA Housing",
     years: "2025 - 2026",
     year: 2025,
+    introKey: "memberPage.members.deputyDirector.intro",
     intro:
       "My name is Moeurn Sovanara. I come from Battambang Province. Currently, I am a 4th-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science.",
     phone: "097 69 76 912",
@@ -30,25 +35,59 @@ const members = [
   },
   {
     id: "director-prev",
-    name: "Moeurn Sovanara",
+    name: "Chhorn Rachhat (ឈាន់ រ៉ាឆាត)",
+    roleKey: "memberPage.members.directorPrev.role",
     role: "Director of KHA Housing",
     years: "2024 - 2025",
     year: 2024,
+    introKey: "memberPage.members.directorPrev.intro",
     intro:
-      "My name is Moeurn Sovanara. I come from Battambang Province. Currently, I am a 3rd-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science.",
+      "My name is Chhorn Rachhat. I come from Kampot Province. Currently, I am a 3rd-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science.",
     phone: "097 69 76 912",
     email: "moeurnsovanara181004@gmail.com",
-    image: "/images/member/moeurnsovanara.jpg",
+    image: "/images/member/Chhornrachhat.jpeg",
     align: "left",
   },
   {
     id: "deputy-director-prev",
-    name: "Moeurn Sovanara",
+    name: "Phon Sobon (ផុន សុបុណ្យ)",
+    roleKey: "memberPage.members.deputyDirectorPrev.role",
     role: "Deputy Director of KHA Housing",
     years: "2024 - 2025",
     year: 2024,
+    introKey: "memberPage.members.deputyDirectorPrev.intro",
     intro:
-      "My name is Moeurn Sovanara. I come from Battambang Province. Currently, I am a 3rd-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science.",
+      "My name is Phon Sobon. I come from Kampong Chhnang Province. Currently, I am a 3rd-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science.",
+    phone: "097 69 76 912",
+    email: "moeurnsovanara181004@gmail.com",
+    image: "/images/member/phonsobon.jpeg",
+    align: "right",
+  },
+  {
+    id: "director-2023",
+    name: "Ra Sarin (រ៉ា សារិន)",
+    roleKey: "memberPage.members.director2023.role",
+    role: "Director of KHA Housing",
+    years: "2023 - 2024",
+    year: 2023,
+    introKey: "memberPage.members.director2023.intro",
+    intro:
+      "My name is Ra Sarin. I come from Siem Reap Province. Currently, I am a 2nd-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science.",
+    phone: "097 69 76 912",
+    email: "moeurnsovanara181004@gmail.com",
+    image: "/images/member/rasarin.jpeg",
+    align: "left",
+  },
+  {
+    id: "deputy-director-2023",
+    name: "Moeurn Sovanara",
+    roleKey: "memberPage.members.deputyDirector2023.role",
+    role: "Deputy Director of KHA Housing",
+    years: "2023 - 2024",
+    year: 2023,
+    introKey: "memberPage.members.deputyDirector2023.intro",
+    intro:
+      "My name is Moeurn Sovanara. I come from Battambang Province. Currently, I am a 2nd-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science.",
     phone: "097 69 76 912",
     email: "moeurnsovanara181004@gmail.com",
     image: "/images/member/moeurnsovanara.jpg",
@@ -108,6 +147,7 @@ const ArrowIcon = () => (
 );
 
 export default function Member() {
+  const { t } = useTranslation("common");
   const years = useMemo(
     () => Array.from(new Set(members.map((m) => m.year))).sort((a, b) => a - b),
     []
@@ -172,7 +212,7 @@ export default function Member() {
     <div className="max-w-6xl mx-auto px-4 py-10 space-y-8">
       <div className="flex items-center justify-between gap-4">
         <h1 className="text-2xl sm:text-3xl font-semibold text-gray-900">
-          Members
+          {t("memberPage.title", "Members")}
         </h1>
       </div>
 
@@ -228,11 +268,11 @@ export default function Member() {
               }`}
             >
               <div className={`${imageFirst ? "" : "md:order-2"}`}>
-                <div className="relative bg-blue-100 rounded-2xl overflow-hidden shadow w-full max-w-[11.5rem] md:max-w-[14rem] mx-auto">
+                <div className="relative bg-blue-100 rounded-2xl overflow-hidden shadow w-full max-w-[11.5rem] md:max-w-[14rem] aspect-[3/4] mx-auto">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-auto object-contain"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
               </div>
@@ -240,18 +280,18 @@ export default function Member() {
               <div className="space-y-4 text-center md:text-left md:flex md:flex-col md:items-start">
                 <div className="space-y-1 text-center md:text-left md:self-start">
                   <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">
-                    {member.role}
+                  {t(member.roleKey, member.role)}
                   </h2>
                   <p className="text-gray-600 text-sm">{member.years}</p>
                 </div>
 
                 <p className="text-gray-800 leading-relaxed text-center md:text-left">
-                  {member.intro}
+                {t(member.introKey, member.intro)}
                 </p>
 
                 <div className="flex flex-col items-start gap-3 pt-2">
                   <button className="inline-flex items-center justify-center gap-2 rounded-full border border-blue-200 text-blue-700 px-4 py-2 font-medium hover:bg-blue-50 transition">
-                    Contact
+                  {t("memberPage.contact", "Contact")}
                   </button>
                   <div className="flex flex-wrap items-center justify-center gap-4 w-full">
                     <div className="flex items-center gap-2 text-gray-700">

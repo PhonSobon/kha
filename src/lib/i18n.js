@@ -125,6 +125,36 @@ const resources = {
           ]
         }
       },
+      "memberPage": {
+        "title": "Members",
+        "contact": "Contact",
+        "members": {
+          "director": {
+            "role": "Director of KHA Housing",
+            "intro": "My name is Nhoeurm Veasna. I come from Siem Reap Province. Currently, I am a 4th-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science."
+          },
+          "deputyDirector": {
+            "role": "Deputy Director of KHA Housing",
+            "intro": "My name is Moeurn Sovanara. I come from Battambang Province. Currently, I am a 4th-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science."
+          },
+          "directorPrev": {
+            "role": "Director of KHA Housing",
+            "intro": "My name is Chhorn Rachhat. I come from Kampot Province. Currently, I am a 3rd-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science."
+          },
+          "deputyDirectorPrev": {
+            "role": "Deputy Director of KHA Housing",
+            "intro": "My name is Phon Sobon. I come from Kampong Chhnang Province. Currently, I am a 3rd-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science."
+          },
+          "director2023": {
+            "role": "Director of KHA Housing",
+            "intro": "My name is Ra Sarin. I come from Siem Reap Province. Currently, I am a 2nd-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science."
+          },
+          "deputyDirector2023": {
+            "role": "Deputy Director of KHA Housing",
+            "intro": "My name is Moeurn Sovanara. I come from Battambang Province. Currently, I am a 2nd-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science."
+          }
+        }
+      },
       "contact": {
         "title": "Contact Us",
         "subtitle": "Khmer Heirs Association"
@@ -257,6 +287,36 @@ const resources = {
             "លើកកម្ពស់ការអភិរក្សវប្បធម៌ និងអត្តសញ្ញាណជាតិក្នុងចំណោមយុវជនខ្មែរ។",
             "ជំរុញកិច្ចសហប្រតិបត្តិការអន្តរជាតិ និងកម្មវិធីផ្លាស់ប្តូរសម្រាប់ការអភិវឌ្ឍអប់រំ។"
           ]
+        }
+      },
+      "memberPage": {
+        "title": "សមាជិក",
+        "contact": "ទំនាក់ទំនង",
+        "members": {
+          "director": {
+            "role": "ប្រធានលំនៅដ្ឋាន KHA",
+            "intro": "ខ្ញុំឈ្មោះ ញឿម វាសនា មកពីខេត្តសៀមរាប។ បច្ចុប្បន្ន ខ្ញុំជានិស្សិតឆ្នាំទី៤ នៃសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP) ជំនាញវិទ្យាសាស្ត្រកុំព្យូទ័រ។"
+          },
+          "deputyDirector": {
+            "role": "អនុប្រធានលំនៅដ្ឋាន KHA",
+            "intro": "ខ្ញុំឈ្មោះ មឿន សុវណ្ណារ៉ា មកពីខេត្តបាត់ដំបង។ បច្ចុប្បន្ន ខ្ញុំជានិស្សិតឆ្នាំទី៤ នៃសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP) ជំនាញវិទ្យាសាស្ត្រកុំព្យូទ័រ។"
+          },
+          "directorPrev": {
+            "role": "ប្រធានលំនៅដ្ឋាន KHA",
+            "intro": "ខ្ញុំឈ្មោះ ឈាន់ រ៉ាឆាត មកពីខេត្តកំពត។ បច្ចុប្បន្ន ខ្ញុំជានិស្សិតឆ្នាំទី៣ នៃសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP) ជំនាញវិទ្យាសាស្ត្រកុំព្យូទ័រ។"
+          },
+          "deputyDirectorPrev": {
+            "role": "អនុប្រធានលំនៅដ្ឋាន KHA",
+            "intro": "ខ្ញុំឈ្មោះ ផុន សុបុណ្យ មកពីខេត្តកំពង់ឆ្នាំង។ បច្ចុប្បន្ន ខ្ញុំជានិស្សិតឆ្នាំទី៣ នៃសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP) ជំនាញវិទ្យាសាស្ត្រកុំព្យូទ័រ។"
+          },
+          "director2023": {
+            "role": "ប្រធានលំនៅដ្ឋាន KHA",
+            "intro": "ខ្ញុំឈ្មោះ រ៉ា សារិន មកពីខេត្តសៀមរាប។ បច្ចុប្បន្ន ខ្ញុំជានិស្សិតឆ្នាំទី២ នៃសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP) ជំនាញវិទ្យាសាស្ត្រកុំព្យូទ័រ។"
+          },
+          "deputyDirector2023": {
+            "role": "អនុប្រធានលំនៅដ្ឋាន KHA",
+            "intro": "ខ្ញុំឈ្មោះ មឿន សុវណ្ណារ៉ា មកពីខេត្តបាត់ដំបង។ បច្ចុប្បន្ន ខ្ញុំជានិស្សិតឆ្នាំទី២ នៃសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP) ជំនាញវិទ្យាសាស្ត្រកុំព្យូទ័រ។"
+          }
         }
       },
       "contact": {
