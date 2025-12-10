@@ -30,7 +30,7 @@ const members = [
       "My name is Moeurn Sovanara. I come from Battambang Province. Currently, I am a 4th-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science.",
     phone: "097 69 76 912",
     email: "moeurnsovanara181004@gmail.com",
-    image: "/images/member/moeurnsovanara.jpg",
+    image: "/images/member/Sovanara.jpeg",
     align: "right",
   },
   {
