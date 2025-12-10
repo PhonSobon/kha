@@ -53,8 +53,11 @@ export default function BacII() {
 
   return (
     <>
-      <div className="bg-white w-[89%] mb-10 h-fit rounded-2xl p-14">
-        <div className="flex justify-end">
+      <div className="bg-white w-full max-w-6xl mb-10 h-fit rounded-2xl p-6 sm:p-8 md:p-10 shadow-md">
+        <div className="flex justify-between items-center gap-4">
+          <div className="text-xl font-semibold text-[#28308F]">
+            Bac II Lessons
+          </div>
           <Filter items={mockBacII} onFilter={setFilteredBacII} />
         </div>
 
@@ -62,7 +65,7 @@ export default function BacII() {
           <Badge />
         </div>
 
-        <div className="flex gap-13 flex-wrap mt-5">
+        <div className="grid gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mt-5">
           {filteredBacII.map((bacii) => (
             <BacIICard key={bacii.id} bacii={bacii} />
           ))}
