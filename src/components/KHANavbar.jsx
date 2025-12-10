@@ -102,7 +102,7 @@ export default function KHANavbar() {
                   {t('navigation.about')}
                 </Link>
                 <Link
-                  href="/members"
+                  href="/member"
                   className="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm"
                   onClick={() => setIsOrgDropdownOpen(false)}
                 >
@@ -257,7 +257,7 @@ export default function KHANavbar() {
                       {t('navigation.about')}
                     </Link>
                     <Link
-                      href="/members"
+                      href="/member"
                       className="block text-white hover:text-blue-200 transition-colors py-2 px-3 rounded-md hover:bg-blue-600"
                       onClick={() => {
                         setIsMenuOpen(false);
