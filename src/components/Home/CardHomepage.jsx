@@ -59,32 +59,33 @@ export default function CardHomepage() {
   const { t, i18n } = useTranslation('common');
 
   return (
-    <div className="w-full flex flex-col items-center px-4 sm:px-6 lg:px-8">
-      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-center text-blue-900 px-4">
+    <div className="w-full flex flex-col items-center px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
+      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 text-center text-blue-900 px-2 sm:px-4 max-w-5xl">
         {t('members.title')}
       </h2>
 
       <div className="w-full max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8">
           {memberContent.map((member, idx) => (
             <div
               key={idx}
-              className="w-full bg-white rounded-lg shadow-md overflow-hidden flex flex-col transform hover:scale-105 transition duration-300"
+              className="w-full bg-white rounded-lg sm:rounded-xl shadow-md sm:shadow-lg hover:shadow-xl overflow-hidden flex flex-col transform hover:scale-[1.02] sm:hover:scale-105 transition-all duration-300 ease-in-out"
             >
-              <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72">
+              <div className="relative w-full aspect-[3/4] sm:aspect-[2/3] md:aspect-[3/4] min-h-[200px] sm:min-h-[240px] md:min-h-[280px]">
                 <Image
                   src={member.imageSrc}
                   alt={i18n.language === "kh" ? member.nameKh : member.name}
                   fill
                   className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, (max-width: 1536px) 25vw, 20vw"
                   unoptimized
                 />
               </div>
-              <div className="bg-[#0057b8] border-t-4 border-orange-500 p-3 sm:p-4 md:p-6 text-center">
-                <h3 className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-1 sm:mb-2 line-clamp-2">
+              <div className="bg-[#0057b8] border-t-4 border-orange-500 p-3 sm:p-4 md:p-5 lg:p-6 text-center flex-1 flex flex-col justify-center">
+                <h3 className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-1 sm:mb-2 line-clamp-2 leading-tight">
                   {i18n.language === "kh" ? member.nameKh : member.name}
                 </h3>
-                <p className="text-white text-xs sm:text-sm md:text-base font-medium line-clamp-2">
+                <p className="text-white text-xs sm:text-sm md:text-base font-medium line-clamp-2 leading-snug">
                   {i18n.language === "kh" ? member.positionKh : member.position}
                 </p>
               </div>

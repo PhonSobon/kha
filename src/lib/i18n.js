@@ -66,11 +66,19 @@ const resources = {
         "sendAnotherEmail": "Send Another Email",
         "forgotPasswordDescription": "Enter your email address and we'll send you a link to reset your password.",
         "enterEmailPlaceholder": "Enter your email address",
+        "enterPasswordPlaceholder": "Enter your password",
         "welcomeBack": "Welcome back!",
         "signInToAccount": "Sign in to your account",
         "demoCredentials": "Demo credentials",
         "demoEmail": "admin@kha.com",
-        "demoPassword": "password123"
+        "demoPassword": "password123",
+        "loginHeroTitle": "Welcome to Log in form!",
+        "loginHeroSubtitle": "To keep connected with us please login with your personal info",
+        "noAccount": "Don't have an account?",
+        "backToHome": "Back to Home",
+        "heroName": "KHMER HEIRS ASSOCIATION",
+        "heroBody": "A group of Khmer intellectual students have come together to establish an association based in the Kingdom of Cambodia, called the Khmer Heirs Association. The Khmer Heirs Association is abbreviated as \"KHA\" in English and \"សទខ\" in Khmer.",
+        "back": "Back"
       },
       "members": {
         "title": "Members Are Able to Get Career Opportunities"
@@ -188,11 +196,19 @@ const resources = {
         "sendAnotherEmail": "ផ្ញើអ៊ីមែលម្តងទៀត",
         "forgotPasswordDescription": "បញ្ចូលអាសយដ្ឋានអ៊ីមែលរបស់អ្នក ហើយយើងនឹងផ្ញើតំណភ្ជាប់សម្រាប់កំណត់ពាក្យសម្ងាត់ថ្មី។",
         "enterEmailPlaceholder": "បញ្ចូលអាសយដ្ឋានអ៊ីមែលរបស់អ្នក",
-        "welcomeBack": "សូមស្វាគមន៍មកវិញ!",
+        "enterPasswordPlaceholder": "បញ្ចូលពាក្យសម្ងាត់របស់អ្នក",
+        "welcomeBack": "សូមស្វាគមន៍មកកាន់ម្តងទៀត!",
         "signInToAccount": "ចូលទៅកាន់គណនីរបស់អ្នក",
         "demoCredentials": "ព័ត៌មានចុះឈ្មោះសាកល្បង",
         "demoEmail": "admin@kha.com",
-        "demoPassword": "password123"
+        "demoPassword": "password123",
+        "loginHeroTitle": "សូមស្វាគមន៍មកកាន់ការ​ Login",
+        "loginHeroSubtitle": "ដើម្បីតភ្ជាប់ជាមួយយើង សូមចូលជាមួយព័ត៌មានផ្ទាល់ខ្លួនរបស់អ្នក",
+        "noAccount": "មិនមានគណនី?",
+        "backToHome": "ត្រលប់ទៅទំព័រដើម",
+        "heroName": "សមាគមទាយាទខ្មែរ",
+        "heroBody": "និស្សិតបញ្ញវន្តខ្មែរបានរួមគ្នាបង្កើតសមាគមមួយ តាំងនៅក្នុងព្រះរាជាណាចក្រកម្ពុជា ដែលមានឈ្មោះថា សមាគមទាយាទខ្មែរ។ សមាគមនេះសរសេរអក្សរកាត់ថា \"KHA\" ជាភាសាអង់គ្លេស និង \"សទខ\" ជាភាសាខ្មែរ។",
+        "back": "ត្រលប់ក្រោយ"
       },
       "members": {
         "title": "សមាជិកទទួលបានឱកាសការងារ"

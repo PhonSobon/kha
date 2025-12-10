@@ -187,21 +187,21 @@ export default function LoginForm() {
             <div className="w-full max-w-md space-y-8">
               <div className="text-center space-y-2">
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-[#26308f]">
-                  {t('auth.loginHeroTitle', { defaultValue: 'Welcome to Log in form!' })}
+                  {t('auth.loginHeroTitle', 'Welcome to Log in form!')}
                 </h1>
                 <p className="text-base text-gray-600 ml-10 mr-10 text-center">
                   {t('auth.loginHeroSubtitle', { defaultValue: 'To keep connected with us please login with your personal info' })}
                 </p>
                 <div className="text-sm text-gray-700">
-                  <span className="font-semibold">{t('auth.noAccount', { defaultValue: "Don’t have an account?" })}</span>{' '}
+                  <span className="font-semibold">{t('auth.noAccount', 'Don’t have an account?')}</span>{' '}
                   <br/>
                   <Link href="/" className="text-[#26308f] font-semibold hover:underline cursor-pointer">
-                    {t('auth.backToHome')}
+                    {t('auth.backToHome','Back to Home')}
                   </Link>
                 </div>
               </div>
             
-            <Card className="shadow-xl border-0 bg-white">
+            <Card>
               <CardBody className="p-8 space-y-6">
                   {errors.general && (
                     <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded-md">
