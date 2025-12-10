@@ -137,6 +137,26 @@ const resources = {
             "role": "Deputy Director of KHA Housing",
             "intro": "My name is Moeurn Sovanara. I come from Battambang Province. Currently, I am a 4th-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science."
           },
+          "leaderFinancial": {
+            "role": "Leader Financial of KHA Housing",
+            "intro": "My name is Ngorn Vannet. I come from Takeo Province. Currently, I am a 4th-year student at the Royal University of Phnom Penh (RUPP), majoring in Mathematic."
+          },
+          "leaderDiscipline": {
+            "role": "Leader Discipline of KHA Housing",
+            "intro": "My name is Tea Choy. I come from PreyVeng Province. Currently, I am a 2th-year student at the Royal University of Phnom Penh (RUPP), majoring in Khmer literature."
+          },
+          "leaderWifi": {
+            "role": "Leader WIFI of KHA Housing",
+            "intro": "My name is Chan Sokvisal. I come from PreyVeng Province. Currently, I am a 2th-year student at the Royal University of Phnom Penh (RUPP), majoring in Information Technology."
+          },
+          "leaderSecurity": {
+            "role": "Leader Security of KHA Housing",
+            "intro": "My name is Kruch Chamroeurn. I come from Siem Reap Province. Currently, I am a 2th-year student at the Royal University of Phnom Penh (IFL), majoring in English."
+          },
+          "subLeaderFinancial": {
+            "role": "Sub Leader Financial of KHA Housing",
+            "intro": "My name is Ven Visal. I come from Svay Rieng Province. Currently, I am a 3th-year student at the Royal University of Phnom Penh (IFL), majoring in English."
+          },
           "directorPrev": {
             "role": "Director of KHA Housing",
             "intro": "My name is Chhorn Rachhat. I come from Kampot Province. Currently, I am a 3rd-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science."
@@ -300,6 +320,26 @@ const resources = {
           "deputyDirector": {
             "role": "អនុប្រធានលំនៅដ្ឋាន KHA",
             "intro": "ខ្ញុំឈ្មោះ មឿន សុវណ្ណារ៉ា មកពីខេត្តបាត់ដំបង។ បច្ចុប្បន្ន ខ្ញុំជានិស្សិតឆ្នាំទី៤ នៃសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP) ជំនាញវិទ្យាសាស្ត្រកុំព្យូទ័រ។"
+          },
+          "leaderFinancial": {
+            "role": "ប្រធានហិរញ្ញវត្ថុនៃ KHA",
+            "intro": "ខ្ញុំឈ្មោះ ងន វណ្ណេត មកពីខេត្តតាកែវ។ បច្ចុប្បន្ន ខ្ញុំជានិស្សិតឆ្នាំទី៤ នៃសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP) ជំនាញគណិតវិទ្យា។"
+          },
+          "leaderDiscipline": {
+            "role": "ប្រធានវិន័យនៃ KHA",
+            "intro": "ខ្ញុំឈ្មោះ ទា​ ចយ មកពីខេត្តព្រៃវែង។ បច្ចុប្បន្ន ខ្ញុំជានិស្សិតឆ្នាំទី២ នៃសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP) ជំនាញភាសាខ្មែរ។"
+          },
+          "leaderWifi": {
+            "role": "ប្រធានវ៉ាយហ្វាយនៃ KHA",
+            "intro": "ខ្ញុំឈ្មោះ ចាន់ សុខវិសាល មកពីខេត្តព្រៃវែង។ បច្ចុប្បន្ន ខ្ញុំជានិស្សិតឆ្នាំទី២ នៃសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP) ជំនាញព័ត៌មានវិទ្យា។"
+          },
+          "leaderSecurity": {
+            "role": "ប្រធានសន្តិសុខនៃ KHA",
+            "intro": "ខ្ញុំឈ្មោះ ក្រួច ចំរើន មកពីខេត្តសៀមរាប។ បច្ចុប្បន្ន ខ្ញុំជានិស្សិតឆ្នាំទី២ នៃសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (IFL) ជំនាញភាសាអង់គ្លេស។"
+          },
+          "subLeaderFinancial": {
+            "role": "អនុប្រធានហិរញ្ញវត្ថុនៃ KHA",
+            "intro": "ខ្ញុំឈ្មោះ វេន វិសាល មកពីខេត្តស្វាយរៀង។ បច្ចុប្បន្ន ខ្ញុំជានិស្សិតឆ្នាំទី៣ នៃសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (IFL) ជំនាញភាសាអង់គ្លេស។"
           },
           "directorPrev": {
             "role": "ប្រធានលំនៅដ្ឋាន KHA",

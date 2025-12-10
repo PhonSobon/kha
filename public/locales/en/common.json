@@ -129,6 +129,10 @@
         "role": "Deputy Director of KHA Housing",
         "intro": "My name is Moeurn Sovanara. I come from Battambang Province. Currently, I am a 4th-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science."
       },
+      "leaderFinancial": {
+        "role": "Leader Financial of KHA Housing",
+        "intro": "My name is Ngorn Vannet. I come from Takeo Province. Currently, I am a 4th-year student at the Royal University of Phnom Penh (RUPP), majoring in Mathematic."
+      },
       "directorPrev": {
         "role": "Director of KHA Housing",
         "intro": "My name is Moeurn Sovanara. I come from Battambang Province. Currently, I am a 3rd-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science."
