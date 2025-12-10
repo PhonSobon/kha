@@ -8,7 +8,10 @@ const resources = {
     common: {
       "navigation": {
         "home": "KHMER HEIRS ASSOCIATION",
+        "organization": "Organization",
         "about": "About Us",
+        "members": "Members",
+        "announcements": "Announcements",
         "leader": "KHA Leader",
         "education": "Education",
         "contact": "Contact Us",
@@ -138,7 +141,10 @@ const resources = {
     common: {
       "navigation": {
         "home": "សមាគមទាយាទខ្មែរ",
+        "organization": "អង្គការ",
         "about": "អំពីពួកយើង",
+        "members": "សមាជិក",
+        "announcements": "ប្រកាស",
         "leader": "ថ្នាក់ដឹកនាំសមាគម",
         "education": "ការសិក្សា",
         "contact": "ទំនាក់ទំនង",

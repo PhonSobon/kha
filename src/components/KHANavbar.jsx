@@ -26,8 +26,10 @@ export const KHALogo = () => (
 export default function KHANavbar() {
   const { t, i18n } = useTranslation('common');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOrgDropdownOpen, setIsOrgDropdownOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const menuRef = useRef(null);
+  const orgDropdownRef = useRef(null);
 
   // Check login status
   useEffect(() => {
@@ -41,16 +43,19 @@ export default function KHANavbar() {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setIsMenuOpen(false);
       }
+      if (orgDropdownRef.current && !orgDropdownRef.current.contains(event.target)) {
+        setIsOrgDropdownOpen(false);
+      }
     }
 
-    if (isMenuOpen) {
+    if (isMenuOpen || isOrgDropdownOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isOrgDropdownOpen]);
 
   const handleLogout = () => {
     localStorage.removeItem('user');
@@ -72,9 +77,47 @@ export default function KHANavbar() {
 
       <NavbarContent className="hidden sm:flex gap-4 md:gap-6 lg:gap-8" justify="center">
         <NavbarItem>
-          <Link href="/about" className="text-white text-sm md:text-base hover:text-blue-200 transition-colors">
-            {t('navigation.about')}
-          </Link>
+          <div ref={orgDropdownRef} className="relative">
+            <button
+              onClick={() => setIsOrgDropdownOpen(!isOrgDropdownOpen)}
+              className="text-white text-sm md:text-base hover:text-blue-200 transition-colors flex items-center gap-1"
+            >
+              {t('navigation.organization', 'Organization')}
+              <svg
+                className={`w-4 h-4 transition-transform ${isOrgDropdownOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {isOrgDropdownOpen && (
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50">
+                <Link
+                  href="/about"
+                  className="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm"
+                  onClick={() => setIsOrgDropdownOpen(false)}
+                >
+                  {t('navigation.about')}
+                </Link>
+                <Link
+                  href="/members"
+                  className="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm"
+                  onClick={() => setIsOrgDropdownOpen(false)}
+                >
+                  {t('navigation.members', 'Members')}
+                </Link>
+                <Link
+                  href="/announcements"
+                  className="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm"
+                  onClick={() => setIsOrgDropdownOpen(false)}
+                >
+                  {t('navigation.announcements', 'Announcements')}
+                </Link>
+              </div>
+            )}
+          </div>
         </NavbarItem>
         <NavbarItem>
           <Link href="/leader" className="text-white text-sm md:text-base hover:text-blue-200 transition-colors">
@@ -186,13 +229,56 @@ export default function KHANavbar() {
           <div className="px-4 py-4 space-y-4">
             {/* Mobile Navigation Links */}
             <div className="space-y-3">
-              <Link 
-                href="/about" 
-                className="block text-white hover:text-blue-200 transition-colors py-2 px-3 rounded-md hover:bg-blue-600"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('navigation.about')}
-              </Link>
+              <div>
+                <button
+                  onClick={() => setIsOrgDropdownOpen(!isOrgDropdownOpen)}
+                  className="w-full text-left text-white hover:text-blue-200 transition-colors py-2 px-3 rounded-md hover:bg-blue-600 flex items-center justify-between"
+                >
+                  <span>{t('navigation.organization', 'Organization')}</span>
+                  <svg
+                    className={`w-4 h-4 transition-transform ${isOrgDropdownOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isOrgDropdownOpen && (
+                  <div className="pl-4 mt-2 space-y-2">
+                    <Link
+                      href="/about"
+                      className="block text-white hover:text-blue-200 transition-colors py-2 px-3 rounded-md hover:bg-blue-600"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsOrgDropdownOpen(false);
+                      }}
+                    >
+                      {t('navigation.about')}
+                    </Link>
+                    <Link
+                      href="/members"
+                      className="block text-white hover:text-blue-200 transition-colors py-2 px-3 rounded-md hover:bg-blue-600"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsOrgDropdownOpen(false);
+                      }}
+                    >
+                      {t('navigation.members', 'Members')}
+                    </Link>
+                    <Link
+                      href="/announcements"
+                      className="block text-white hover:text-blue-200 transition-colors py-2 px-3 rounded-md hover:bg-blue-600"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsOrgDropdownOpen(false);
+                      }}
+                    >
+                      {t('navigation.announcements', 'Announcements')}
+                    </Link>
+                  </div>
+                )}
+              </div>
               <Link 
                 href="/leader" 
                 className="block text-white hover:text-blue-200 transition-colors py-2 px-3 rounded-md hover:bg-blue-600"
