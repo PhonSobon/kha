@@ -120,6 +120,21 @@
   "memberPage": {
     "title": "Members",
     "contact": "Contact",
+    "tabs": {
+      "leader": "Leader",
+      "allMembers": "All Members",
+      "alumni": "Alumni"
+    },
+    "allMembers": {
+      "title": "All Members",
+      "description": "Complete list of all KHA Housing members.",
+      "comingSoon": "All members list coming soon..."
+    },
+    "alumni": {
+      "title": "Alumni",
+      "description": "Former members who have graduated and moved on to successful careers.",
+      "comingSoon": "Alumni information coming soon..."
+    },
     "members": {
       "director": {
         "role": "Director of KHA Housing",

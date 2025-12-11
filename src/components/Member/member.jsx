@@ -249,11 +249,12 @@ export default function Member() {
   const [lastReorderedId, setLastReorderedId] = useState(null);
 
   const visibleMembers = useMemo(() => {
-    const order = orderByYear[selectedYear] || groupedByYear[selectedYear]?.map((m) => m.id) || [];
+    const order =
+      orderByYear[selectedYear] ||
+      groupedByYear[selectedYear]?.map((m) => m.id) ||
+      [];
     const lookup = groupedByYear[selectedYear] || [];
-    return order
-      .map((id) => lookup.find((m) => m.id === id))
-      .filter(Boolean);
+    return order.map((id) => lookup.find((m) => m.id === id)).filter(Boolean);
   }, [groupedByYear, orderByYear, selectedYear]);
 
   const handleReorder = (targetId) => {
@@ -285,13 +286,18 @@ export default function Member() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10 space-y-8">
-      <div className="flex items-center justify-between gap-4">
-        <h1 className="text-2xl sm:text-3xl font-semibold text-gray-900">
-          {t("memberPage.title", "Members")}
-        </h1>
-      </div>
-
       <div className="-mx-4 px-4 overflow-x-auto">
+        <div className="text-center mb-3">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            {t("memberPage.allMembers.title", "All Members")}
+          </h2>
+          <p className="text-gray-600">
+            {t(
+              "memberPage.allMembers.description",
+              "Complete list of all KHA Housing members."
+            )}
+          </p>
+        </div>
         <div className="flex gap-3 pb-2">
           {years.map((year) => {
             const isActive = year === selectedYear;
@@ -316,7 +322,8 @@ export default function Member() {
         {visibleMembers.map((member) => {
           const imageFirst = member.align === "left";
           const isDragging = draggingId === member.id;
-          const isDragOver = dragOverId === member.id && draggingId !== member.id;
+          const isDragOver =
+            dragOverId === member.id && draggingId !== member.id;
           return (
             <div
               key={member.id}
@@ -335,7 +342,9 @@ export default function Member() {
               onDragLeave={() => setDragOverId(null)}
               onDrop={() => handleReorder(member.id)}
               className={`grid md:grid-cols-2 items-start bg-white shadow-sm rounded-2xl p-6 transition-all duration-200 ease-out cursor-grab active:cursor-grabbing select-none ${
-                isDragging ? "opacity-90 scale-[0.98] translate-y-0.5 ring-2 ring-blue-300 shadow-md" : ""
+                isDragging
+                  ? "opacity-90 scale-[0.98] translate-y-0.5 ring-2 ring-blue-300 shadow-md"
+                  : ""
               } ${
                 isDragOver && !isDragging
                   ? "ring-2 ring-blue-200 shadow-md scale-[0.995]"
@@ -355,23 +364,25 @@ export default function Member() {
               <div className="space-y-4 text-center md:text-left md:flex md:flex-col md:items-start">
                 <div className="space-y-1 text-center md:text-left md:self-start">
                   <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">
-                  {t(member.roleKey, member.role)}
+                    {t(member.roleKey, member.role)}
                   </h2>
                   <p className="text-gray-600 text-sm">{member.years}</p>
                 </div>
 
                 <p className="text-gray-800 leading-relaxed text-center md:text-left">
-                {t(member.introKey, member.intro)}
+                  {t(member.introKey, member.intro)}
                 </p>
 
                 <div className="flex flex-col items-start gap-3 pt-2">
                   <button className="inline-flex items-center justify-center gap-2 rounded-full border border-blue-200 text-blue-700 px-4 py-2 font-medium hover:bg-blue-50 transition">
-                  {t("memberPage.contact", "Contact")}
+                    {t("memberPage.contact", "Contact")}
                   </button>
                   <div className="flex flex-wrap items-center justify-center gap-4 w-full">
                     <div className="flex items-center gap-2 text-gray-700">
                       <PhoneIcon />
-                      <span className="text-sm font-medium">{member.phone}</span>
+                      <span className="text-sm font-medium">
+                        {member.phone}
+                      </span>
                     </div>
                     <div className="flex items-center gap-2 text-gray-700">
                       <MailIcon />
