@@ -63,7 +63,8 @@
     "checkYourEmail": "Check your email for verification link",
     "sendAnotherEmail": "Send Another Email",
     "forgotPasswordDescription": "Enter your email address and we'll send you a link to reset your password.",
-    "enterEmailPlaceholder": "Enter your email address"
+    "enterEmailPlaceholder": "Enter your email address",
+    "forgotPasswordHero": "We will send you a secure link to reset your password."
   },
   "members": {
     "title": "Members Are Able to Get Career Opportunities"

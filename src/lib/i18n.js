@@ -81,6 +81,7 @@ const resources = {
         "backToHome": "Back to Home",
         "heroName": "KHMER HEIRS ASSOCIATION",
         "heroBody": "A group of Khmer intellectual students have come together to establish an association based in the Kingdom of Cambodia, called the Khmer Heirs Association. The Khmer Heirs Association is abbreviated as \"KHA\" in English and \"សទខ\" in Khmer.",
+        "forgotPasswordHero": "We will send you a secure link to reset your password.",
         "back": "Back"
       },
       "members": {
@@ -264,6 +265,7 @@ const resources = {
         "backToHome": "ត្រលប់ទៅទំព័រដើម",
         "heroName": "សមាគមទាយាទខ្មែរ",
         "heroBody": "និស្សិតបញ្ញវន្តខ្មែរបានរួមគ្នាបង្កើតសមាគមមួយ តាំងនៅក្នុងព្រះរាជាណាចក្រកម្ពុជា ដែលមានឈ្មោះថា សមាគមទាយាទខ្មែរ។ សមាគមនេះសរសេរអក្សរកាត់ថា \"KHA\" ជាភាសាអង់គ្លេស និង \"សទខ\" ជាភាសាខ្មែរ។",
+        "forgotPasswordHero": "យើងនឹងផ្ញើតំណភ្ជាប់សុវត្ថិភាពឲ្យអ្នក ដើម្បីកំណត់ពាក្យសម្ងាត់ឡើងវិញ។",
         "back": "ត្រលប់ក្រោយ"
       },
       "members": {
