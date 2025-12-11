@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import KHANavbar from "../../components/KHANavbar";
 import Member from "../../components/Member/member";
@@ -11,6 +11,20 @@ export default function Page() {
   const { t } = useTranslation("common");
   const [activeTab, setActiveTab] = useState("leader");
 
+  // Load saved tab from localStorage on mount
+  useEffect(() => {
+    const savedTab = localStorage.getItem("memberPageActiveTab");
+    if (savedTab && ["leader", "allMembers", "alumni"].includes(savedTab)) {
+      setActiveTab(savedTab);
+    }
+  }, []);
+
+  // Save tab to localStorage when it changes
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    localStorage.setItem("memberPageActiveTab", tab);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <KHANavbar />
@@ -18,7 +32,7 @@ export default function Page() {
         <div className="max-w-7xl mx-auto px-4"> 
           <div className="flex items-center gap-2 sm:gap-3 px-4 sm:px-8 md:px-16 text-left mb-6">
             <button
-              onClick={() => setActiveTab("leader")}
+              onClick={() => handleTabChange("leader")}
               className={`text-base sm:text-lg md:text-xl font-medium transition-colors duration-200 cursor-pointer ${
                 activeTab === "leader"
                   ? "text-[#28308F] font-bold"
@@ -29,7 +43,7 @@ export default function Page() {
             </button>
             <span className="text-gray-400 text-base sm:text-lg md:text-xl">|</span>
             <button
-              onClick={() => setActiveTab("allMembers")}
+              onClick={() => handleTabChange("allMembers")}
               className={`text-base sm:text-lg md:text-xl font-medium transition-colors duration-200 cursor-pointer ${
                 activeTab === "allMembers"
                   ? "text-[#28308F] font-bold"
@@ -40,7 +54,7 @@ export default function Page() {
             </button>
             <span className="text-gray-400 text-base sm:text-lg md:text-xl">|</span>
             <button
-              onClick={() => setActiveTab("alumni")}
+              onClick={() => handleTabChange("alumni")}
               className={`text-base sm:text-lg md:text-xl font-medium transition-colors duration-200 cursor-pointer ${
                 activeTab === "alumni"
                   ? "text-[#28308F] font-bold"
