@@ -62,9 +62,18 @@
     "passwordResetSent": "Password reset link sent to your email",
     "checkYourEmail": "Check your email for verification link",
     "sendAnotherEmail": "Send Another Email",
-    "forgotPasswordDescription": "Enter your email address and we'll send you a link to reset your password.",
+    "forgotPasswordDescription": "Enter your email and we’ll send a reset link.",
     "enterEmailPlaceholder": "Enter your email address",
-    "forgotPasswordHero": "We will send you a secure link to reset your password."
+    "forgotPasswordHero": "We’ll email you a secure link to reset your password.",
+    "enterOtp": "Enter the 6-digit code",
+    "otpSentToEmail": "We sent a 6-digit code to your email.",
+    "otpLabel": "Verification code",
+    "verifyCode": "Verify code",
+    "otpRequired": "Code is required",
+    "otpInvalid": "Please enter the 6-digit code",
+    "newPasswordStepTitle": "Create a new password",
+    "newPasswordStepSubtitle": "Use at least 6 characters to keep your account safe.",
+    "updatePassword": "Update password"
   },
   "members": {
     "title": "Members Are Able to Get Career Opportunities"

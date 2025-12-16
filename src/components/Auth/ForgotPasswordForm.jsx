@@ -6,14 +6,25 @@ import { Button, Input, Card, CardBody } from '@heroui/react';
 import Link from 'next/link';
 import { ArrowLeftIcon, CheckCircleIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import VerifyOtpForm from './VerifyOtpForm';
+import NewPasswordForm from './NewPasswordForm';
 
 export default function ForgotPasswordForm() {
   const { t, i18n } = useTranslation('common');
   const router = useRouter();
+  const storageKey = 'forgot_password_flow';
+
   const [email, setEmail] = useState('');
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [stage, setStage] = useState('email'); // email -> otp -> reset -> done
+  const [passwords, setPasswords] = useState({ password: '', confirmPassword: '' });
+  const [otp, setOtp] = useState('');
+  const [otpError, setOtpError] = useState('');
+  const [isVerifyingOtp, setIsVerifyingOtp] = useState(false);
+  const [isResetting, setIsResetting] = useState(false);
   const [isLangReady, setIsLangReady] = useState(false);
 
   useEffect(() => {
@@ -31,6 +42,45 @@ export default function ForgotPasswordForm() {
       setIsLangReady(true);
     }
   }, [i18n]);
+
+  // Load persisted state safely after mount (avoids wrong initial stage)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    try {
+      const raw = JSON.parse(localStorage.getItem(storageKey) || '{}');
+      const allowedStages = ['email', 'otp', 'reset'];
+      const hasEmail = !!raw.email;
+      const nextStage = allowedStages.includes(raw.stage) ? raw.stage : 'email';
+
+      // enforce prerequisites
+      if (nextStage === 'otp' && !hasEmail) {
+        setStage('email');
+        return;
+      }
+      if (nextStage === 'reset' && (!hasEmail || !raw.otp)) {
+        setStage('email');
+        return;
+      }
+
+      setEmail(raw.email || '');
+      setOtp(raw.otp || '');
+      setPasswords(raw.passwords || { password: '', confirmPassword: '' });
+      setStage(nextStage);
+    } catch {
+      // ignore bad data
+    }
+  }, []);
+
+  // Persist progress except after completion
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (stage === 'done') {
+      localStorage.removeItem(storageKey);
+      return;
+    }
+    const data = { stage, email, otp, passwords };
+    localStorage.setItem(storageKey, JSON.stringify(data));
+  }, [stage, email, otp, passwords]);
 
   const validateEmail = (email) => {
     if (!email) {
@@ -54,11 +104,11 @@ export default function ForgotPasswordForm() {
     setIsLoading(true);
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Simulate API call to send reset email
+      await new Promise(resolve => setTimeout(resolve, 1200));
       
-      // Mock successful password reset request
-      setIsSubmitted(true);
+      // Move to OTP stage
+      setStage('otp');
       setErrors({});
     } catch (error) {
       setErrors({ general: 'Something went wrong. Please try again.' });
@@ -74,55 +124,154 @@ export default function ForgotPasswordForm() {
     }
   };
 
+  const validateOtp = (value) => {
+    if (!value) return t('auth.otpRequired', 'OTP is required');
+    if (!/^\d{6}$/.test(value)) return t('auth.otpInvalid', 'Enter the 6-digit code');
+    return '';
+  };
+
+  const handleOtpSubmit = async (e) => {
+    e.preventDefault();
+
+    const validation = validateOtp(otp);
+    if (validation) {
+      setOtpError(validation);
+      return;
+    }
+
+    setIsVerifyingOtp(true);
+    setOtpError('');
+
+    try {
+      // Simulate OTP verification
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setStage('reset');
+    } catch (error) {
+      setOtpError(t('auth.otpInvalid', 'Enter the 6-digit code'));
+    } finally {
+      setIsVerifyingOtp(false);
+    }
+  };
+
+  const handleOtpChange = (value) => {
+    if (/^\d{0,6}$/.test(value)) {
+      setOtp(value);
+      if (otpError) setOtpError('');
+    }
+  };
+
+  const handlePasswordChange = (field, value) => {
+    setPasswords((prev) => ({ ...prev, [field]: value }));
+    if (errors[field]) {
+      setErrors((prev) => ({ ...prev, [field]: '' }));
+    }
+  };
+
+  const validatePasswords = () => {
+    const newErrors = {};
+    if (!passwords.password) {
+      newErrors.password = t('auth.passwordRequired');
+    } else if (passwords.password.length < 6) {
+      newErrors.password = t('auth.passwordTooShort');
+    }
+
+    if (!passwords.confirmPassword) {
+      newErrors.confirmPassword = t('auth.passwordRequired');
+    } else if (passwords.password !== passwords.confirmPassword) {
+      newErrors.confirmPassword = t('auth.passwordMismatch');
+    }
+
+    setErrors((prev) => ({ ...prev, ...newErrors }));
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleResetSubmit = async (e) => {
+    e.preventDefault();
+    if (!validatePasswords()) return;
+
+    setIsResetting(true);
+    setErrors((prev) => ({ ...prev, general: '' }));
+    try {
+      // Simulate password update
+      await new Promise((resolve) => setTimeout(resolve, 1200));
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem(storageKey);
+      }
+      toast.success(t('auth.passwordResetSuccess', 'Password updated successfully.'), {
+        position: 'top-center',
+        autoClose: 2000,
+      });
+      setTimeout(() => {
+        router.push('/login');
+      }, 1200);
+    } catch (error) {
+      setErrors((prev) => ({ ...prev, general: t('auth.loginError', 'Something went wrong. Please try again.') }));
+    } finally {
+      setIsResetting(false);
+    }
+  };
+
   if (!isLangReady) {
     return null;
   }
 
-  if (isSubmitted) {
+  if (stage === 'done') {
+    return null;
+  }
+
+  if (stage === 'otp') {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md w-full space-y-8">
-          <Card className="shadow-2xl border-0">
-            <CardBody className="text-center py-12 space-y-6">
-              <div className="flex justify-center">
-                <CheckCircleIcon className="h-20 w-20 text-green-500 animate-pulse" />
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900">
-                {t('auth.passwordResetSent')}
-              </h2>
-              <p className="text-gray-600">
-                {t('auth.checkYourEmail')}
-              </p>
-              <div className="space-y-3">
-                <Button
-                  color="primary"
-                  size="lg"
-                  className="w-full bg-[#26308f] text-white font-semibold rounded-full shadow-lg hover:bg-[#1f297a] transition-colors"
-                  onClick={() => router.push('/login')}
-                >
-                  {t('auth.backToLogin')}
-                </Button>
-                <Button
-                  variant="bordered"
-                  size="lg"
-                  className="w-full border-[#26308f] text-[#26308f] font-semibold rounded-full shadow-sm hover:bg-[#f4f5ff]"
-                  onClick={() => {
-                    setIsSubmitted(false);
-                    setEmail('');
-                  }}
-                >
-                  {t('auth.sendAnotherEmail')}
-                </Button>
-              </div>
-            </CardBody>
-          </Card>
-        </div>
-      </div>
+      <>
+        <ToastContainer position="top-center" />
+        <VerifyOtpForm
+          t={t}
+          errors={errors}
+          otp={otp}
+          otpError={otpError}
+          onOtpChange={handleOtpChange}
+          onSubmit={handleOtpSubmit}
+          isVerifyingOtp={isVerifyingOtp}
+          onBack={() => {
+            setStage('email');
+            setOtp('');
+            setPasswords({ password: '', confirmPassword: '' });
+            if (typeof window !== 'undefined') {
+              localStorage.removeItem(storageKey);
+            }
+          }}
+        />
+      </>
+    );
+  }
+
+  if (stage === 'reset') {
+    return (
+      <>
+        <ToastContainer position="top-center" />
+        <NewPasswordForm
+          t={t}
+          errors={errors}
+          password={passwords.password}
+          confirmPassword={passwords.confirmPassword}
+          onPasswordChange={handlePasswordChange}
+          onSubmit={handleResetSubmit}
+          isSubmitting={isResetting}
+          onBack={() => {
+            setStage('otp');
+            setPasswords({ password: '', confirmPassword: '' });
+            if (typeof window !== 'undefined') {
+              localStorage.setItem(storageKey, JSON.stringify({ stage: 'otp', email, otp, passwords: { password: '', confirmPassword: '' } }));
+            }
+          }}
+        />
+      </>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-100 flex items-center justify-center py-8 px-4">
+    <>
+      <ToastContainer position="top-center" />
+      <div className="min-h-screen bg-slate-100 flex items-center justify-center py-8 px-4">
       <div className="w-full max-w-6xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div
@@ -238,6 +387,7 @@ export default function ForgotPasswordForm() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
