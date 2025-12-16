@@ -1,8 +1,8 @@
 "use client";
 import React from 'react'
-import FromContact from '../../components/contact/FromContact'
-import HeaderContact from '../../components/contact/HeaderContact'
-import CardContact from '../../components/contact/CardContact'
+import FromContact from '../../components/Contact/FromContact'
+import HeaderContact from '../../components/Contact/HeaderContact'
+import CardContact from '../../components/Contact/CardContact'
 import KHAFooter from '../../components/KHAFooter'
 import { useTranslation } from 'react-i18next'
 import KHANavbar from '../../components/KHANavbar';
