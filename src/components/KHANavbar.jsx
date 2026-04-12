@@ -198,18 +198,12 @@ export default function KHANavbar() {
           {/* Login/Logout Button */}
           <NavbarItem>
             {isLoggedIn ? (
-              // <button
-              //   onClick={handleLogout}
-              //   className="text-white text-sm md:text-base hover:text-red-200 transition-colors px-3 py-1 rounded-md hover:bg-red-600/20"
-              // >
-              //   {t('auth.logout')}
-              // </button>
-              <div
-                className="w-9 h-9 rounded-full overflow-hidden cursor-pointer bg-amber-300"
-                onClick={handleLogout}
+              <Link
+                href="/profile"
+                className="w-9 h-9 rounded-full overflow-hidden cursor-pointer bg-amber-300 block hover:ring-2 hover:ring-white transition-all"
               >
-                <Image src="/images/member/moeurnsovanara.jpg" alt="profile"></Image>
-              </div>
+                <Image src="/images/member/moeurnsovanara.jpg" alt="profile" width={36} height={36} className="w-full h-full object-cover"></Image>
+              </Link>
             ) : (
               <Link
                 href="/login"

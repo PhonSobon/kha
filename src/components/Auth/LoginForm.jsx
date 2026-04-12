@@ -25,6 +25,12 @@ export default function LoginForm() {
   useEffect(() => {
     const savedLang = typeof window !== 'undefined' ? localStorage.getItem('lang') : null;
     const targetLang = savedLang || 'kh';
+
+    // Persist default language so next visits stay consistent
+    if (!savedLang && typeof window !== 'undefined') {
+      localStorage.setItem('lang', targetLang);
+    }
+
     if (i18n.language !== targetLang) {
       i18n.changeLanguage(targetLang).finally(() => setIsLangReady(true));
     } else {
@@ -123,29 +129,6 @@ export default function LoginForm() {
 
   if (!isLangReady) {
     return null;
-  }
-
-  if (loginSuccess) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="max-w-md w-full mx-auto">
-          <Card className="shadow-2xl border-0">
-            <CardBody className="text-center py-12">
-              <div className="mb-6">
-                <CheckCircleIcon className="mx-auto h-20 w-20 text-green-500 animate-pulse" />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                {t('auth.loginSuccess')}
-              </h2>
-              <p className="text-gray-600 mb-6">
-                {t('auth.welcomeBack')}
-              </p>
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto"></div>
-            </CardBody>
-          </Card>
-        </div>
-      </div>
-    );
   }
 
   return (

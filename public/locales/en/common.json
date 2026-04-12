@@ -167,5 +167,16 @@
         "intro": "My name is Moeurn Sovanara. I come from Battambang Province. Currently, I am a 3rd-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science."
       }
     }
+  },
+  "profile": {
+    "title": "Profile",
+    "subtitle": "View and manage your account information",
+    "accountInfo": "Account Information",
+    "accountStatus": "Account Status",
+    "verified": "Verified",
+    "unverified": "Unverified",
+    "lastLogin": "Last Login",
+    "settings": "Settings",
+    "goToDashboard": "Go to Dashboard"
   }
 }
