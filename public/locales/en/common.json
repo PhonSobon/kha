@@ -73,7 +73,8 @@
     "otpInvalid": "Please enter the 6-digit code",
     "newPasswordStepTitle": "Create a new password",
     "newPasswordStepSubtitle": "Use at least 6 characters to keep your account safe.",
-    "updatePassword": "Update password"
+    "updatePassword": "Update password",
+    "verifyCoded" : "OTP Verified !!!"
   },
   "members": {
     "title": "Members Are Able to Get Career Opportunities"
