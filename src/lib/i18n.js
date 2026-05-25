@@ -108,7 +108,8 @@ const resources = {
           "slogan2": "Grow",
           "slogan3": ",Together We",
           "slogan4": "Learn"
-        }
+        },
+        "download": "download"
       },
       "about": {
         "vision": {
@@ -302,7 +303,8 @@ const resources = {
           "slogan3": "និង",
           "slogan4": "រៀនសូត្រ",
           "slogan5": "ជាមួយគ្នា"
-        }
+        },
+        "download":"ទាញយក"
       },
       "about": {
         "vision": {

@@ -2,62 +2,44 @@ import { useState } from "react";
 import BacIICard from "./BacIICard";
 import Filter from "./Filter";
 import Badge from "./badge";
+import BookPreviewModal from "./BookPreviewModal";
 
 export default function BacII() {
   const mockBacII = [
     {
       id: 1,
-      title: "2025 | Chinese Bac II Exam Prep with Gu Laoshi",
-      description:
-        "Prepare for the Bac II Chinese exam with our comprehensive course! Designed for high school students, this program focuses on advanced Mandarin skills, including reading comprehension, essay writing, and oral presentation. Strengthen your foundation for success!",
+      customTitle: "Book for Teaching Stategy",
+      subject: "Khmer",
+      description: "Prepare for the Bac II Chinese exam with our comprehensive course!",
       imageSrc: "/assets/education/bacIIImage.png",
+      bookSrc: "/assets/books/teaching_strategy.pdf",
     },
     {
       id: 2,
-      title: "2025 | Japanese Bac II Exam Prep with Sensei",
-      description:
-        "Master Japanese for the Bac II exam with our tailored course! This program covers advanced grammar, kanji, and listening skills, perfect for students aiming to excel in Japanese language assessments.",
+      customTitle: "Japanese Bac II Exam Prep with Sensei",
+      subject: "Japanese",
+      description: "Master Japanese for the Bac II exam with our tailored course!",
       imageSrc: "/assets/education/bacIIImage.png",
+      bookSrc: "/assets/books/japanese-bacii.pdf",
     },
     {
       id: 3,
-      title: "2025 | Korean Bac II Exam Prep with Seonsaengnim",
-      description:
-        "Get ready for the Bac II Korean exam with our intensive course! Focus on advanced vocabulary, writing, and cultural context to achieve top scores in your Korean language test.",
+      customTitle: "Korean Bac II Exam Prep with Seonsaengnim",
+      subject: "Korean",
+      description: "Get ready for the Bac II Korean exam with our intensive course!",
       imageSrc: "/assets/education/bacIIImage.png",
-    },
-    {
-      id: 4,
-      title: "2025 | French Bac II Exam Prep with Professeur",
-      description:
-        "Enhance your French skills for the Bac II exam! This course offers advanced reading, writing, and speaking practice, ideal for students targeting excellence in French.",
-      imageSrc: "/assets/education/bacIIImage.png",
-    },
-    {
-      id: 5,
-      title: "2025 | Spanish Bac II Exam Prep with Profesor",
-      description:
-        "Prepare for the Bac II Spanish exam with our detailed course! Covering advanced grammar and conversation, this program helps you succeed in Spanish language assessments.",
-      imageSrc: "/assets/education/bacIIImage.png",
-    },
-    {
-      id: 6,
-      title: "2025 | German Bac II Exam Prep with Lehrer",
-      description:
-        "Excel in the Bac II German exam with our specialized course! Focus on advanced syntax, reading, and oral skills to boost your German proficiency.",
-      imageSrc: "/assets/education/bacIIImage.png",
+      bookSrc: "/assets/books/korean-bacii.pdf",
     },
   ];
 
   const [filteredBacII, setFilteredBacII] = useState(mockBacII);
+  const [selectedBook, setSelectedBook] = useState(null);
 
   return (
     <>
       <div className="bg-white w-full max-w-6xl mb-10 h-fit rounded-2xl p-6 sm:p-8 md:p-10 shadow-md">
         <div className="flex justify-between items-center gap-4">
-          <div className="text-xl font-semibold text-[#28308F]">
-            Bac II Lessons
-          </div>
+          <div className="text-xl font-semibold text-[#28308F]">Bac II Lessons</div>
           <Filter items={mockBacII} onFilter={setFilteredBacII} />
         </div>
 
@@ -67,10 +49,14 @@ export default function BacII() {
 
         <div className="grid gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mt-5">
           {filteredBacII.map((bacii) => (
-            <BacIICard key={bacii.id} bacii={bacii} />
+            <BacIICard key={bacii.id} bacii={bacii} onClick={() => setSelectedBook(bacii)} />
           ))}
         </div>
       </div>
+
+      {selectedBook && (
+        <BookPreviewModal book={selectedBook} onClose={() => setSelectedBook(null)} />
+      )}
     </>
   );
 }

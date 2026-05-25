@@ -12,15 +12,15 @@ export default function CardTutorial({ tutorial }) {
         width={1000}
         height={1000}
         src={tutorial.imageSrc}
-        alt={`${tutorial.title} image`}
+        alt={`${tutorial.customTitle} image`}
       />
       <div className="px-3 pb-4 flex flex-col flex-1">
-        <Link href="/">
-          <h1 className="text-[#28308F] text-2xl truncate whitespace-nowrap overflow-hidden text-ellipsis">
-            {tutorial.title}
+        <Link href={tutorial.title} target="_blank" rel="noopener noreferrer">
+          <h1 className="text-[#28308F] text-2xl truncate whitespace-nowrap overflow-hidden text-ellipsis hover:underline">
+            {tutorial.customTitle}
           </h1>
         </Link>
-        <p className="text-[18px] mt-2 line-clamp-4 text-black opacity-70 flex-1">
+        <p className="text-[18px] mt-2 line-clamp-2 text-black opacity-70 flex-1">
           {tutorial.description}
         </p>
       </div>
