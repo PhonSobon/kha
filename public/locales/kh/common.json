@@ -183,6 +183,21 @@
     "unverified": "មិនបានផ្ទៀងផ្ទាត់",
     "lastLogin": "ចូលចុងក្រោយ",
     "settings": "ការកំណត់",
-    "goToDashboard": "ទៅកាន់ផ្ទាំងគ្រប់គ្រង"
+    "goToDashboard": "ទៅកាន់ផ្ទាំងគ្រប់គ្រង",
+    "accountSetting": "ការកំណត់គណនី",
+    "profileInfo": "ព័ត៌មាន Profile",
+    "userName": "ឈ្មោះអ្នកប្រើប្រាស់",
+    "deleteProfile": "លុបគណនី",
+    "update": "ធ្វើបច្ចុប្បន្នភាព",
+    "gender" : {
+      "male": "ប្រុស",
+      "female": "ស្រី",
+      "others": "ផ្សេងៗ"
+    },
+    "close": "បិទ",
+    "emailAddress": "អាសយដ្ឋានអ៉ីម៉ែល",
+    "phoneNumber" : "លេខទូរស័ព្ទ",
+    "genderLabel" : "ភេទ",
+    "dob" : "កាលបរិច្ឆេទកំណើត"
   }
 }

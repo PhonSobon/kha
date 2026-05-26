@@ -170,7 +170,7 @@ export default function ProfilePage() {
 
   if (isLoading) return null;
 
-  const displayName = user?.email?.split("@")[0]?.toUpperCase() ?? "USER";
+  const displayName = user?.email?.split("@")[0] ?? "User";
 
   return (
     <div className="min-h-screen bg-[#f8fafc]">
@@ -206,7 +206,7 @@ export default function ProfilePage() {
               </div>
               <label
                 htmlFor="upload"
-                className="absolute bottom-1 right-1 bg-[#26308f] rounded-2xl p-2.5 border-4 border-white shadow-lg cursor-pointer hover:scale-110 hover:bg-indigo-700 transition-all"
+                className="absolute bottom-1 right-1 bg-[#26308f] rounded-4xl p-2.5 border-4 border-white shadow-lg cursor-pointer hover:scale-110 hover:bg-indigo-700 transition-all"
               >
                 <PencilIcon className="w-5 h-5 text-white" />
                 <input
@@ -222,7 +222,7 @@ export default function ProfilePage() {
             <h2 className="mt-8 text-2xl font-black text-slate-800 tracking-tight">
               {displayName}
             </h2>
-            <p className="text-slate-400 text-xs font-bold tracking-widest mt-1">
+            <p className="text-slate-700 text-ls font-light tracking-widest mt-1">
               {user?.email}
             </p>
 
@@ -233,7 +233,7 @@ export default function ProfilePage() {
                 startContent={<Cog6ToothIcon className="w-5 h-5" />}
                 onPress={onOpen}
               >
-                Account Settings
+                {t("profile.accountSetting", "Account Setting")}
               </Button>
               <Button
                 fullWidth
@@ -260,12 +260,11 @@ export default function ProfilePage() {
             <>
               <ModalHeader className="border-b border-slate-100 pb-6">
                 <h2 className="text-3xl font-black text-slate-800">
-                  Profile Info
+                  {t("profile.profileInfo","Profile Information")}
                 </h2>
               </ModalHeader>
 
               <ModalBody className="py-8 px-6">
-                {/* Avatar row */}
                 <div className="flex items-center justify-between pb-8 border-b border-slate-100">
                   <div className="flex items-center gap-4">
                     <Image
@@ -277,9 +276,9 @@ export default function ProfilePage() {
                     />
                     <div>
                       <p className="text-xs font-bold text-slate-400">
-                        User Name
+                        {t("profile.userName", "User Name")}
                       </p>
-                      <p className="text-lg font-black text-slate-800 uppercase tracking-tight">
+                      <p className="text-lg font-black text-slate-800 tracking-tight">
                         {displayName}
                       </p>
                     </div>
@@ -287,19 +286,19 @@ export default function ProfilePage() {
                   <div className="flex gap-3">
                     <Button
                       variant="solid"
-                      className="bg-red-500 hover:bg-red-600 text-white rounded-xl font-bold px-6 transition-all"
+                      className="bg-red-500 hover:bg-red-600 cursor-pointer text-white rounded-xl font-bold px-6 transition-all"
                       startContent={<TrashIcon className="w-4 h-4" />}
                       onPress={handleDelete}
                     >
-                      Delete
+                      {t("profile.deleteProfile", "Delete")}
                     </Button>
                     <Button
                       variant="solid"
-                      className="bg-[#8b5cf6] hover:bg-[#7c3aed] text-white rounded-xl font-bold px-6 shadow-lg shadow-purple-100 transition-all"
+                      className="bg-[#8b5cf6] hover:bg-[#7c3aed] text-white cursor-pointer rounded-xl font-bold px-6 shadow-lg shadow-purple-100 transition-all"
                       startContent={<PencilSquareIcon className="w-4 h-4" />}
                       onPress={handleUpdate}
                     >
-                      Update
+                      {t("profile.update", "Update")}
                     </Button>
                   </div>
                 </div>
@@ -307,22 +306,22 @@ export default function ProfilePage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 mt-8">
                   <EditField
                     icon={<UserIcon className="w-5 h-5" />}
-                    label="Gender"
+                    label={t("profile.genderLabel", "Gender")}
                   >
                     <select
                       value={form.gender}
                       onChange={setField("gender")}
                       className={inputCls(false)}
                     >
-                      <option>Female</option>
-                      <option>Male</option>
-                      <option>Others</option>
+                      <option>{t("profile.gender.male")}</option>
+                      <option>{t("profile.gender.female", "Female")}</option>
+                      <option>{t("profile.gender.others", "Others")}</option>
                     </select>
                   </EditField>
 
                   <EditField
                     icon={<CalendarIcon className="w-5 h-5" />}
-                    label="Date of birth"
+                    label= {t("profile.dob", "Date Of Birth")}
                     error={errors.dob}
                   >
                     <input
@@ -335,7 +334,7 @@ export default function ProfilePage() {
 
                   <EditField
                     icon={<EnvelopeIcon className="w-5 h-5" />}
-                    label="Email Address"
+                    label= {t("profile.emailAddress", "Email Address")}
                     error={errors.email}
                   >
                     <input
@@ -349,7 +348,7 @@ export default function ProfilePage() {
 
                   <EditField
                     icon={<PhoneIcon className="w-5 h-5" />}
-                    label="Phone Number"
+                    label= {t("profile.phoneNumber", "Phone Number")}
                     error={errors.phone}
                   >
                     <input
@@ -367,9 +366,9 @@ export default function ProfilePage() {
                 <Button
                   variant="flat"
                   onPress={onClose}
-                  className="font-bold rounded-xl px-12 h-12 bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all"
+                  className="font-bold cursor-pointer rounded-xl px-12 h-12 bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all"
                 >
-                  Close
+                  {t("profile.close", "Close")}
                 </Button>
               </ModalFooter>
             </>
