@@ -19,7 +19,6 @@ import {
 import {
   UserIcon,
   EnvelopeIcon,
-  CalendarIcon,
   ArrowLeftIcon,
   ShieldCheckIcon,
   ArrowRightOnRectangleIcon,
@@ -32,6 +31,7 @@ import {
   ExclamationCircleIcon,
   InformationCircleIcon,
 } from "@heroicons/react/24/outline";
+import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
 import { ToastContainer, toast } from "react-toastify";
@@ -208,7 +208,7 @@ export default function ProfilePage() {
                 htmlFor="upload"
                 className="absolute bottom-1 right-1 bg-[#26308f] rounded-4xl p-2.5 border-4 border-white shadow-lg cursor-pointer hover:scale-110 hover:bg-indigo-700 transition-all"
               >
-                <PencilIcon className="w-5 h-5 text-white" />
+                <Icon icon="fluent:image-edit-20-regular" className="w-7 h-7 text-white" />
                 <input
                   id="upload"
                   type="file"
@@ -229,7 +229,7 @@ export default function ProfilePage() {
             <div className="w-full mt-10 space-y-3">
               <Button
                 fullWidth
-                className="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold h-14 rounded-2xl transition-all"
+                className="cursor-pointer bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold h-14 rounded-2xl transition-all"
                 startContent={<Cog6ToothIcon className="w-5 h-5" />}
                 onPress={onOpen}
               >
@@ -237,7 +237,7 @@ export default function ProfilePage() {
               </Button>
               <Button
                 fullWidth
-                className="bg-red-500 hover:bg-red-600 text-white font-bold h-14 rounded-2xl shadow-lg shadow-red-100 transition-all"
+                className="cursor-pointer bg-red-500 hover:bg-red-600 text-white font-bold h-14 rounded-2xl shadow-lg shadow-red-100 transition-all"
                 onPress={handleLogout}
                 startContent={<ArrowRightOnRectangleIcon className="w-5 h-5" />}
               >
@@ -260,7 +260,7 @@ export default function ProfilePage() {
             <>
               <ModalHeader className="border-b border-slate-100 pb-6">
                 <h2 className="text-3xl font-black text-slate-800">
-                  {t("profile.profileInfo","Profile Information")}
+                  {t("profile.profileInfo", "Profile Information")}
                 </h2>
               </ModalHeader>
 
@@ -287,7 +287,7 @@ export default function ProfilePage() {
                     <Button
                       variant="solid"
                       className="bg-red-500 hover:bg-red-600 cursor-pointer text-white rounded-xl font-bold px-6 transition-all"
-                      startContent={<TrashIcon className="w-4 h-4" />}
+                      startContent={<Icon icon="si:bin-line" className="w-5 h-5" />}
                       onPress={handleDelete}
                     >
                       {t("profile.deleteProfile", "Delete")}
@@ -295,7 +295,7 @@ export default function ProfilePage() {
                     <Button
                       variant="solid"
                       className="bg-[#8b5cf6] hover:bg-[#7c3aed] text-white cursor-pointer rounded-xl font-bold px-6 shadow-lg shadow-purple-100 transition-all"
-                      startContent={<PencilSquareIcon className="w-4 h-4" />}
+                      startContent={<Icon icon="ic:baseline-update" className="w-5 h-5" />}
                       onPress={handleUpdate}
                     >
                       {t("profile.update", "Update")}
@@ -305,7 +305,10 @@ export default function ProfilePage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 mt-8">
                   <EditField
-                    icon={<UserIcon className="w-5 h-5" />}
+                    icon=
+                    {
+                      <Icon icon="ph:gender-male" className="w-5 h-5" />
+                    }
                     label={t("profile.genderLabel", "Gender")}
                   >
                     <select
@@ -320,21 +323,31 @@ export default function ProfilePage() {
                   </EditField>
 
                   <EditField
-                    icon={<CalendarIcon className="w-5 h-5" />}
-                    label= {t("profile.dob", "Date Of Birth")}
+                    icon={
+                      <Icon icon="solar:calendar-outline" className="w-5 h-5" />
+                    }
+                    label={t("profile.dob", "Date Of Birth")}
                     error={errors.dob}
                   >
-                    <input
-                      type="date"
-                      value={form.dob}
-                      onChange={setField("dob")}
-                      className={inputCls(!!errors.dob)}
-                    />
+                    <div className="relative flex items-center w-full">
+                      <input
+                        type="date"
+                        value={form.dob}
+                        onChange={setField("dob")}
+                        className={`${inputCls(!!errors.dob)} w-full pr-10 clear-date-icon`}
+                      />
+
+                      <div className="absolute right-3 pointer-events-none text-gray-400">
+                        <Icon icon="solar:calendar-outline" className="w-5 h-5" />
+                      </div>
+                    </div>
                   </EditField>
 
                   <EditField
-                    icon={<EnvelopeIcon className="w-5 h-5" />}
-                    label= {t("profile.emailAddress", "Email Address")}
+                    icon={
+                      <Icon icon="fluent:mail-32-regular" className="w-5 h-5" />
+                    }
+                    label={t("profile.emailAddress", "Email Address")}
                     error={errors.email}
                   >
                     <input
@@ -347,8 +360,10 @@ export default function ProfilePage() {
                   </EditField>
 
                   <EditField
-                    icon={<PhoneIcon className="w-5 h-5" />}
-                    label= {t("profile.phoneNumber", "Phone Number")}
+                    icon={
+                      <Icon icon="solar:call-dropped-outline" className="w-5 h-5" />
+                    }
+                    label={t("profile.phoneNumber", "Phone Number")}
                     error={errors.phone}
                   >
                     <input
@@ -366,9 +381,12 @@ export default function ProfilePage() {
                 <Button
                   variant="flat"
                   onPress={onClose}
-                  className="font-bold cursor-pointer rounded-xl px-12 h-12 bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all"
+                  className="font-bold cursor-pointer rounded-xl border border-red-700 px-8 h-12 bg-red-100 text-red-600 hover:text-white hover:bg-red-600 transition-all"
                 >
-                  {t("profile.close", "Close")}
+                  <div className="flex justify-between items-center gap-5">
+                    <Icon icon="radix-icons:cross-circled" className="w-5 h-5" />
+                    {t("profile.close", "Close")}
+                  </div>
                 </Button>
               </ModalFooter>
             </>
