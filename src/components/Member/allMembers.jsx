@@ -7,7 +7,7 @@ const allMembersData = [
   {
     id: "director",
     name: "Nhoeurm Veasna",
-    nameKh: "ញឹក វាស្នា",
+    nameKh: "ញឿម វាសនា",
     role: "Director of KHA Housing",
     roleKh: "នាយកផ្ទះស្នាក់នៅ KHA",
     image: "/images/member/nhoeurmveasna.jpeg",
@@ -30,8 +30,8 @@ const allMembersData = [
   },
   {
     id: "leader-discipline",
-    name: "Tea Choy",
-    nameKh: "ទែ ចុយ",
+    name: "Tea Chory",
+    nameKh: "ទា ចយ",
     role: "Leader Discipline of KHA Housing",
     roleKh: "ប្រធានវិន័យនៃ KHA",
     image: "/images/member/Choy.jpeg",
