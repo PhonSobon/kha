@@ -6,7 +6,10 @@
     "event": "Event",
     "leader": "Leader",
     "contact": "Contact",
-    "login": "Login"
+    "login": "Login",
+    "organization": "Organization",
+    "members": "Members",
+    "announcements": "Announcements"
   },
   "home": {
     "welcome": "WELCOME TO KHMER HEIRS ASSOCIATION",
