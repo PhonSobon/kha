@@ -42,7 +42,7 @@ export default function BookPreviewModal({ book, onClose }) {
 
             <button
               onClick={onClose}
-              className="w-8 h-8 flex items-center justify-center rounded-full bg-red-500 hover:bg-red-700 text-white text-xl leading-none transition-colors"
+              className="w-8 h-8 flex cursor-pointer items-center justify-center rounded-full bg-red-500 hover:bg-red-700 text-white text-xl leading-none transition-colors"
             >
               &times;
             </button>

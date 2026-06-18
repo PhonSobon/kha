@@ -7,7 +7,7 @@ export default function Tutorial() {
   const mockTutorials = [
     {
       id: 1,
-      title: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1",
+      title: "https://www.youtube.com/watch?v=JD-9NmMVVH8&list=RDJD-9NmMVVH8&start_radio=1",
       customTitle: "Chinese Class with Gu Laoshi | HSK 1",
       subject: "Chinese",
       description: "Are you ready to start learning one of the most important and widely spoken languages",
@@ -15,7 +15,7 @@ export default function Tutorial() {
     },
     {
       id: 2,
-      title: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2",
+      title: "https://www.youtube.com/watch?v=JD-9NmMVVH8&list=RDJD-9NmMVVH8&start_radio=1",
       customTitle: "Japanese Class with Sensei | JLPT N5",
       subject: "Japanese",
       description: "Begin your journey into Japanese with our JLPT N5 Tutorial!",
@@ -23,7 +23,7 @@ export default function Tutorial() {
     },
     {
       id: 3,
-      title: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_3",
+      title: "https://www.youtube.com/watch?v=JD-9NmMVVH8&list=RDJD-9NmMVVH8&start_radio=1",
       customTitle: "Korean Class with Seonsaengnim | TOPIK I",
       subject: "Korean",
       description: "Dive into Korean with our TOPIK I Tutorial!",
