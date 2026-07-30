@@ -9,7 +9,7 @@ const allMembersData = [
     name: "Nhoeurm Veasna",
     nameKh: "ញឿម វាសនា",
     role: "Director of KHA Housing",
-    roleKh: "នាយកផ្ទះស្នាក់នៅ KHA",
+    roleKh: "ប្រធានលំនៅឋាននៃ KHA",
     image: "/images/member/nhoeurmveasna.jpeg",
   },
   {
@@ -17,7 +17,7 @@ const allMembersData = [
     name: "Moeurn Sovanara",
     nameKh: "មឿន សុវណ្ណារ៉ា",
     role: "Deputy Director of KHA Housing",
-    roleKh: "រដ្ឋបទប្រឹក្សានាយកផ្ទះស្នាក់នៅ KHA",
+    roleKh: "អនុប្រធានលំនៅឋាននៃ KHA",
     image: "/images/member/Sovanara.jpeg",
   },
   {
@@ -47,7 +47,7 @@ const allMembersData = [
   {
     id: "leader-security",
     name: "Kruch Chamroeurn",
-    nameKh: "ក្រុច ចំរើន",
+    nameKh: "ក្រួច ចំរើន",
     role: "Leader Security of KHA Housing",
     roleKh: "ប្រធានសន្តិសុខនៃ KHA",
     image: "/images/member/chamroeurn.jpeg",
@@ -55,7 +55,7 @@ const allMembersData = [
   {
     id: "sub-leader-financial",
     name: "Ven Visal",
-    nameKh: "វ៉េន វិសាល",
+    nameKh: "វេន វិសាល",
     role: "Sub Leader Financial of KHA Housing",
     roleKh: "អនុប្រធានហិរញ្ញវត្ថុនៃ KHA",
     image: "/images/member/venVisal.jpeg",
@@ -65,7 +65,7 @@ const allMembersData = [
     name: "Chhorn Rachhat",
     nameKh: "ឈាន់ រ៉ាឆាត",
     role: "Director of KHA Housing",
-    roleKh: "នាយកផ្ទះស្នាក់នៅ KHA",
+    roleKh: "ប្រធានលំនៅឋាននៃ KHA",
     image: "/images/member/Chhornrachhat.jpeg",
   },
   {
@@ -73,7 +73,7 @@ const allMembersData = [
     name: "Phon Sobon",
     nameKh: "ផុន សុបុណ្យ",
     role: "Deputy Director of KHA Housing",
-    roleKh: "រដ្ឋបទប្រឹក្សានាយកផ្ទះស្នាក់នៅ KHA",
+    roleKh: "អនុប្រធានលំនៅឋាននៃ KHA",
     image: "/images/member/phonsobon.jpeg",
   },
   {
@@ -81,23 +81,23 @@ const allMembersData = [
     name: "Ra Sarin",
     nameKh: "រ៉ា សារិន",
     role: "Director of KHA Housing",
-    roleKh: "នាយកផ្ទះស្នាក់នៅ KHA",
+    roleKh: "ប្រធានលំនៅឋាននៃ KHA",
     image: "/images/member/rasarin.jpeg",
   },
   {
-    id: "deputy-director-2023",
-    name: "Moeurn Sovanara",
-    nameKh: "មឿន សុវណ្ណារ៉ា",
-    role: "Deputy Director of KHA Housing",
-    roleKh: "រដ្ឋបទប្រឹក្សានាយកផ្ទះស្នាក់នៅ KHA",
-    image: "/images/member/moeurnsovanara.jpg",
+    id: "leader-hygiene-2023",
+    name: "Cheng Sovanarith",
+    nameKh: "ចេង សុវណ្ណារិទ្ធិ",
+    role: "Leader Hygiene of KHA Housing",
+    roleKh: "ប្រធានអនាម័យនៃ KHA",
+    image: "/images/cards/rith.jpg",
   },
 ];
 
 export default function AllMembers() {
   const { t, i18n } = useTranslation("common");
-  const [memberOrder, setMemberOrder] = useState(() => 
-    allMembersData.map((m) => m.id)
+  const [memberOrder, setMemberOrder] = useState(() =>
+    allMembersData.map((m) => m.id),
   );
   const [draggingId, setDraggingId] = useState(null);
   const [dragOverId, setDragOverId] = useState(null);
@@ -113,7 +113,7 @@ export default function AllMembers() {
     const from = memberOrder.indexOf(draggingId);
     const to = memberOrder.indexOf(targetId);
     if (from === -1 || to === -1) return;
-    
+
     const next = [...memberOrder];
     next.splice(from, 1);
     next.splice(to, 0, draggingId);
@@ -135,16 +135,25 @@ export default function AllMembers() {
 
   return (
     <div className="w-full flex flex-col items-center px-4 sm:px-6 lg:px-8 py-6">
-      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-center text-blue-900 px-4">
-        {t("memberPage.allMembers.title", "All Members")}
-      </h2>
+      <div className="text-center mb-6 sm:mb-8">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center text-blue-900 px-4 mb-4">
+          {t("memberPage.allMembers.title", "All KHA Members")}
+        </h2>
+        <p className="text-gray-600">
+          {t(
+            "memberPage.allMembers.description",
+            "Complete list of all KHA Housing members.",
+          )}
+        </p>
+      </div>
 
       <div className="w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
           {orderedMembers.map((member) => {
             const isDragging = draggingId === member.id;
-            const isDragOver = dragOverId === member.id && draggingId !== member.id;
-            
+            const isDragOver =
+              dragOverId === member.id && draggingId !== member.id;
+
             return (
               <div
                 key={member.id}
@@ -171,9 +180,7 @@ export default function AllMembers() {
                     ? "ring-2 ring-blue-200 shadow-lg scale-[0.995]"
                     : ""
                 } ${
-                  !isDragging && !isDragOver
-                    ? "transform hover:scale-105"
-                    : ""
+                  !isDragging && !isDragOver ? "transform hover:scale-105" : ""
                 }`}
               >
                 <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72">
@@ -185,8 +192,8 @@ export default function AllMembers() {
                     unoptimized
                   />
                 </div>
-                <div className="bg-[#0057b8] border-t-4 border-orange-500 p-3 sm:p-4 md:p-6 text-center">
-                  <h3 className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-1 sm:mb-2 line-clamp-2">
+                <div className="bg-[#0057b8] border-t-4 border-orange-500 p-3 sm:p-4 md:p-4 text-center">
+                  <h3 className="text-white text-sm sm:text-base md:text-sm lg:text-lg font-bold mb-1 sm:mb-2 line-clamp-2">
                     {i18n.language === "kh" ? member.nameKh : member.name}
                   </h3>
                   <p className="text-white text-xs sm:text-sm md:text-base font-medium line-clamp-2">

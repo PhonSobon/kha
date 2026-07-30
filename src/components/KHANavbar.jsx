@@ -30,11 +30,16 @@ export default function KHANavbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const menuRef = useRef(null);
   const orgDropdownRef = useRef(null);
+  const [user, setUser] = useState(null);
 
-  // Check login status
   useEffect(() => {
-    const user = localStorage.getItem("user");
-    setIsLoggedIn(!!user);
+    const userData = localStorage.getItem("user");
+
+    if (userData) {
+      const parsedUser = JSON.parse(userData);
+      setUser(parsedUser);
+      setIsLoggedIn(true);
+    }
   }, []);
 
   // Close menu when clicking outside
@@ -62,6 +67,7 @@ export default function KHANavbar() {
 
   const handleLogout = () => {
     localStorage.removeItem("user");
+    setUser(null);
     setIsLoggedIn(false);
     window.location.href = "/";
   };
@@ -197,12 +203,18 @@ export default function KHANavbar() {
         <NavbarContent justify="end" className="hidden sm:flex gap-4">
           {/* Login/Logout Button */}
           <NavbarItem>
-            {isLoggedIn ? (
+            {user ? (
               <Link
                 href="/profile"
                 className="w-9 h-9 rounded-full overflow-hidden cursor-pointer bg-amber-300 block hover:ring-2 hover:ring-white transition-all"
               >
-                <Image src="/images/member/moeurnsovanara.jpg" alt="profile" width={36} height={36} className="w-full h-full object-cover"></Image>
+                <Image
+                  src="/images/member/moeurnsovanara.jpg"
+                  alt="profile"
+                  width={36}
+                  height={36}
+                  className="w-full h-full object-cover"
+                ></Image>
               </Link>
             ) : (
               <Link

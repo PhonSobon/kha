@@ -95,30 +95,48 @@ export default function LoginForm() {
 
       if (
         formData.email === "admin@kha.com" &&
-        formData.password === "password123"
+        formData.password === "admin123"
       ) {
         localStorage.setItem(
           "user",
           JSON.stringify({
             email: formData.email,
+            role: "admin",
             isVerified: true,
             loginTime: new Date().toISOString(),
           }),
         );
 
         setLoginSuccess(true);
-        toast.success(t("auth.welcomeBack", "Welcome back! Redirecting..."));
+        toast.success("Welcome Admin!");
 
         setTimeout(() => {
           router.push("/dashboard");
-        }, 2000);
-      } else {
-        const errorMsg = t(
-          "auth.invalidCredentials",
-          "Invalid email or password",
+        }, 1500);
+      } else if (
+        formData.email === "member@kha.com" &&
+        formData.password === "member123"
+      ) {
+        localStorage.setItem(
+          "user",
+          JSON.stringify({
+            email: formData.email,
+            role: "member",
+            isVerified: true,
+            loginTime: new Date().toISOString(),
+          }),
         );
+
+        setLoginSuccess(true);
+        toast.success("Welcome Member!");
+
+        setTimeout(() => {
+          router.push("/profile");
+        }, 1500);
+      } else {
+        const errorMsg = "Invalid email or password";
         setErrors({ general: errorMsg });
-        toast.error(errorMsg); // Show the red toast for wrong credentials
+        toast.error(errorMsg);
       }
     } catch (error) {
       const generalError = t("auth.loginError", "Something went wrong.");
@@ -143,13 +161,20 @@ export default function LoginForm() {
     }
   };
 
-  const fillDemoCredentials = () => {
+  const fillDemoCredentialsAdmin = () => {
     setFormData({
       email: "admin@kha.com",
-      password: "password123",
+      password: "admin123",
       rememberMe: false,
     });
     setErrors({});
+  };
+
+  const fillDemoCredentialsUsers = () => {
+    setFormData({
+      email: "member@kha.com",
+      password: "member123",
+    });
   };
 
   if (!isLangReady) {

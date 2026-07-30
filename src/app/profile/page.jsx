@@ -184,7 +184,7 @@ export default function ProfilePage() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-24 pb-24 relative z-10">
         <div className="mb-8">
           <Link
-            href="/dashboard"
+            href={user?.role === "admin" ? "/dashboard" : "/"}
             className="inline-flex items-center text-white/90 hover:text-white font-bold bg-white/10 backdrop-blur-md px-6 py-2.5 rounded-full border border-white/20 shadow-xl transition-all"
           >
             <ArrowLeftIcon className="w-4 h-4 mr-2" />

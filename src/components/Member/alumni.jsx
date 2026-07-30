@@ -6,9 +6,9 @@ export default function Alumni() {
   const { t } = useTranslation("common");
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+    <div className="max-w-6xl mx-auto px-4 py-6">
+      <div className="text-center mb-6">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center text-blue-900 px-4 mb-4">
           {t("memberPage.alumni.title", "Alumni")}
         </h2>
         <p className="text-gray-600">

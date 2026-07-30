@@ -141,8 +141,8 @@
       "alumni": "Alumni"
     },
     "allMembers": {
-      "title": "All Members",
-      "description": "Complete list of all KHA Housing members.",
+      "title": "All KHA Members",
+      "description": "list of all KHA Housing members.",
       "comingSoon": "All members list coming soon..."
     },
     "alumni": {
@@ -151,25 +151,99 @@
       "comingSoon": "Alumni information coming soon..."
     },
     "members": {
-      "director": {
+      "directorhousingAllGen" : "Director KHA Housing All Generations",
+      "desc" : "List of management each generation of KHA housing",
+      "director2025": {
         "role": "Director of KHA Housing",
-        "intro": "My name is Moeurn Sovanara. I come from Battambang Province. Currently, I am a 4th-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science."
+        "intro": "My name is Nhoeurm Veasna. I come from Siem Reap Province. Currently, I am a 3th-year student at the TUX Global Institute, majoring in Digital Marketing."
       },
-      "deputyDirector": {
+      "deputyDirector2025": {
         "role": "Deputy Director of KHA Housing",
         "intro": "My name is Moeurn Sovanara. I come from Battambang Province. Currently, I am a 4th-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science."
       },
-      "leaderFinancial": {
+      "leaderFinancial2025": {
         "role": "Leader Financial of KHA Housing",
         "intro": "My name is Ngorn Vannet. I come from Takeo Province. Currently, I am a 4th-year student at the Royal University of Phnom Penh (RUPP), majoring in Mathematic."
       },
-      "directorPrev": {
-        "role": "Director of KHA Housing",
-        "intro": "My name is Moeurn Sovanara. I come from Battambang Province. Currently, I am a 3rd-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science."
+      "leaderDiscipline2025": {
+        "role": "Leader Displine of KHA Housing",
+        "intro": "My name is Tea Chhory. I come from Steng Treng Province. Currently, I am a 2th-year student at the Royal University of Phnom Penh (RUPP), majoring in Khmer Literature."
       },
-      "deputyDirectorPrev": {
+      "leaderHygiene2025": {
+        "role": "Leader Hygiene of KHA Housing",
+        "intro": "My name is Hoeur Songhey. I come from Siem Reap Province. Currently, I am a 2th-year student at the Royal University of Phnom Penh (RUPP), majoring in Information Technology and Engineering."
+      },
+      "leaderWifi2025": {
+        "role": "Leader Wifi of KHA Housing",
+        "intro": "My name is Chan SokVisal. I come from Siem Reap Province. Currently, I am a 4th-year student at the National University of Management(NUM), majoring in Information Technology."
+      },
+      "leaderSecurity2025": {
+        "role": "Leader Security of KHA Housing",
+        "intro": "My name is Kruch Chamroeun. I come from Siem Reap Province. Currently, I am a 4th-year student at the National University of Management(NUM), majoring in English."
+      },
+      "directorPrev2024": {
+        "role": "Director of KHA Housing",
+        "intro": "My name is Chhorn Rachhat. I come from kampot Province. Currently, I am a 5rd-year student at the Institute of Technology of Cambodia (ITC), majoring in Mechanical Industrial Engineering."
+      },
+      "deputyDirector2024": {
         "role": "Deputy Director of KHA Housing",
-        "intro": "My name is Moeurn Sovanara. I come from Battambang Province. Currently, I am a 3rd-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science."
+        "intro": "My name is Phon Sobon. I come from Kompong Chnang Province. Currently, I am a 4rd-year student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science."
+      },
+      "LeadFinancial2024": {
+        "role": "Leader Financial of KHA Housing",
+        "intro": "My name is Roeurn Sambo. I come from Kompong Chnang Province. Currently, I am a 4rd-year student at the Royal University of Phnom Penh (RUPP), majoring in Mathematic."
+      },
+      "subleadFinacial2024": {
+        "role": "Leader Financial of KHA Housing",
+        "intro": "My name is Noek Peth. I come from Siem Reap Province. Currently, I am a 4rd-year student at the Royal University of Phnom Penh (RUPP), majoring in Mathematic."
+      },
+      "leaddispline2024": {
+        "role": "Leader Displine of KHA Housing",
+        "intro": "My name is Nhoeurm Veasna. I come from Siem Reap Province. Currently, I am a 3th-year student at the TUX Global Institute, majoring in Digital Marketing."
+      },
+      "leadHygiene2024": {
+        "role": "Leader Hygiene of KHA Housing",
+        "intro": "My name is Cheng Sovanarith. I come from Preah Vihear Province. Currently, I am a fresh graduated student at the Royal University of Phnom Penh (RUPP), majoring in Khmer Literature."
+      },
+      "leadWifi2024": {
+        "role": "Leader Wifi of KHA Housing",
+        "intro": "My name is Touch Pich. I come Battambang Province. Currently, I am a fresh graduated student at the Royal University of Phnom Penh (RUPP), majoring in Computer Science."
+      },
+      "subleadWifi2024": {
+        "role": "Sub Leader Wifi of KHA Housing",
+        "intro": "My name is Chan SokVisal. I come from Siem Reap Province. Currently, I am a 4th-year student at the National University of Management(NUM), majoring in Information Technology."
+      },
+      "leadSecurity2024": {
+        "role": "Leader Security of KHA Housing",
+        "intro": "My name is Ki Angkia. I come from Ratanakiri Province. Currently, I am a 4th-year student at the Norton University, majoring in Electrical and Electronic Engineering."
+      },
+      "director2023": {
+        "role": "Director of KHA Housing",
+        "intro": "My name is Ra Sarin. I come from Siem Reap Province. Currently, I am a fresh graduated student at the Royal University of Phnom Penh (RUPP), majoring in Physic."
+      },
+      "LeadFinancial2023": {
+        "role": "Lead Financial of KHA Housing",
+        "intro": "My name is Ngoun Rith. I come from Battambang Province. Currently, I am a fresh graduated student at the Royal University of Phnom Penh (RUPP), majoring in Physic."
+      },
+      "subLeadFinancial2023": {
+        "role": "Sub Lead Financial of KHA Housing",
+        "intro": "My name is Horn Sean. I come from Kompong Cham Province. Currently, I am a fresh graduated student at the Royal University of Phnom Penh (RUPP), majoring in Physic."
+      },
+      "leadHygiene2023": {
+        "role": "Lead Hygiene of KHA Housing",
+        "intro": "My name is Hong Pisey. I come from Kompong Cham Province. Currently, I am a fresh graduated student at the Royal University of Phnom Penh (RUPP), majoring in Mathematic."
+      },
+      "leadWifi2023": {
+        "role": "Lead Wifi of KHA Housing",
+        "intro": "My name is Noek Peth. I come from Siem Reap Province. Currently, I am a 4rd-year student at the Royal University of Phnom Penh (RUPP), majoring in Mathematic."
+      },
+      "subleadWifi2023": {
+        "role": "Sub Lead Wifi of KHA Housing",
+        "intro": "My name is Moeurn Visal. I come from Takeo Province. Currently, I am a fresh graduated student at the Royal University of Phnom Penh (RUPP), majoring in Mathematic."
+      },
+      "leadSecurity2023": {
+        "role": "Lead Security of KHA Housing",
+        "intro": "My name is Toun Sora. I come from Steung Treng Province. Currently, I am a fresh graduated student at the Royal University of Phnom Penh (RUPP), majoring in History."
       }
     }
   },

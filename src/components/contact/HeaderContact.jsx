@@ -2,14 +2,16 @@
 import React from 'react'
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
+import ParticlesComponent from '../ui/particles-bg';
 
 export default function HeaderContact() {
   const { t, i18n } = useTranslation('common');
   return (
-    <div className="pt-16 relative w-full h-[600px] bg-gradient-to-r from-blue-500 via-blue-400 to-blue-300 flex items-center justify-center">
-      <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl px-8">
+    <div className="pt-16 relative w-full h-[600px] overflow-hidden">
+      <ParticlesComponent />
+      <div className="relative z-10 pointer-events-none flex flex-col md:flex-row items-center justify-between w-full h-full max-w-7xl mx-auto px-8">
         {/* Left: Text */}
-        <div className="flex-1 text-center md:text-left mb-8 md:mb-0">
+        <div className="flex-1 text-center md:text-left mb-8 md:mb-0 pointer-events-none">
           <h2 className="text-white text-3xl md:text-5xl font-bold drop-shadow-lg mb-4">
             {t('contact.title')}
           </h2>
@@ -18,7 +20,7 @@ export default function HeaderContact() {
           </h1>
         </div>
         {/* Right: Image */}
-        <div className="flex-1 flex justify-center md:justify-end">
+        <div className="flex-1 flex justify-center md:justify-end pointer-events-none">
           <Image
             src="/images/content/2.jpg"
             alt={t('contact.subtitle')}
