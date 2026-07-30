@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@heroicons/react": "^2.2.0",
     "@heroui/navbar": "^2.2.17",
     "@heroui/react": "^2.7.8",
@@ -18,7 +19,6 @@
     "chart.js": "^4.5.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "emailjs-com": "^3.2.0",
     "framer-motion": "^12.40.0",
     "i18next": "^25.6.0",
     "i18next-browser-languagedetector": "^8.2.0",

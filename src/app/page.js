@@ -34,7 +34,7 @@ export default function Home() {
       <div className="pt-16">
         <div className="relative w-full h-75 sm:h-100 md:h-130 lg:h-175 xl:h-175 overflow-hidden">
           <Image
-            width={1200}th
+            width={1200}
             height={600}
             src={heroImages[current]}
             unoptimized
