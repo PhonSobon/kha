@@ -20,7 +20,7 @@ export default function BacII() {
       subject: "Japanese",
       description: "Master Japanese for the Bac II exam with our tailored course!",
       imageSrc: "/assets/education/bacIIImage.png",
-      bookSrc: "/assets/books/japanese-bacii.pdf",
+      bookSrc: "/assets/books/teaching_strategy.pdf",
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ export default function BacII() {
       subject: "Korean",
       description: "Get ready for the Bac II Korean exam with our intensive course!",
       imageSrc: "/assets/education/bacIIImage.png",
-      bookSrc: "/assets/books/korean-bacii.pdf",
+      bookSrc: "/assets/books/teaching_strategy.pdf",
     },
   ];
 

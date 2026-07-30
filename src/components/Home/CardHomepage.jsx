@@ -81,7 +81,7 @@ export default function CardHomepage() {
                 />
               </div>
               <div className="bg-[#0057b8] border-t-4 border-orange-500 p-3 sm:p-4 md:p-6 text-center">
-                <h3 className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-1 sm:mb-2 line-clamp-2">
+                <h3 className="text-white text-sm sm:text-base md:text-lg lg:text-lg font-bold mb-1 sm:mb-2 line-clamp-2">
                   {i18n.language === "kh" ? member.nameKh : member.name}
                 </h3>
                 <p className="text-white text-xs sm:text-sm md:text-base font-medium line-clamp-2">

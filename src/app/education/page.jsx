@@ -27,7 +27,7 @@ export default function page() {
           }`}
           onClick={() => setActiveComponent("tutorial")}
         >
-          <h2 className="cursor-pointer">{t('education.tutorials')}</h2>
+          <h2 className="cursor-pointer">{t('education.videoTutorials')}</h2>
         </Button>
         <Button
           variant={activeComponent === "bacii" ? "default" : "outline"}
