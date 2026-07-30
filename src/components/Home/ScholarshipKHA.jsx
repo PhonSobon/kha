@@ -92,7 +92,7 @@ export default function ScholarshipKHA() {
                   {i18n.language === "kh" ? member.countryKH : member.country}
                 </div>
               </div>
-              <div className="flex-shrink-0 flex items-center justify-center p-2 sm:p-4">
+              <div className="flex items-center justify-center p-2 sm:p-4">
                 <Image
                   src={member.image}
                   alt={i18n.language === "kh" ? member.nameKH : member.name}

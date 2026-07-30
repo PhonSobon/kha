@@ -1,6 +1,7 @@
 
 
 "use client";
+import Image from "next/image";
 import React from "react";
 
 export default function Announcement() {
@@ -27,7 +28,7 @@ export default function Announcement() {
       </header>
 
       <div className="w-full overflow-hidden rounded-xl shadow-sm flex justify-center py-4">
-        <img
+        <Image
           src="/images/member/recruitment2025.jpeg"
           alt="KHA recruitment announcement"
           className="w-full max-w-3xl h-auto object-cover"

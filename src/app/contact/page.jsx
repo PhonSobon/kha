@@ -33,7 +33,7 @@ export default function page() {
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-full min-h-[500px]"
+            className="w-full h-full min-h-125"
           ></iframe>
         </div>
       </div>

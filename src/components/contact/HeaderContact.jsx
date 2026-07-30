@@ -7,7 +7,7 @@ import ParticlesComponent from '../ui/particles-bg';
 export default function HeaderContact() {
   const { t, i18n } = useTranslation('common');
   return (
-    <div className="pt-16 relative w-full h-[600px] overflow-hidden">
+    <div className="pt-16 relative w-full h-150 overflow-hidden">
       <ParticlesComponent />
       <div className="relative z-10 pointer-events-none flex flex-col md:flex-row items-center justify-between w-full h-full max-w-7xl mx-auto px-8">
         {/* Left: Text */}

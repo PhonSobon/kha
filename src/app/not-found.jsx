@@ -1,12 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function NotFound() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-white to-gray-100">
+    <div className="flex items-center justify-center min-h-screen from-white to-gray-100">
       <div className="flex flex-col items-center space-y-6">
-        <img
+        <Image
           src="/assets/Logo.png"
+          width={30}
+          height={30}
           alt="Khmer Heirs Association Logo"
           className="w-32 h-32 rounded-full shadow-lg"
         />

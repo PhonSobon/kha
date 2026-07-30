@@ -32,9 +32,9 @@ export default function Home() {
     <div>
       <KHANavbar />
       <div className="pt-16">
-        <div className="relative w-full h-[300px] sm:h-[400px] md:h-[520px] lg:h-[600px] xl:h-[700px] overflow-hidden">
+        <div className="relative w-full h-75 sm:h-100 md:h-130 lg:h-175 xl:h-175 overflow-hidden">
           <Image
-            width={1200}
+            width={1200}th
             height={600}
             src={heroImages[current]}
             unoptimized

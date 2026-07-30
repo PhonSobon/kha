@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -575,7 +576,7 @@ export default function Member() {
             >
               <div className={`${imageFirst ? "" : "md:order-2"}`}>
                 <div className="relative bg-blue-100 rounded-2xl overflow-hidden shadow w-full max-w-[11.5rem] md:max-w-[14rem] aspect-[3/4] mx-auto">
-                  <img
+                  <Image
                     src={member.image}
                     alt={member.name}
                     className="absolute inset-0 w-full h-full object-cover"
