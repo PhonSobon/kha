@@ -579,6 +579,8 @@ export default function Member() {
                   <Image
                     src={member.image}
                     alt={member.name}
+                    width={10}
+                    height={10}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>

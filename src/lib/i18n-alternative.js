@@ -1,13 +1,13 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 
 // Alternative approach using dynamic imports
 const loadTranslations = async () => {
   try {
     const [enCommon, khCommon] = await Promise.all([
-      import('../../public/locales/en/common.json'),
-      import('../../public/locales/kh/common.json')
+      import("../../public/locales/en/common.json"),
+      import("../../public/locales/kh/common.json"),
     ]);
 
     const resources = {
@@ -21,9 +21,9 @@ const loadTranslations = async () => {
 
     i18n.init({
       resources,
-      fallbackLng: 'en',
-      lng: 'en',
-      debug: process.env.NODE_ENV === 'development',
+      fallbackLng: "en",
+      lng: "en",
+      debug: process.env.NODE_ENV === "development",
       interpolation: {
         escapeValue: false,
       },
@@ -33,14 +33,25 @@ const loadTranslations = async () => {
     });
 
     // Load saved language from localStorage
-    if (typeof window !== 'undefined') {
-      const savedLang = localStorage.getItem('lang') || 'en';
-      i18n.changeLanguage(savedLang);
-    }
+    const lng =
+      typeof window !== "undefined"
+        ? localStorage.getItem("lang") || "en"
+        : "en";
 
+    await i18n.init({
+      resources,
+      lng,
+      fallbackLng: "en",
+      interpolation: {
+        escapeValue: false,
+      },
+      react: {
+        useSuspense: false,
+      },
+    });
   } catch (error) {
-    console.error('Failed to load translations:', error);
-    
+    console.error("Failed to load translations:", error);
+
     // Fallback to basic translations
     i18n.init({
       resources: {
@@ -51,9 +62,9 @@ const loadTranslations = async () => {
               about: "About",
               education: "Education",
               contact: "Contact",
-              leader: "Leader"
-            }
-          }
+              leader: "Leader",
+            },
+          },
         },
         kh: {
           common: {
@@ -62,14 +73,14 @@ const loadTranslations = async () => {
               about: "អំពីយើង",
               education: "ការអប់រំ",
               contact: "ទំនាក់ទំនង",
-              leader: "ថ្នាក់ដឹកនាំ"
-            }
-          }
-        }
+              leader: "ថ្នាក់ដឹកនាំ",
+            },
+          },
+        },
       },
-      fallbackLng: 'en',
-      lng: 'en',
-      debug: process.env.NODE_ENV === 'development',
+      fallbackLng: "en",
+      lng: "en",
+      debug: process.env.NODE_ENV === "development",
       interpolation: {
         escapeValue: false,
       },
