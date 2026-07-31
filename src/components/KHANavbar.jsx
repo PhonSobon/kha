@@ -209,7 +209,7 @@ export default function KHANavbar() {
                 className="w-9 h-9 rounded-full overflow-hidden cursor-pointer bg-amber-300 block hover:ring-2 hover:ring-white transition-all"
               >
                 <Image
-                  src="/images/member/moeurnsovanara.jpg"
+                  src="/images/Logo/logo.jpg"
                   alt="profile"
                   width={36}
                   height={36}
