@@ -5,10 +5,10 @@ export default function CardTutorial({ tutorial }) {
   return (
     <div
       key={tutorial.id}
-      className="w-full rounded-2xl min-h-[340px] shadow cursor-pointer hover:scale-102 transition-transform duration-400 bg-white flex flex-col"
+      className="w-full rounded-2xl min-h-85 shadow cursor-pointer hover:scale-102 transition-transform duration-400 bg-white flex flex-col"
     >
       <Image
-        className="w-full p-2 hover:scale-103 transition-transform duration-400 rounded-t-3xl object-cover aspect-[4/3]"
+        className="w-full p-2 hover:scale-103 transition-transform duration-400 rounded-t-3xl object-cover aspect-4/3"
         width={1000}
         height={1000}
         src={tutorial.imageSrc}

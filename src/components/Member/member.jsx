@@ -575,7 +575,7 @@ export default function Member() {
               }`}
             >
               <div className={`${imageFirst ? "" : "md:order-2"}`}>
-                <div className="relative bg-blue-100 rounded-2xl overflow-hidden shadow w-full max-w-[11.5rem] md:max-w-[14rem] aspect-[3/4] mx-auto">
+                <div className="relative bg-blue-100 rounded-2xl overflow-hidden shadow w-full max-w-46 md:max-w-56 aspect-3/4 mx-auto">
                   <Image
                     src={member.image}
                     alt={member.name}

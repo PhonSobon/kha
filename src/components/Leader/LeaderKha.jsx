@@ -48,7 +48,7 @@ export default function LeaderKha() {
   const { i18n } = useTranslation('common');
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white pb-12 pt-10">
+    <div className="min-h-screen bg-linear-to-b from-blue-100 to-white pb-12 pt-10">
       <p className="text-lg text-gray-700 mb-8 text-center max-w-2xl mx-auto">
         {i18n.language === "en" ? director.descEN : director.descKH}
       </p>

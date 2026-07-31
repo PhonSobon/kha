@@ -109,7 +109,7 @@ export default function ParticlesComponent() {
       className={`
         absolute inset-0 z-10
         transition-colors duration-500
-        bg-gradient-to-tr from-[#e3f2fd] via-[#90caf9] to-[#64b5f6]
+        bg-linear-to-tr from-[#e3f2fd] via-[#90caf9] to-[#64b5f6]
         dark:from-[#000814] dark:via-[#003566] dark:to-[#0077b6]
       `}
     />
