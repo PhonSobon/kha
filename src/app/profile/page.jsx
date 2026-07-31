@@ -79,7 +79,7 @@ export default function ProfilePage() {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [profileImage, setProfileImage] = useState(
-    "/images/member/moeurnsovanara.jpg",
+    "/images/Logo/logo.jpg",
   );
 
   const [form, setForm] = useState({
