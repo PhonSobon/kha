@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import AlumniCard from "@/components/others/cardAlumini";
+import { allAlumini } from "@/components/others/allAlumini";
 
 export default function Alumni() {
   const { t } = useTranslation("common");
@@ -15,13 +17,12 @@ export default function Alumni() {
           {t("memberPage.alumni.description", "Former members who have graduated and moved on to successful careers.")}
         </p>
       </div>
-      
-      <div className="bg-white rounded-2xl shadow-sm p-8">
-        <p className="text-gray-500 text-center">
-          {t("memberPage.alumni.comingSoon", "Alumni information coming soon...")}
-        </p>
+
+      <div className="bg-white rounded-2xl shadow-sm p-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {allAlumini.map((alumini) => (
+          <AlumniCard key={alumini.id} alumini={alumini} />
+        ))}
       </div>
     </div>
   );
 }
-
