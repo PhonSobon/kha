@@ -110,5 +110,13 @@ export const allAlumini = [
     faceBookLink: "https://www.facebook.com/sokhuoy.sam",
     contact: "https://t.me",
     image: "/images/alumini/sam_sokhuoy.jpg",
+  },
+  {
+    id: "15",
+    name: "Len Lot",
+    nameKh: "លេន ឡូត",
+    faceBookLink: "https://www.facebook.com/len.lot.2025/",
+    contact: "https://t.me",
+    image: "/images/alumini/len_lot.jpg",
   }
 ];
